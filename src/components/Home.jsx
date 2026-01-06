@@ -1,8 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import "../Style.css";
 import logo from "../assets/logo.png";
+import heroBg from "../assets/herohome.jpeg";
 
 const Home = () => {
+    const [showFilters, setShowFilters] = useState(false);
+    const [purpose, setPurpose] = useState("For Sale");
+
     return (
         <>
             <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
@@ -339,6 +343,149 @@ const Home = () => {
                     </ul>
                 </div>
             </div>
+
+            <section
+                className="hero-home"
+                style={{
+                    backgroundImage: `url(${heroBg})` 
+                }}
+            >
+                <div className="overlay">
+                    <div className="container text-center">
+                        <h1 className="hero-title">Search Luxury Homes</h1>
+                        <p className="hero-subtitle">
+                            Thousands of luxury home enthusiasts just like you visit our website.
+                        </p>
+
+                        <div className="search-bar shadow-lg">
+                            <div className="dropdown">
+                                <button
+                                    className="btn dropdown-toggle purpose-btn"
+                                    data-bs-toggle="dropdown"
+                                >
+                                    {purpose}
+                                </button>
+                                <ul className="dropdown-menu">
+                                    <li>
+                                        <button className="dropdown-item" onClick={() => setPurpose("For Sale")}>
+                                            For Sale
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className="dropdown-item" onClick={() => setPurpose("For Rent")}>
+                                            For Rent
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <input
+                                type="text"
+                                className="form-control location-input"
+                                placeholder="Place, neighborhood, school or agent..."
+                            />
+
+                            <button
+                                className="btn filter-btn"
+                                onClick={() => setShowFilters(!showFilters)}
+                            >
+                            <i class="fa-solid fa-arrow-up-wide-short"></i>
+                            </button>
+
+                            <button className="btn search-btn">
+                                Search <i className="bi bi-search"></i>
+                            </button>
+                        </div>
+
+                        {showFilters && (
+                            <div className="advanced-filter shadow-lg">
+                                <div className="row g-4">
+                                    <div className="col-md-6">
+                                        <label className="filter-label">
+                                            Price range from <span>$100</span> to <span>$500,000</span>
+                                        </label>
+                                        <input type="range" className="form-range" />
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <label className="filter-label">
+                                            Size range from <span>0</span> to <span>1,000</span>
+                                        </label>
+                                        <input type="range" className="form-range" />
+                                    </div>
+
+                                    <div className="col-md-3">
+                                        <select className="form-select">
+                                            <option>Province / States</option>
+                                            <option>California</option>
+                                            <option>Texas</option>
+                                            <option>Florida</option>
+                                            <option>New York</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="col-md-3">
+                                        <select className="form-select">
+                                            <option>Rooms</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="col-md-3">
+                                        <select className="form-select">
+                                            <option>Bath: Any</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="col-md-3">
+                                        <select className="form-select">
+                                            <option>Beds: Any</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div className="amenities mt-4">
+                                    <h6>Amenities:</h6>
+                                    <div className="row">
+                                        {[
+                                            "Bed linens",
+                                            "Carbon alarm",
+                                            "Check-in lockbox",
+                                            "Coffee maker",
+                                            "Dishwasher",
+                                            "Fireplace",
+                                            "Refrigerator",
+                                            "Security cameras",
+                                            "Smoke alarm",
+                                            "Iron",
+                                            "Hangers",
+                                            
+                                        ].map((item) => (
+                                            <div className="col-md-3" key={item}>
+                                                <div className="form-check">
+                                                    <input type="checkbox" className="form-check-input" />
+                                                    <label className="form-check-label">{item}</label>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </section>
         </>
     );
 };
