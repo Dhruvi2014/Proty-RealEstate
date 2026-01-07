@@ -3,6 +3,14 @@ import "../Style.css";
 import logo from "../assets/logo.png";
 import heroBg from "../assets/herohome.jpeg";
 
+import boxhouse1 from "../assets/box-house1.jpg";
+import boxhouse2 from "../assets/box-house2.jpg";
+import boxhouse3 from "../assets/box-house3.jpg";
+import boxhouse4 from "../assets/box-house4.jpg";
+import boxhouse5 from "../assets/box-house5.jpg";
+import boxhouse6 from "../assets/box-house6.jpg";
+
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 const Home = () => {
@@ -17,6 +25,65 @@ const Home = () => {
         { title: "Townhouse", count: "234 Property", icon: "fa-house" },
         { title: "Commercial", count: "234 Property", icon: "fa-store" },
     ];
+
+    const properties = [
+        {
+            img: boxhouse1,
+            title: "Elegant studio flat",
+            address: "102 Ingraham St, Brooklyn, NY 11237",
+            beds: 3,
+            baths: 3,
+            sqft: "4,043",
+            price: "$8.600",
+        },
+        {
+            img: boxhouse2,
+            title: "Elegant studio flat",
+            address: "102 Ingraham St, Brooklyn, NY 11237",
+            beds: 3,
+            baths: 3,
+            sqft: "4,043",
+            price: "$8.600",
+        },
+        {
+            img: boxhouse3,
+            title: "Elegant studio flat",
+            address: "102 Ingraham St, Brooklyn, NY 11237",
+            beds: 3,
+            baths: 3,
+            sqft: "4,043",
+            price: "$8.600",
+        },
+        {
+            img: boxhouse4,
+            title: "Elegant studio flat",
+            address: "102 Ingraham St, Brooklyn, NY 11237",
+            beds: 3,
+            baths: 3,
+            sqft: "4,043",
+            price: "$8.600",
+        },
+        {
+            img: boxhouse5,
+            title: "Elegant studio flat",
+            address: "102 Ingraham St, Brooklyn, NY 11237",
+            beds: 3,
+            baths: 3,
+            sqft: "4,043",
+            price: "$8.600",
+        },
+        {
+            img: boxhouse6,
+            title: "Elegant studio flat",
+            address: "102 Ingraham St, Brooklyn, NY 11237",
+            beds: 3,
+            baths: 3,
+            sqft: "4,043",
+            price: "$8.600",
+        }
+
+    ];
+
 
     return (
         <>
@@ -498,7 +565,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="property-types-section py-5">
+            <section className="property-types-section  pt-5 pb-0">
                 <div className="container text-center">
                     <h2 className="section-title">Try Searching For</h2>
                     <p className="section-subtitle">
@@ -506,12 +573,12 @@ const Home = () => {
                     </p>
 
                     <Swiper
-  modules={[Pagination]}
-  slidesPerView="auto"
-  spaceBetween={24}
-  pagination={{ clickable: true }}
-  className="property-swiper"
->
+                        modules={[Pagination]}
+                        slidesPerView="auto"
+                        spaceBetween={24}
+                        pagination={{ clickable: true }}
+                        className="property-swiper"
+                    >
 
                         {propertyTypes.map((item, index) => (
                             <SwiperSlide key={index}>
@@ -528,15 +595,62 @@ const Home = () => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-
-                    <div className="mt-5">
-                        <h2 className="section-title">Today’s Luxury Listings</h2>
-                        <p className="section-subtitle">
-                            Thousands of luxury home enthusiasts just like you visit our website.
-                        </p>
-                    </div>
                 </div>
             </section>
+
+            <div className="container mt-0 mb-5">
+                <p className="text-center text-muted mb-4" style={{marginTop:"2px"}}>
+                    <h2>Today’s Luxury Listings</h2>
+                    Thousands of luxury home enthusiasts just like you visit our website.
+                </p>
+
+                <div className="row g-4">
+                    {properties.map((item, index) => (
+                        <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+                            <div className="pro-card">
+
+                                <div className="pro-image">
+                                    <img src={item.img} alt="property" />
+
+                                    <div className="pro-badges">
+                                        <span className="pro-badge featured">Featured</span>
+                                        <span className="pro-badge sale">For Sale</span>
+                                    </div>
+
+                                    <div className="pro-hover">
+                                        <span><i className="fa-regular fa-bookmark"></i></span>
+                                        <span><i className="fa-solid fa-magnifying-glass"></i></span>
+                                    </div>
+                                </div>
+
+                                <div className="pro-content">
+                                    <h5>{item.title}</h5>
+
+                                    <p className="pro-address">
+                                        <i className="bi bi-geo-alt"></i> {item.address}
+                                    </p>
+
+                                    <div className="pro-info">
+                                        <span><b>{item.beds}</b> Beds</span>
+                                        <span><b>{item.baths}</b> Baths</span>
+                                        <span><b>{item.sqft}</b> Sqft</span>
+                                    </div>
+
+                                    <hr />
+
+                                    <div className="pro-footer">
+                                        <h4 className="pro-price">{item.price}</h4>
+                                        <span className="pro-compare">⇄ Compare</span>
+                                        <button className="pro-btn">Details</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
 
 
         </>

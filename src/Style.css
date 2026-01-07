@@ -534,3 +534,177 @@ a[aria-expanded="true"] i {
     flex: 0 0 85%;
   }
 }
+.pro-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.pro-card:hover {
+  transform: translateY(-5px);
+}
+
+.pro-image {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+}
+
+.pro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pro-badges {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.pro-badge {
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.pro-badge.featured { background: #ff9f43; }
+.pro-badge.sale { background: #2f3640; }
+
+.pro-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.pro-image:hover .pro-hover {
+  opacity: 1;
+}
+
+.pro-hover span {
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff9f43;
+  font-size: 18px;
+}
+
+.pro-content {
+  padding: 20px;
+}
+
+.pro-address {
+  font-size: 14px;
+  color: #777;
+}
+
+.pro-info {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.pro-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pro-price {
+  color: #ff9f43;
+  font-weight: 700;
+}
+
+.pro-btn {
+  border: 1px solid #ff9f43;
+  background: transparent;
+  padding: 6px 18px;
+  border-radius: 30px;
+  color: #ff9f43;
+}
+
+.pro-btn:hover {
+  background: #ff9f43;
+  color: #fff;
+}
+@media (max-width: 991px) {
+  .pro-image {
+    height: 210px;
+  }
+
+  .pro-info {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+
+  .pro-footer {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .pro-btn {
+    padding: 6px 16px;
+  }
+}
+@media (max-width: 576px) {
+  .pro-image {
+    height: 190px;
+  }
+
+  .pro-content {
+    padding: 16px;
+  }
+
+  .pro-info {
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .pro-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .pro-price {
+    font-size: 20px;
+  }
+
+  .pro-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pro-hover span {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 400px) {
+  .pro-image {
+    height: 170px;
+  }
+
+  .pro-content h5 {
+    font-size: 17px;
+  }
+}
