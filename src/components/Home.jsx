@@ -3,9 +3,20 @@ import "../Style.css";
 import logo from "../assets/logo.png";
 import heroBg from "../assets/herohome.jpeg";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 const Home = () => {
     const [showFilters, setShowFilters] = useState(false);
     const [purpose, setPurpose] = useState("For Sale");
+
+    const propertyTypes = [
+        { title: "Apartment", count: "234 Property", icon: "fa-building" },
+        { title: "Villa", count: "234 Property", icon: "fa-house-chimney" },
+        { title: "Studio", count: "234 Property", icon: "fa-city", active: true },
+        { title: "Office", count: "234 Property", icon: "fa-briefcase" },
+        { title: "Townhouse", count: "234 Property", icon: "fa-house" },
+        { title: "Commercial", count: "234 Property", icon: "fa-store" },
+    ];
 
     return (
         <>
@@ -347,7 +358,7 @@ const Home = () => {
             <section
                 className="hero-home"
                 style={{
-                    backgroundImage: `url(${heroBg})` 
+                    backgroundImage: `url(${heroBg})`
                 }}
             >
                 <div className="overlay">
@@ -389,7 +400,7 @@ const Home = () => {
                                 className="btn filter-btn"
                                 onClick={() => setShowFilters(!showFilters)}
                             >
-                            <i class="fa-solid fa-arrow-up-wide-short"></i>
+                                <i class="fa-solid fa-arrow-up-wide-short"></i>
                             </button>
 
                             <button className="btn search-btn">
@@ -470,7 +481,7 @@ const Home = () => {
                                             "Smoke alarm",
                                             "Iron",
                                             "Hangers",
-                                            
+
                                         ].map((item) => (
                                             <div className="col-md-3" key={item}>
                                                 <div className="form-check">
@@ -486,8 +497,51 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            <section className="property-types-section py-5">
+                <div className="container text-center">
+                    <h2 className="section-title">Try Searching For</h2>
+                    <p className="section-subtitle">
+                        Thousands of luxury home enthusiasts just like you have found their dream home
+                    </p>
+
+                    <Swiper
+  modules={[Pagination]}
+  slidesPerView="auto"
+  spaceBetween={24}
+  pagination={{ clickable: true }}
+  className="property-swiper"
+>
+
+                        {propertyTypes.map((item, index) => (
+                            <SwiperSlide key={index}>
+                                <div className={`property-card ${item.active ? "active" : ""}`}>
+                                    <span className="spill-bg"></span>
+
+                                    <div className="property-icon">
+                                        <i className={`fa-solid ${item.icon}`}></i>
+                                    </div>
+
+                                    <h5>{item.title}</h5>
+                                    <p>{item.count}</p>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+
+                    <div className="mt-5">
+                        <h2 className="section-title">Today’s Luxury Listings</h2>
+                        <p className="section-subtitle">
+                            Thousands of luxury home enthusiasts just like you visit our website.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
         </>
     );
 };
 
 export default Home;
+

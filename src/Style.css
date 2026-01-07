@@ -392,3 +392,145 @@ a[aria-expanded="true"] i {
 .amenities h6 {
   font-weight: 600;
 }
+
+
+.property-types-section {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2b2b2b;
+}
+
+.section-subtitle {
+  color: #777;
+  margin-bottom: 50px;
+}
+
+.property-card {
+  position: relative;
+  height: 220px;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #eee;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+
+.spill-bg {
+  position: absolute;
+  inset: 0;
+  background: #f79642;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.property-card:hover .spill-bg,
+.property-card.active .spill-bg {
+  transform: translateY(0);
+}
+
+.property-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+.property-card h5 {
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+.property-card p {
+  font-size: 14px;
+  color: #777;
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+.property-card:hover h5,
+.property-card:hover p,
+.property-card:hover .property-icon,
+.property-card.active h5,
+.property-card.active p,
+.property-card.active .property-icon {
+  color: #fff;
+}
+
+.property-card.active {
+  box-shadow: 0 28px 50px rgba(247, 150, 66, 0.45);
+}
+
+.property-swiper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+
+.property-swiper .swiper-wrapper {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.property-swiper .swiper-slide {
+  box-sizing: border-box;
+  width: 196px;
+  flex-shrink: 0;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #ddd;
+  opacity: 1;
+  margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f79642;
+}
+
+
+@media (max-width: 992px) {
+  .property-swiper .swiper-slide {
+    flex: 0 0 calc((100% - 48px) / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .property-card {
+    height: 200px;
+  }
+
+  .property-swiper .swiper-slide {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 576px) {
+  .property-swiper .swiper-slide {
+    flex: 0 0 85%;
+  }
+}
