@@ -16,6 +16,7 @@ import { Pagination } from "swiper/modules";
 const Home = () => {
     const [showFilters, setShowFilters] = useState(false);
     const [purpose, setPurpose] = useState("For Sale");
+    const [activeTab, setActiveTab] = useState("Buying");
 
     const propertyTypes = [
         { title: "Apartment", count: "234 Property", icon: "fa-building" },
@@ -599,8 +600,8 @@ const Home = () => {
             </section>
 
             <div className="container mt-0 mb-5">
-                <p className="text-center text-muted mb-4" style={{marginTop:"2px"}}>
-                    <h2>Today’s Luxury Listings</h2>
+                <h2 className="text-center text-muted mb-4">Today’s Luxury Listings</h2>
+                <p className="text-center text-muted mb-4" style={{ marginTop: "2px" }}>
                     Thousands of luxury home enthusiasts just like you visit our website.
                 </p>
 
@@ -650,6 +651,77 @@ const Home = () => {
                     ))}
                 </div>
             </div>
+
+            <section className="discover-section">
+                <div className="container text-center">
+                    <h2 className="discover-title">Discover how we can help</h2>
+                    <p className="discover-subtitle">
+                        Thousands of luxury home enthusiasts just like you visit our website.
+                    </p>
+
+                    <div className="discover-tabs">
+                        {["Buying", "Rating", "Selling"].map((tab) => (
+                            <button
+                                key={tab}
+                                className={`tab-btn ${activeTab === tab ? "active" : ""}`}
+                                onClick={() => setActiveTab(tab)}
+                            >
+                                {tab}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Cards */}
+                    <div className="row mt-5">
+                        <div className="col-lg-4 col-md-6 mb-4">
+                            <div className="discover-card">
+                                <div className="icon">
+                                    <i className="fas fa-search-dollar"></i>
+                                </div>
+                                <h5>Find out how much you can afford</h5>
+                                <p>
+                                    We’ll help you estimate your budget range. Save to your buyer
+                                    profile to help in your search
+                                </p>
+                                <button className="learn-btn">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4 col-md-6 mb-4">
+                            <div className="discover-card">
+                                <div className="icon">
+                                    <i className="fas fa-home"></i>
+                                </div>
+                                <h5>Understand your monthly costs</h5>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                                    sollicitudin ipsum eu massa facilisis.
+                                </p>
+                                <button className="learn-btn">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4 col-md-6 mb-4">
+                            <div className="discover-card">
+                                <div className="icon">
+                                    <i className="fas fa-chart-line"></i>
+                                </div>
+                                <h5>Get help with your down payment</h5>
+                                <p>
+                                    In fermentum dignissim mauris et blandit. Fusce efficitur libero
+                                    sit amet ullamcorper.
+                                </p>
+                                <button className="learn-btn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p className="chat-text">
+                        Looking to spotlight a unique property with expert marketing?
+                        <span> Let’s chat</span>
+                    </p>
+                </div>
+            </section>
 
 
 
