@@ -2,13 +2,22 @@ import { useState } from "react";
 import "../Style.css";
 import logo from "../assets/logo.png";
 import heroBg from "../assets/herohome.jpeg";
-
+import homeImg from "../assets/home-img1.jpg";
 import boxhouse1 from "../assets/box-house1.jpg";
 import boxhouse2 from "../assets/box-house2.jpg";
 import boxhouse3 from "../assets/box-house3.jpg";
 import boxhouse4 from "../assets/box-house4.jpg";
 import boxhouse5 from "../assets/box-house5.jpg";
 import boxhouse6 from "../assets/box-house6.jpg";
+
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
+import img4 from "../assets/img4.jpg";
+import img5 from "../assets/img5.jpg";
+import img6 from "../assets/img7.jpg";
+import img7 from "../assets/img6.jpg";
+
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -83,6 +92,16 @@ const Home = () => {
             price: "$8.600",
         }
 
+    ];
+
+    const cards = [
+        { img: img1, col: "col-lg-3 col-md-6" },
+        { img: img2, col: "col-lg-3 col-md-6" },
+        { img: img3, col: "col-lg-3 col-md-6" },
+        { img: img4, col: "col-lg-3 col-md-6" },
+        { img: img5, col: "col-lg-3 col-md-6" },
+        { img: img6, col: "col-lg-6 col-md-12" },
+        { img: img7, col: "col-lg-3 col-md-6" },
     ];
 
 
@@ -671,7 +690,6 @@ const Home = () => {
                         ))}
                     </div>
 
-                    {/* Cards */}
                     <div className="row mt-5">
                         <div className="col-lg-4 col-md-6 mb-4">
                             <div className="discover-card">
@@ -722,6 +740,109 @@ const Home = () => {
                     </p>
                 </div>
             </section>
+
+            <section className="loan-section">
+                <div className="container">
+                    <div className="row align-items-center">
+
+                        <div className="col-lg-6 col-md-12">
+                            <h2 className="loan-title">
+                                Do you need a home loan?<br />Get pre-approved
+                            </h2>
+                            <p className="loan-desc">
+                                Find a lender who can offer competitive mortgage rates and help
+                                you with pre-approval.
+                            </p>
+
+                            <div className="row g-3 mt-4">
+                                <div className="col-md-6">
+                                    <label>Total Amount</label>
+                                    <input type="number" className="form-control" defaultValue="1000" />
+                                </div>
+
+                                <div className="col-md-6">
+                                    <label>Down Payment</label>
+                                    <div className="d-flex gap-2">
+                                        <input type="number" className="form-control" defaultValue="2000" />
+                                        <span className="percentage-box">20%</span>
+                                    </div>
+                                </div>
+
+                                <div className="col-md-6">
+                                    <label>Interest Rate</label>
+                                    <input type="text" className="form-control" defaultValue="0" />
+                                </div>
+
+                                <div className="col-md-6">
+                                    <label>Amortization Period (months)</label>
+                                    <select className="form-select">
+                                        <option>Select amortization period</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+
+                                <div className="col-md-6">
+                                    <label>Property Tax</label>
+                                    <input type="text" className="form-control" defaultValue="$3000" />
+                                </div>
+
+                                <div className="col-md-6">
+                                    <label>Home Insurance</label>
+                                    <input type="text" className="form-control" defaultValue="$3000" />
+                                </div>
+                            </div>
+
+                            <p className="estimate mt-4">
+                                Your estimated monthly payment: <span>8000</span>
+                            </p>
+
+                            <div className="btn-group mt-3">
+                                <button className="btn btn-calc">Calculate now</button>
+                                <button className="btn btn-reset">Start over</button>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6 col-md-12 text-center">
+                            <div className="image-wrapper fade-in">
+                                <img src={homeImg} alt="Home" className="img-fluid" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+             <section className="neighborhoods">
+      <div className="container">
+
+        <div className="text-center mb-5">
+          <h2 className="section-title">Explore The Neighborhoods</h2>
+          <p className="section-subtitle">
+            Find your dream apartment with our listing
+          </p>
+        </div>
+
+        <div className="row g-4">
+          {cards.map((item, index) => (
+            <div className={item.col} key={index}>
+              <div className="neighborhood-card">
+                <img src={item.img} alt="neighborhood" />
+
+                <div className="card-content">
+                  <h5>New York</h5>
+                  <button className="property-btn">
+                    2,491 Properties <i className="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
 
 
 

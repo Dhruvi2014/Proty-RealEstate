@@ -74,7 +74,6 @@
     display: block;
   }
 }
-/* Profile dropdown */
 .profile-btn {
   width: 42px;
   height: 42px;
@@ -810,5 +809,237 @@ a[aria-expanded="true"] i {
 
   .tab-btn {
     margin-bottom: 10px;
+  }
+}
+.loan-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.loan-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+}
+
+.loan-desc {
+  color: #666;
+  max-width: 480px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.form-control,
+.form-select {
+  height: 48px;
+  border-radius: 12px;
+}
+
+.percentage-box {
+  background: #f5f5f5;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.estimate {
+  font-weight: 600;
+}
+
+.estimate span {
+  color: #ff8c2b;
+  font-weight: 700;
+}
+
+.btn-group {
+  display: flex;
+  gap: 16px;  
+}
+
+.btn-group .btn-calc {
+  background: #ff8c2b;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-calc:hover {
+  background: #ff6f00;
+  transform: translateY(-2px);
+}
+
+.btn-group .btn-reset {
+  border: 2px solid hsl(27, 100%, 58%);
+  background: #ff8c2b;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+  background: #ff8c2b;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.image-wrapper {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  border-radius: 24px;
+  width: 100%;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .loan-title {
+    font-size: 28px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-group button {
+    width: 100%;
+  }
+
+  .image-wrapper {
+    margin-top: 40px;
+  }
+}
+.neighborhoods {
+  padding: 80px 0;
+}
+
+/* Heading */
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: #777;
+  margin-top: 6px;
+}
+
+/* Card */
+.neighborhood-card {
+  position: relative;
+  height: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.neighborhood-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Overlay gradient */
+.neighborhood-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.15)
+  );
+}
+
+/* Bottom content */
+.card-content {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.card-content h5 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Property Button */
+.property-btn {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.property-btn:hover {
+  background: #ff8c2b;
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* Hover Effects */
+.neighborhood-card:hover img {
+  transform: scale(1.1);
+}
+
+.neighborhood-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .neighborhood-card {
+    height: 220px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .neighborhood-card {
+    height: 200px;
   }
 }
