@@ -18,6 +18,11 @@ import img5 from "../assets/img5.jpg";
 import img6 from "../assets/img7.jpg";
 import img7 from "../assets/img6.jpg";
 
+import boxlist1 from "../assets/boxlist1.jpg";
+import boxlist2 from "../assets/boxlist2.jpg";
+import boxlist3 from "../assets/boxlist3.jpg";
+import boxlist4 from "../assets/boxlist4.jpg";
+
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -103,6 +108,8 @@ const Home = () => {
         { img: img6, col: "col-lg-6 col-md-12" },
         { img: img7, col: "col-lg-3 col-md-6" },
     ];
+
+    const propertiesdata = [boxlist1, boxlist2, boxlist3, boxlist4];
 
 
     return (
@@ -814,35 +821,98 @@ const Home = () => {
                 </div>
             </section>
 
-             <section className="neighborhoods">
-      <div className="container">
+            <section className="neighborhoods">
+                <div className="container">
 
-        <div className="text-center mb-5">
-          <h2 className="section-title">Explore The Neighborhoods</h2>
-          <p className="section-subtitle">
-            Find your dream apartment with our listing
-          </p>
-        </div>
+                    <div className="text-center mb-5">
+                        <h2 className="section-title">Explore The Neighborhoods</h2>
+                        <p className="section-subtitle">
+                            Find your dream apartment with our listing
+                        </p>
+                    </div>
 
-        <div className="row g-4">
-          {cards.map((item, index) => (
-            <div className={item.col} key={index}>
-              <div className="neighborhood-card">
-                <img src={item.img} alt="neighborhood" />
+                    <div className="row g-4">
+                        {cards.map((item, index) => (
+                            <div className={item.col} key={index}>
+                                <div className="neighborhood-card">
+                                    <img src={item.img} alt="neighborhood" />
 
-                <div className="card-content">
-                  <h5>New York</h5>
-                  <button className="property-btn">
-                    2,491 Properties <i className="fa-solid fa-arrow-right"></i>
-                  </button>
+                                    <div className="card-content">
+                                        <h5>New York</h5>
+                                        <button className="property-btn">
+                                            2,491 Properties <i className="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+            </section>
+
+            <div className="container py-5">
+      {/* Heading */}
+      <div className="text-center mb-5">
+        <h2 className="fw-bold">Open Houses Listings</h2>
+        <p className="text-muted">
+          Thousands of luxury home enthusiasts just like you visit our website.
+        </p>
+      </div>
+
+      <div className="row g-4">
+        {propertiesdata.map((img, index) => (
+          <div className="col-lg-6 col-md-12" key={index}>
+            <div className="openhouse-card d-flex flex-column flex-md-row">
+
+              <div className="openhouse-img">
+                <span className="openhouse-badge">For Sale</span>
+
+                <div className="openhouse-overlay">
+                  <i className="fa-regular fa-bookmark"></i>
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <img src={img} alt="open house" />
+              </div>
+
+              <div className="openhouse-content">
+                <h5 className="fw-semibold">Elegant studio flat</h5>
+
+                <p className="text-muted mb-2">
+                  <i className="fa-solid fa-location-dot me-1"></i>
+                  Los Angeles, California 91604
+                </p>
+
+                <div className="openhouse-info">
+                  <span>
+                    <i className="fa-solid fa-bed"></i> Beds 4
+                  </span>
+                  <span>
+                    <i className="fa-solid fa-bath"></i> Baths 2
+                  </span>
+                  <span>
+                    <i className="fa-solid fa-ruler-combined"></i> Sqft 1150
+                  </span>
+                  <span>
+                    <i className="fa-solid fa-car"></i> Garage 2
+                  </span>
+                </div>
+
+                <div className="openhouse-price-row">
+                  <h5 className="openhouse-price">$8.600</h5>
+                  <button className="openhouse-btn">Details</button>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
 
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
+
+
+                
 
 
 

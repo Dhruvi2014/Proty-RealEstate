@@ -939,7 +939,6 @@ label {
   padding: 80px 0;
 }
 
-/* Heading */
 .section-title {
   font-size: 36px;
   font-weight: 700;
@@ -950,7 +949,6 @@ label {
   margin-top: 6px;
 }
 
-/* Card */
 .neighborhood-card {
   position: relative;
   height: 260px;
@@ -967,7 +965,6 @@ label {
   transition: transform 0.6s ease;
 }
 
-/* Overlay gradient */
 .neighborhood-card::after {
   content: "";
   position: absolute;
@@ -979,7 +976,6 @@ label {
   );
 }
 
-/* Bottom content */
 .card-content {
   position: absolute;
   bottom: 16px;
@@ -998,7 +994,6 @@ label {
   margin: 0;
 }
 
-/* Property Button */
 .property-btn {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(6px);
@@ -1017,7 +1012,6 @@ label {
   transform: translateX(4px);
 }
 
-/* Hover Effects */
 .neighborhood-card:hover img {
   transform: scale(1.1);
 }
@@ -1027,7 +1021,6 @@ label {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* Responsive */
 @media (max-width: 991px) {
   .neighborhood-card {
     height: 220px;
@@ -1041,5 +1034,131 @@ label {
 @media (max-width: 576px) {
   .neighborhood-card {
     height: 200px;
+  }
+}
+.openhouse-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.openhouse-img {
+  position: relative;
+  width: 45%;
+}
+
+.openhouse-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.openhouse-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #ff8a00;
+  color: #fff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  z-index: 2;
+}
+
+.openhouse-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.openhouse-overlay i {
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  color: #ff8a00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.openhouse-overlay i:hover {
+  background: #ff8a00;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+.openhouse-img:hover .openhouse-overlay {
+  opacity: 1;
+}
+
+.openhouse-content {
+  padding: 20px;
+  width: 55%;
+}
+
+.openhouse-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+  color: #777;
+  margin: 16px 0;
+}
+
+.openhouse-info i {
+  margin-right: 6px;
+  color: #ff8a00;
+}
+
+.openhouse-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.openhouse-price {
+  color: #ff8a00;
+  font-weight: 700;
+}
+
+.openhouse-btn {
+  border: 1px solid #ff8a00;
+  background: transparent;
+  padding: 7px 20px;
+  border-radius: 20px;
+  color: #ff8a00;
+  transition: 0.3s;
+}
+
+.openhouse-btn:hover {
+  background: #ff8a00;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .openhouse-card {
+    flex-direction: column;
+  }
+
+  .openhouse-img,
+  .openhouse-content {
+    width: 100%;
+  }
+
+  .openhouse-img {
+    height: 240px;
   }
 }
