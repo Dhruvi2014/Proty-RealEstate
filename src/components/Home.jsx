@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "../Style.css";
 import logo from "../assets/logo.png";
 import heroBg from "../assets/herohome.jpeg";
@@ -23,10 +23,20 @@ import boxlist2 from "../assets/boxlist2.jpg";
 import boxlist3 from "../assets/boxlist3.jpg";
 import boxlist4 from "../assets/boxlist4.jpg";
 
-
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+
+import agent from "../assets/person-1.png";
+import logo1 from "../assets/vector1.png";
+import logo2 from "../assets/vector2.png";
+import logo3 from "../assets/vector3.png";
+import logo4 from "../assets/vector4.png";
+import logo5 from "../assets/vector5.png";
+
+import bloggrid1 from "../assets/blog-grid-1.jpg";
+import bloggrid2 from "../assets/blog-grid-2.jpg";
+import bloggrid3 from "../assets/blog-grid-3.jpg";
+
 const Home = () => {
     const [showFilters, setShowFilters] = useState(false);
     const [purpose, setPurpose] = useState("For Sale");
@@ -110,6 +120,46 @@ const Home = () => {
     ];
 
     const propertiesdata = [boxlist1, boxlist2, boxlist3, boxlist4];
+    const logos = [logo1, logo2, logo3, logo4, logo5];
+
+    const sliderRef = useRef(null);
+
+    useEffect(() => {
+        const slider = sliderRef.current;
+        let scrollAmount = 0;
+
+        const slide = () => {
+            scrollAmount += 1;
+            if (scrollAmount >= slider.scrollWidth / 2) {
+                scrollAmount = 0;
+            }
+            slider.scrollLeft = scrollAmount;
+        };
+
+        const interval = setInterval(slide, 20);
+        return () => clearInterval(interval);
+    }, []);
+
+    const blogs = [
+        {
+            img: bloggrid1,
+            tag: "Real estate",
+            title: "Building gains into housing stocks and how to trade the...",
+            date: "26 August, 2024",
+        },
+        {
+            img: bloggrid2,
+            tag: "News",
+            title: "Building gains into housing stocks and how to trade the...",
+            date: "26 August, 2024",
+        },
+        {
+            img: bloggrid3,
+            tag: "Real estate",
+            title: "Building gains into housing stocks and how to trade the...",
+            date: "26 August, 2024",
+        },
+    ];
 
 
     return (
@@ -494,7 +544,7 @@ const Home = () => {
                                 className="btn filter-btn"
                                 onClick={() => setShowFilters(!showFilters)}
                             >
-                                <i class="fa-solid fa-arrow-up-wide-short"></i>
+                                <i className="fa-solid fa-arrow-up-wide-short"></i>
                             </button>
 
                             <button className="btn search-btn">
@@ -852,67 +902,148 @@ const Home = () => {
             </section>
 
             <div className="container py-5">
-      {/* Heading */}
-      <div className="text-center mb-5">
-        <h2 className="fw-bold">Open Houses Listings</h2>
-        <p className="text-muted">
-          Thousands of luxury home enthusiasts just like you visit our website.
-        </p>
-      </div>
-
-      <div className="row g-4">
-        {propertiesdata.map((img, index) => (
-          <div className="col-lg-6 col-md-12" key={index}>
-            <div className="openhouse-card d-flex flex-column flex-md-row">
-
-              <div className="openhouse-img">
-                <span className="openhouse-badge">For Sale</span>
-
-                <div className="openhouse-overlay">
-                  <i className="fa-regular fa-bookmark"></i>
-                  <i className="fa-solid fa-magnifying-glass"></i>
+                {/* Heading */}
+                <div className="text-center mb-5">
+                    <h2 className="fw-bold">Open Houses Listings</h2>
+                    <p className="text-muted">
+                        Thousands of luxury home enthusiasts just like you visit our website.
+                    </p>
                 </div>
 
-                <img src={img} alt="open house" />
-              </div>
+                <div className="row g-4">
+                    {propertiesdata.map((img, index) => (
+                        <div className="col-lg-6 col-md-12" key={index}>
+                            <div className="openhouse-card d-flex flex-column flex-md-row">
 
-              <div className="openhouse-content">
-                <h5 className="fw-semibold">Elegant studio flat</h5>
+                                <div className="openhouse-img">
+                                    <span className="openhouse-badge">For Sale</span>
 
-                <p className="text-muted mb-2">
-                  <i className="fa-solid fa-location-dot me-1"></i>
-                  Los Angeles, California 91604
+                                    <div className="openhouse-overlay">
+                                        <i className="fa-regular fa-bookmark"></i>
+                                        <i className="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+
+                                    <img src={img} alt="open house" />
+                                </div>
+
+                                <div className="openhouse-content">
+                                    <h5 className="fw-semibold">Elegant studio flat</h5>
+
+                                    <p className="text-muted mb-2">
+                                        <i className="fa-solid fa-location-dot me-1"></i>
+                                        Los Angeles, California 91604
+                                    </p>
+
+                                    <div className="openhouse-info">
+                                        <span>
+                                            <i className="fa-solid fa-bed"></i> Beds 4
+                                        </span>
+                                        <span>
+                                            <i className="fa-solid fa-bath"></i> Baths 2
+                                        </span>
+                                        <span>
+                                            <i className="fa-solid fa-ruler-combined"></i> Sqft 1150
+                                        </span>
+                                        <span>
+                                            <i className="fa-solid fa-car"></i> Garage 2
+                                        </span>
+                                    </div>
+
+                                    <div className="openhouse-price-row">
+                                        <h5 className="openhouse-price">$8.600</h5>
+                                        <button className="openhouse-btn">Details</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* DARK SECTION */}
+            <section className="work-section">
+                <h1 className="title">Let’s Work Together</h1>
+                <p className="subtitle">
+                    Thousands of luxury home enthusiasts just like you visit our website.
                 </p>
 
-                <div className="openhouse-info">
-                  <span>
-                    <i className="fa-solid fa-bed"></i> Beds 4
-                  </span>
-                  <span>
-                    <i className="fa-solid fa-bath"></i> Baths 2
-                  </span>
-                  <span>
-                    <i className="fa-solid fa-ruler-combined"></i> Sqft 1150
-                  </span>
-                  <span>
-                    <i className="fa-solid fa-car"></i> Garage 2
-                  </span>
+                {/* LOGO SLIDER */}
+                <div className="logo-slider" ref={sliderRef}>
+                    <div className="logo-track">
+                        {[...logos, ...logos].map((logo, index) => (
+                            <div className="logo-card" key={index}>
+                                <img src={logo} alt="real estate logo" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
+            </section>
 
-                <div className="openhouse-price-row">
-                  <h5 className="openhouse-price">$8.600</h5>
-                  <button className="openhouse-btn">Details</button>
+            <section className="cta-wrapper">
+                <div className="cta-card">
+                    <div className="row align-items-center">
+                        <div className="col-lg-6 col-md-12">
+                            <h2>
+                                Are You Selling Or <br /> Renting Your Property?
+                            </h2>
+                            <p>
+                                Thousands of luxury home enthusiasts just like you visit our
+                                website.
+                            </p>
+                            <button className="btn cta-btn">
+                                Request your free appraisal
+                            </button>
+                        </div>
+
+                        <div className="col-lg-6 col-md-12 text-center">
+                            <img src={agent} className="agent-img" alt="agent" />
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </section>
 
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+            <section className="insight-section">
+                <div className="container">
+                    {/* HEADER */}
+                    <div className="text-center mb-5">
+                        <h2 className="section-title">Insight & Opinion</h2>
+                        <p className="section-subtitle">
+                            Thousands of luxury home enthusiasts just like you visit our website.
+                        </p>
+                    </div>
+
+                    {/* BLOG GRID */}
+                    <div className="row g-4">
+                        {blogs.map((blog, index) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+                                <div className="blog-card">
+                                    <div className="img-wrapper">
+                                        <img src={blog.img} alt="blog" />
+                                        <span className="tag">{blog.tag}</span>
+                                    </div>
+
+                                    <div className="blog-content">
+                                        <div className="date">
+                                            <i className="fa-regular fa-clock"></i>
+                                            <span>{blog.date}</span>
+                                        </div>
+
+                                        <h4>{blog.title}</h4>
+
+                                        <a href="#" className="read-more">
+                                            Read More <i className="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
 
-                
+
 
 
 
