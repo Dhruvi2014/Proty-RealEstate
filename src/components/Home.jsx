@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "../Style.css";
 import logo from "../assets/logo.png";
 import heroBg from "../assets/herohome.jpeg";
@@ -1005,7 +1007,6 @@ const Home = () => {
 
             <section className="insight-section">
                 <div className="container">
-                    {/* HEADER */}
                     <div className="text-center mb-5">
                         <h2 className="section-title">Insight & Opinion</h2>
                         <p className="section-subtitle">
@@ -1013,7 +1014,6 @@ const Home = () => {
                         </p>
                     </div>
 
-                    {/* BLOG GRID */}
                     <div className="row g-4">
                         {blogs.map((blog, index) => (
                             <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
@@ -1031,9 +1031,9 @@ const Home = () => {
 
                                         <h4>{blog.title}</h4>
 
-                                        <a href="#" className="read-more">
+                                        <Link to={`/blog/${blog.id}`} className="read-more">
                                             Read More <i className="fa-solid fa-arrow-right"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -1041,12 +1041,6 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
-
-
-
-
-
         </>
     );
 };
