@@ -7,7 +7,7 @@ import userImg from "../assets/blog-grid-1.jpg";
 import listing1 from "../assets/listing1.jpg";
 import listing2 from "../assets/listing2.jpg";
 import listing3 from "../assets/listing3.jpg";
-
+import gridImg from "../assets/img1.jpg";
 
 const BlogDetails = () => {
     const { id } = useParams();
@@ -140,9 +140,118 @@ const BlogDetails = () => {
                                 </div>
                             </div>
 
+                            <div className="comment-box mt-4">
+                                <div className="d-flex gap-3">
+                                    <img src={userImg} className="comment-avatar" alt="" />
+
+                                    <div className="flex-grow-1">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 className="mb-0">Viola Lucas</h6>
+                                                <small>August 15, 2023</small>
+                                            </div>
+
+                                            <div className="rating">
+                                                ★★★★★
+                                            </div>
+                                        </div>
+
+                                        <p className="mt-2">
+                                            It’s really easy to use and it is exactly what I am looking for.
+                                            A lot of good looking templates & it’s highly customizable.
+                                            Live support is helpful, solved my issue in no time.
+                                        </p>
 
 
+                                        <div className="comment-actions">
+                                            <span><i className="far fa-thumbs-up"></i> Useful</span>
+                                            <span><i className="far fa-thumbs-down"></i> Not helpful</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div className="comment-box mt-4">
+                                <div className="d-flex gap-3">
+                                    <img src={userImg} className="comment-avatar" alt="" />
+
+                                    <div className="flex-grow-1">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 className="mb-0">Viola Lucas</h6>
+                                                <small>August 15, 2023</small>
+                                            </div>
+
+                                            <div className="rating">
+                                                ★★★★★
+                                            </div>
+                                        </div>
+
+                                        <p className="mt-2">
+                                            It’s really easy to use and it is exactly what I am looking for.
+                                            A lot of good looking templates & it’s highly customizable.
+                                            Live support is helpful, solved my issue in no time.
+                                        </p>
+
+
+                                        <div className="comment-actions">
+                                            <span><i className="far fa-thumbs-up"></i> Useful</span>
+                                            <span><i className="far fa-thumbs-down"></i> Not helpful</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br></br>
+                            <button className="cmt-btn">
+                                View All Comments
+                            </button>
+
+                            <div className="comment-form-wrapper">
+                                <h2>Leave A Comment</h2>
+                                <p className="subtitle">
+                                    Your email address will not be published. Required fields are marked *
+                                </p>
+
+                                <form>
+                                    <div className="row">
+                                        <div className="col-md-6 mb-4">
+                                            <label>Name</label>
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                placeholder="Your Name*"
+                                            />
+                                        </div>
+
+                                        <div className="col-md-6 mb-4">
+                                            <label>Email</label>
+                                            <input
+                                                type="email"
+                                                className="form-control"
+                                                placeholder="Your Email*"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="mb-3 d-flex align-items-center gap-2">
+                                        <input type="checkbox" className="form-check-input" />
+                                        <span>Save your name, email for the next time review</span>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label>Comment</label>
+                                        <textarea
+                                            className="form-control"
+                                            rows="5"
+                                            placeholder="Your comment"
+                                        ></textarea>
+                                    </div>
+
+                                    <button className="btn post-btn">
+                                        Post Comment
+                                    </button>
+                                </form>
+                            </div>
                         </div>
 
                         <div className="col-lg-4">
@@ -168,7 +277,7 @@ const BlogDetails = () => {
                                     <img src={listing1} alt="" />
                                     <div>
                                         <p>Key Real Estate Trends to Watch in 2024</p>
-                                        <span><i class="fa-regular fa-calendar"></i>Feb 16, 2024</span>
+                                        <span><i className="fa-regular fa-calendar"></i>Feb 16, 2024</span>
                                     </div>
                                 </div>
                                 <br></br><hr></hr>
@@ -218,7 +327,10 @@ const BlogDetails = () => {
                                 </div>
                             </div>
 
-                            <div className="agent-card">
+                            <div
+                                className="sidebar-box agent-card"
+                                style={{ backgroundImage: `url(${gridImg})` }}
+                            >
                                 <h3>We can help you find a local real estate agent</h3>
                                 <p>
                                     Connect with a trusted agent who knows the market inside out –
@@ -228,11 +340,10 @@ const BlogDetails = () => {
                                     Connect with an agent
                                 </button>
                             </div>
-
-
                         </div>
-
                     </div>
+
+
                 </div>
             </section>
 
