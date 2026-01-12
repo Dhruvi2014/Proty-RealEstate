@@ -9,8 +9,36 @@ import listing2 from "../assets/listing2.jpg";
 import listing3 from "../assets/listing3.jpg";
 import gridImg from "../assets/img1.jpg";
 
+import bloggrid1 from "../assets/blog-grid-1.jpg";
+import bloggrid2 from "../assets/blog-grid-2.jpg";
+import bloggrid3 from "../assets/blog-grid-3.jpg";
+
+import footerImg from "../assets/footerImg.png";
+import logo from "../assets/logo2.png";
+
 const BlogDetails = () => {
     const { id } = useParams();
+
+    const blogs = [
+        {
+            img: bloggrid1,
+            tag: "Real estate",
+            title: "Building gains into housing stocks and how to trade the...",
+            date: "26 August, 2024",
+        },
+        {
+            img: bloggrid2,
+            tag: "News",
+            title: "Building gains into housing stocks and how to trade the...",
+            date: "26 August, 2024",
+        },
+        {
+            img: bloggrid3,
+            tag: "Real estate",
+            title: "Building gains into housing stocks and how to trade the...",
+            date: "26 August, 2024",
+        },
+    ];
 
     return (
         <>
@@ -347,11 +375,161 @@ const BlogDetails = () => {
                 </div>
             </section>
 
+            <div className="container">
+                <div className="row g-4">
+                    {blogs.map((blog, index) => (
+                        <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+                            <div className="blog-card">
+                                <div className="img-wrapper">
+                                    <img src={blog.img} alt="blog" />
+                                    <span className="tag">{blog.tag}</span>
+                                </div>
 
+                                <div className="blog-content">
+                                    <div className="date">
+                                        <i className="fa-regular fa-clock"></i>
+                                        <span>{blog.date}</span>
+                                    </div>
 
+                                    <h4>{blog.title}</h4>
 
+                                    <Link to={`/blog/${blog.id}`} className="read-more">
+                                        Read More <i className="fa-solid fa-arrow-right"></i>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
+            <div className="footer-cta">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-lg-8 d-flex align-items-center gap-4">
+                            <img
+                                src={footerImg}
+                                alt="agent"
+                                className="cta-img"
+                            />
+                            <div>
+                                <h3>Find a Local Real Estate Agent Today</h3>
+                                <p>
+                                    If you’re looking to buy or sell a home. We’ll help you make
+                                    the most money possible.
+                                </p>
+                            </div>
+                        </div>
 
+                        <div className="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                            <div className="cta-search">
+                                <input type="text" placeholder="Find your location agent" />
+                                <i className="fas fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer className="footer">
+                <div className="container">
+                    <div className="footer-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <div className="footer-logo">
+                            <img src={logo} alt="logo" />
+                        </div>
+
+                        <div className="footer-contact">
+                            <div>
+                                <i className="fas fa-phone-alt"></i>
+                                <span>Call us</span>
+                                <strong>(603) 555-0123</strong>
+                            </div>
+
+                            <div>
+                                <i className="fas fa-envelope"></i>
+                                <span>Need live help</span>
+                                <strong>proty-support@gmail.com</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="row footer-main">
+                        <div className="col-lg-3 col-md-6">
+                            <h5>About us</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right"></i> Contact</li>
+                                <li><i className="fas fa-angle-right"></i> Why choose us?</li>
+                                <li><i className="fas fa-angle-right"></i> Customer reviews</li>
+                                <li><i className="fas fa-angle-right"></i> Our team</li>
+                                <li><i className="fas fa-angle-right"></i> Careers with realty</li>
+                                <li><i className="fas fa-angle-right"></i> Work with us</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Popular house</h5>
+                            <ul>
+                                <li>#Penthouses</li>
+                                <li>#Villa</li>
+                                <li>#Smart home</li>
+                                <li>#Apartments</li>
+                                <li>#Office</li>
+                                <li>#Bungalow</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Quick links</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right"></i> Terms of use</li>
+                                <li><i className="fas fa-angle-right"></i> Privacy policy</li>
+                                <li><i className="fas fa-angle-right"></i> Our services</li>
+                                <li><i className="fas fa-angle-right"></i> Contact support</li>
+                                <li><i className="fas fa-angle-right"></i> Pricing plans</li>
+                                <li><i className="fas fa-angle-right"></i> FAQs</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Newsletter</h5>
+                            <p>Sign up to receive the latest articles</p>
+
+                            <input
+                                type="email"
+                                placeholder="Your email address"
+                                className="newsletter-input"
+                            />
+                            <button className="subscribe-btn">Subscribe</button>
+
+                            <div className="terms">
+                                <input type="checkbox" />
+                                <span>
+                                    I have read and agree to the terms & conditions
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <p>
+                            © Copyright 2024 <strong>PROTY</strong> – REAL ESTATE. Designed &
+                            Developed by Themesflat
+                        </p>
+
+                        <div className="social">
+                            <span>Follow us</span>
+                            <i className="fab fa-facebook-f"></i>
+                            <i className="fab fa-x-twitter"></i>
+                            <i className="fab fa-linkedin-in"></i>
+                            <i className="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </>
     );
 };
