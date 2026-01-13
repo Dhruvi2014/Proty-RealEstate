@@ -2104,7 +2104,6 @@ blockquote {
   margin-bottom: 30px;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
   .masonry {
     column-count: 2;
@@ -2116,3 +2115,5 @@ blockquote {
     column-count: 1;
   }
 }
+
+

@@ -245,8 +245,8 @@ const Home = () => {
                                 <div className="dropdown-menu mega-menu narrow animate">
                                     <ul className="list-unstyled mb-0">
 
-                                        <li>Home Page 1</li>
-                                        <li>Home Page 2</li>
+                                        <li><Link to="/">Home Page 1</Link></li>
+                                        <li><Link to="/home2">Home Page 2</Link></li>
                                         <li>Home Page 3</li>
                                         <li>Home Page 4</li>
                                         <li>Home Page 5</li>
