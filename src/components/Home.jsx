@@ -24,6 +24,7 @@ import boxlist1 from "../assets/boxlist1.jpg";
 import boxlist2 from "../assets/boxlist2.jpg";
 import boxlist3 from "../assets/boxlist3.jpg";
 import boxlist4 from "../assets/boxlist4.jpg";
+import footerlogo from "../assets/logo2.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -38,6 +39,14 @@ import logo5 from "../assets/vector5.png";
 import bloggrid1 from "../assets/blog-grid-1.jpg";
 import bloggrid2 from "../assets/blog-grid-2.jpg";
 import bloggrid3 from "../assets/blog-grid-3.jpg";
+
+import t1 from "../assets/testimonials-1.jpg";
+import t2 from "../assets/testimonials-2.jpg";
+import t3 from "../assets/testimonials-3.jpg";
+import t4 from "../assets/testimonials-4.jpg";
+import t5 from "../assets/testimonials-5.jpg";
+import t6 from "../assets/testimonials-6.jpg";
+
 
 const Home = () => {
     const [showFilters, setShowFilters] = useState(false);
@@ -162,6 +171,47 @@ const Home = () => {
             date: "26 August, 2024",
         },
     ];
+
+    const testimonialsData = [
+        {
+            name: "Annette Black",
+            role: "CEO Themesflat",
+            text: "Aenean orci lorem, pharetra ac imperdiet eget, tristique ac magna. In aliquet efficitur turpis, et posuere tellus commodo at. Morbi accumsan nulla id neque rutrum, et tempus dui venenatis. Quisque dapibus metus ligula, id tempor nisl interdum vitae.",
+            image: t1,
+        },
+        {
+            name: "Floyd Miles",
+            role: "CEO Themesflat",
+            text: "In hac habitasse platea dictumst. Sed eleifend aliquam dui quis convallis. Sed aliquet eros sit amet metus rhoncus bibendum nec vel nunc. Nullam ac dapibus enim. Nulla rhoncus ante ante, nec lacinia turpis consectetur non. Vivamus sit amet nunc leo.",
+            image: t2,
+        },
+        {
+            name: "Jacob Jones",
+            role: "CEO Themesflat",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam tempus urna id interdum. Proin iaculis erat id sapien venenatis convallis. Nam et ullamcorper nibh. Nulla malesuada consectetur sem ut varius. Fusce ornare tortor non maximus volutpat. Integer at consequat turpis, vel aliquam neque. Suspendisse quis odio felis. Quisque volutpat bibendum maximus. In porttitor semper ultrices.",
+            image: t3,
+        },
+        {
+            name: "Eleanor Pena",
+            role: "CEO Themesflat",
+            text: "In hac habitasse platea dictumst. Sed eleifend aliquam dui quis convallis...",
+            image: t4,
+        },
+        {
+            name: "Cody Fisher",
+            role: "CEO Themesflat",
+            text: "My experience with property management services has exceeded expectations. They efficiently manage properties with a professional and attentive approach in every situation. I feel reassured that any issue will be resolved promptly and effectively.",
+            image: t5,
+        },
+        {
+            name: "Ralph Edwards",
+            role: "CEO Themesflat",
+            text: "Quisque tincidunt, nunc vitae maximus lobortis...",
+            image: t6,
+        },
+    ];
+    const [visible, setVisible] = useState(3);
+
 
 
     return (
@@ -1041,6 +1091,153 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            <section className="testimonials-section">
+                <div className="container">
+                    <h2 className="section-title">Clients Testimonials</h2>
+                    <p className="section-subtitle">
+                        Thousands of luxury home enthusiasts just like you visit our website.
+                    </p>
+
+                    <div className="masonry">
+                        {testimonialsData.slice(0, visible).map((item, index) => (
+                            <div className="masonry-item" key={index}>
+                                <div className="testimonial-card">
+                                    <div className="stars">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                    </div>
+
+                                    <p className="testimonial-text">{item.text}</p>
+
+                                    <div className="client-info">
+                                        <img src={item.image} alt={item.name} />
+                                        <div>
+                                            <h6>{item.name}</h6>
+                                            <span>{item.role}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+
+                    {visible < testimonialsData.length && (
+                        <div className="text-center mt-5">
+                            <button
+                                className="btn show-more-btn"
+                                onClick={() => setVisible(visible + 3)}
+                            >
+                                Show more...
+                            </button>
+                        </div>
+                    )}
+                </div>
+            </section>
+
+            <footer className="footer">
+                <div className="container">
+                    <div className="footer-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <div className="footer-logo">
+                            <img src={footerlogo} alt="logo" />
+                        </div>
+
+                        <div className="footer-contact">
+                            <div>
+                                <i className="fas fa-phone-alt"></i>
+                                <span>Call us</span>
+                                <strong>(603) 555-0123</strong>
+                            </div>
+
+                            <div>
+                                <i className="fas fa-envelope"></i>
+                                <span>Need live help</span>
+                                <strong>proty-support@gmail.com</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="row footer-main">
+                        <div className="col-lg-3 col-md-6">
+                            <h5>About us</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right"></i> Contact</li>
+                                <li><i className="fas fa-angle-right"></i> Why choose us?</li>
+                                <li><i className="fas fa-angle-right"></i> Customer reviews</li>
+                                <li><i className="fas fa-angle-right"></i> Our team</li>
+                                <li><i className="fas fa-angle-right"></i> Careers with realty</li>
+                                <li><i className="fas fa-angle-right"></i> Work with us</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Popular house</h5>
+                            <ul>
+                                <li>#Penthouses</li>
+                                <li>#Villa</li>
+                                <li>#Smart home</li>
+                                <li>#Apartments</li>
+                                <li>#Office</li>
+                                <li>#Bungalow</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Quick links</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right"></i> Terms of use</li>
+                                <li><i className="fas fa-angle-right"></i> Privacy policy</li>
+                                <li><i className="fas fa-angle-right"></i> Our services</li>
+                                <li><i className="fas fa-angle-right"></i> Contact support</li>
+                                <li><i className="fas fa-angle-right"></i> Pricing plans</li>
+                                <li><i className="fas fa-angle-right"></i> FAQs</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Newsletter</h5>
+                            <p>Sign up to receive the latest articles</p>
+
+                            <input
+                                type="email"
+                                placeholder="Your email address"
+                                className="newsletter-input"
+                            />
+                            <button className="subscribe-btn">Subscribe</button>
+
+                            <div className="terms">
+                                <input type="checkbox" />
+                                <span>
+                                    I have read and agree to the terms & conditions
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <p>
+                            © Copyright 2024 <strong>PROTY</strong> – REAL ESTATE. Designed &
+                            Developed by Themesflat
+                        </p>
+
+                        <div className="social">
+                            <span>Follow us</span>
+                            <i className="fab fa-facebook-f"></i>
+                            <i className="fab fa-x-twitter"></i>
+                            <i className="fab fa-linkedin-in"></i>
+                            <i className="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </>
     );
 };
