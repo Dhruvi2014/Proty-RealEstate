@@ -212,8 +212,6 @@ const Home = () => {
     ];
     const [visible, setVisible] = useState(3);
 
-
-
     return (
         <>
             <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
@@ -1054,6 +1052,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
 
             <section className="insight-section">
                 <div className="container">

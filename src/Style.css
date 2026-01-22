@@ -1320,13 +1320,11 @@ label {
   }
 }
 
-/* SECTION */
 .insight-section {
   padding: 80px 0;
   background: #fff;
 }
 
-/* HEADER */
 .section-title {
   font-size: 42px;
   font-weight: 700;
@@ -1444,12 +1442,17 @@ blockquote {
 
 
 .sidebar-box {
-  background: #fff;
+  background: #ffffff;
   padding: 20px;
   margin-bottom: 25px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
 }
+
+.sidebar-box.featured {
+  background: #efd9d9;
+}
+
 
 .sidebar-box ul {
   padding: 0;
