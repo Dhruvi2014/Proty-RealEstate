@@ -181,8 +181,6 @@ export default function Home2() {
     const GAP = 24;
     const VISIBLE = 4;
 
-
-
     const [index, setIndex] = useState(0);
     const maxIndex = images.length - VISIBLE;
 
@@ -242,7 +240,7 @@ export default function Home2() {
 
                                             <li><Link to="/">Home Page 1</Link></li>
                                             <li><Link to="/home2">Home Page 2</Link></li>
-                                            <li>Home Page 3</li>
+                                            <li><Link to="/home3">Home Page 3</Link></li>
                                             <li>Home Page 4</li>
                                             <li>Home Page 5</li>
                                             <li>Home Page 6</li>
@@ -683,7 +681,6 @@ export default function Home2() {
                 <div className="container">
                     <div className="row align-items-center">
 
-                        {/* LEFT CONTENT */}
                         <div className="col-lg-6 col-md-12">
                             <h2 className="trusted-title">
                                 Trusted By 100+ Million Buyers
