@@ -7,6 +7,8 @@ import home3person1 from "../assets/home3person1.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
+import person from "../assets/home2person1.jpg";
+
 import home2box1 from "../assets/home2box1.jpg";
 import home2box2 from "../assets/home2box2.jpg";
 import home2box3 from "../assets/home2box3.jpg";
@@ -18,6 +20,26 @@ import agent1 from "../assets/home2person1.jpg";
 import agent2 from "../assets/home2person2.jpg";
 import agent3 from "../assets/home2person3.jpg";
 import agent4 from "../assets/home2person4.jpg";
+
+import home3 from "../assets/home3.jpg";
+import t1 from "../assets/home2t1.jpg";
+import t2 from "../assets/home2t2.jpg";
+import t3 from "../assets/home2t3.jpg";
+import t4 from "../assets/testimonials-2.jpg";
+import t5 from "../assets/testimonials-3.jpg";
+
+import logo1 from "../assets/vector1.png";
+import logo2 from "../assets/vector2.png";
+import logo3 from "../assets/vector3.png";
+import logo4 from "../assets/vector4.png";
+import logo5 from "../assets/vector5.png";
+
+import bloggrid1 from "../assets/blog-grid-1.jpg";
+import bloggrid2 from "../assets/blog-grid-2.jpg";
+import bloggrid3 from "../assets/blog-grid-3.jpg";
+
+import footerImg from "../assets/footerImg.png";
+import footerlogo from "../assets/logo4-4.png";
 
 export default function Home2() {
     const [type, setType] = useState("rent");
@@ -58,11 +80,92 @@ export default function Home2() {
     };
 
     const agents = [
-  { id: 1, name: "Leslie Alexander", role: "Sale agent", img: agent1 },
-  { id: 2, name: "Leslie Alexander", role: "Sale agent", img: agent2 },
-  { id: 3, name: "Leslie Alexander", role: "Sale agent", img: agent3 },
-  { id: 4, name: "Leslie Alexander", role: "Sale agent", img: agent4 },
-];
+        { id: 1, name: "Leslie Alexander", role: "Sale agent", img: agent1 },
+        { id: 2, name: "Leslie Alexander", role: "Sale agent", img: agent2 },
+        { id: 3, name: "Leslie Alexander", role: "Sale agent", img: agent3 },
+        { id: 4, name: "Leslie Alexander", role: "Sale agent", img: agent4 },
+    ];
+
+    const testimonialsData = [
+        {
+            img: t1,
+            text:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
+            name: "Brooklyn Simmons",
+            location: "Los Angeles, CA",
+        },
+        {
+            img: t2,
+            text:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
+            name: "Leslie Alexander",
+            location: "Los Angeles, CA",
+        },
+        {
+            img: t3,
+            text:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
+            name: "Kristin Watson",
+            location: "San Diego, CA",
+        },
+        {
+            img: t4,
+            text:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
+            name: "Ronald Richards",
+            location: "Miami, FL",
+        },
+        {
+            img: t5,
+            text:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
+            name: "Courtney Henry",
+            location: "New York, NY",
+        },
+    ];
+
+    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
+    const goToNextSlide = () => {
+        if (activeSlideIndex < testimonialsData.length - 2) {
+            setActiveSlideIndex(activeSlideIndex + 1);
+        }
+    };
+
+    const goToPrevSlide = () => {
+        if (activeSlideIndex > 0) {
+            setActiveSlideIndex(activeSlideIndex - 1);
+        }
+    };
+
+    const logos = [
+        { image: logo1 },
+        { image: logo2 },
+        { image: logo3 },
+        { image: logo4 },
+        { image: logo5 },
+    ];
+
+    const blogs = [
+        {
+            img: bloggrid1,
+            tag: "Real estate",
+            title: "Building gains into housing stocks and how to trade the...",
+            date: "26 August, 2024",
+        },
+        {
+            img: bloggrid2,
+            tag: "News",
+            title: "Building gains into housing stocks and how to trade the...",
+            date: "26 August, 2024",
+        },
+        {
+            img: bloggrid3,
+            tag: "Real estate",
+            title: "Building gains into housing stocks and how to trade the...",
+            date: "26 August, 2024",
+        },
+    ];
 
 
     return (
@@ -721,52 +824,448 @@ export default function Home2() {
             </section>
 
             <section className="agents-section">
-      <div className="container text-center">
+                <div className="container text-center">
 
-        <h2 className="agents-title">Agents Specializing In California</h2>
-        <p className="agents-subtitle">
-          We connect you directly to the person that knows the most about a
-          property for sale, the listing agent.
-        </p>
+                    <h2 className="agents-title">Agents Specializing In California</h2>
+                    <p className="agents-subtitle">
+                        We connect you directly to the person that knows the most about a
+                        property for sale, the listing agent.
+                    </p>
 
-        <div className="row mt-5">
-          {agents.map((agent) => (
-            <div key={agent.id} className="col-lg-3 col-md-6 mb-4">
-              <div className="agent-card">
+                    <div className="row mt-5">
+                        {agents.map((agent) => (
+                            <div key={agent.id} className="col-lg-3 col-md-6 mb-4">
+                                <div className="agent-card">
 
-                <div className="agent-img-wrap">
-                  <img src={agent.img} alt={agent.name} />
+                                    <div className="agent-img-wrap">
+                                        <img src={agent.img} alt={agent.name} />
 
-                  {/* SOCIAL ICONS */}
-                  <div className="agent-social">
-                    <a href="#"><i className="fab fa-facebook-f"></i></a>
-                    <a href="#"><i className="fab fa-x-twitter"></i></a>
-                    <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i className="fab fa-instagram"></i></a>
-                  </div>
+                                        <div className="agent-social">
+                                            <a href="#"><i className="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i className="fab fa-x-twitter"></i></a>
+                                            <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                                            <a href="#"><i className="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <h5 className="agent-name">{agent.name}</h5>
+                                    <p className="agent-role">{agent.role}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <br></br>
+
+                    <p className="agents-footer-text mt-4">
+                        Explore Property agents are here to help with all your buying,
+                        renting and selling goals. Find the home of your dreams with an
+                        expert you can trust. Let’s chat
+                    </p>
+
+                    <button className="agents-btn">
+                        Find your location agent <i className="fas fa-search ms-2"></i>
+                    </button>
+
                 </div>
+            </section>
 
-                <h5 className="agent-name">{agent.name}</h5>
-                <p className="agent-role">{agent.role}</p>
-              </div>
+            <section className="home3-wrapper">
+                <div className="container-fluid">
+                    <div className="row g-0 align-items-stretch">
+
+                        <div className="col-lg-6 col-md-12">
+                            <div className="home3-image">
+                                <img src={home3} alt="Property" />
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6 col-md-12">
+                            <div className="home3-content">
+
+                                <h2 className="home3-title">Featured Properties</h2>
+
+                                <div className="home3-tags">
+                                    <span className="tag-sale">For Sale</span>
+                                    <span className="tag-featured">Featured</span>
+                                </div>
+
+                                <h3 className="home3-property-title">
+                                    Rancho Vista Verde, Santa Barbara
+                                </h3>
+
+                                <div className="home3-features">
+                                    <span><i className="fa-solid fa-bed"></i> Beds 4</span>
+                                    <span><i className="fa-solid fa-bath"></i> Baths 2</span>
+                                    <span><i className="fa-solid fa-ruler-combined"></i> Sqft 1150</span>
+                                    <span><i className="fa-solid fa-warehouse"></i> Garage 2</span>
+                                </div>
+
+                                <p className="home3-location">
+                                    <i className="fa-solid fa-location-dot"></i>
+                                    102 Ingraham St, Brooklyn, NY 11237
+                                </p>
+
+                                <div className="home3-agent">
+                                    <img
+                                        src={person}
+                                        alt="Agent"
+                                    />
+                                    <div>
+                                        <small>Agent</small>
+                                        <h6>John Smith</h6>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div className="home3-footer">
+                                    <h4 className="home3-price">
+                                        $250,00 <span>/month</span>
+                                    </h4>
+
+                                    <div className="home3-actions">
+                                        <button className="compare-btn">
+                                            <i className="fa-solid fa-arrow-right-arrow-left"></i> Compare
+                                        </button>
+                                        <button className="details-btn">
+                                            Details
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section className="wcus-section">
+                <div className="container">
+
+                    <div className="wcus-header text-center">
+                        <h2>Why Choose Us?</h2>
+                        <p>
+                            Here’s just a few reasons why homeowners are choosing Realty
+                            to sell their property.
+                        </p>
+                    </div>
+
+                    <div className="row wcus-card-row">
+
+                        <div className="col-lg-3 col-md-6 col-sm-12">
+                            <div className="wcus-card">
+                                <div className="wcus-icon-box">
+                                    <i className="fa-solid fa-calendar-check"></i>
+                                </div>
+                                <h4>30+ Years of Local Property Experience</h4>
+                                <p>
+                                    We are not loud, noisy and full of our own self-importance.
+                                    As your agent we know we work for you.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6 col-sm-12">
+                            <div className="wcus-card">
+                                <div className="wcus-icon-box">
+                                    <i className="fa-solid fa-user-group"></i>
+                                </div>
+                                <h4>We Have Happy Clients</h4>
+                                <p>
+                                    Not all agents have the skills or experience to ensure you
+                                    get the highest price for your property.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6 col-sm-12">
+                            <div className="wcus-card">
+                                <div className="wcus-icon-box">
+                                    <i className="fa-solid fa-house-user"></i>
+                                </div>
+                                <h4>We Are not Like Other Agents You Know</h4>
+                                <p>
+                                    We are not loud, noisy and full of our own self-importance.
+                                    As your agent we know we work for you.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6 col-sm-12">
+                            <div className="wcus-card">
+                                <div className="wcus-icon-box">
+                                    <i className="fa-solid fa-location-dot"></i>
+                                </div>
+                                <h4>Intimate Local Knowledge</h4>
+                                <p>
+                                    Not all agents have the skills or experience to ensure you
+                                    get the highest price for your property.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p className="wcus-footer-text text-center">
+                        You can obtain more information and an appraisal of your property by{" "}
+                        <span>clicking this link</span> now.
+                    </p>
+
+                    <div className="text-center">
+                        <button className="wcus-btn">Get Started Now</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <section className="tslider-section">
+                <div className="container">
+
+                    <div className="tslider-header text-center">
+                        <h2>What Our Clients Say?</h2>
+                        <p>
+                            Here’s just a few reasons why homeowners are choosing Realty
+                            to sell their property.
+                        </p>
+                    </div>
+
+                    <div className="row tslider-row">
+                        {testimonialsData.slice(activeSlideIndex, activeSlideIndex + 2).map((item, idx) => (
+                            <div className="col-lg-6 col-md-12" key={idx}>
+                                <div className="tslider-card">
+                                    <img src={item.img} alt="client" className="tslider-avatar" />
+
+                                    <p className="tslider-text">{item.text}</p>
+
+                                    <div className="tslider-stars">
+                                        <i className="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
+                                    </div>
+
+                                    <h5>{item.name}</h5>
+                                    <span>{item.location}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="tslider-controls">
+                        <button
+                            className="tslider-btn"
+                            onClick={goToPrevSlide}
+                            disabled={activeSlideIndex === 0}
+                        >
+                            <i className="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                        <div className="tslider-dots">
+                            {testimonialsData.slice(0, testimonialsData.length - 1).map((_, i) => (
+                                <span
+                                    key={i}
+                                    className={
+                                        activeSlideIndex === i
+                                            ? "tslider-dot active"
+                                            : "tslider-dot"
+                                    }
+                                ></span>
+                            ))}
+                        </div>
+
+                        <button
+                            className="tslider-btn"
+                            onClick={goToNextSlide}
+                            disabled={activeSlideIndex === testimonialsData.length - 2}
+                        >
+                            <i className="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+            <section className="logo-section container">
+                <h2>Let’s Work Together</h2>
+                <p>Thousands of luxury home enthusiasts just like you visit our website.</p>
+
+                <div className="logo-slider">
+                    <div className="logo-track">
+                        {[...logos, ...logos].map((logo, index) => (
+                            <div className="logo-card" key={index}>
+                                <img src={logo.image} alt="Real Estate Logo" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="insight-section">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="section-title">Insight & Opinion</h2>
+                        <p className="section-subtitle">
+                            Thousands of luxury home enthusiasts just like you visit our website.
+                        </p>
+                    </div>
+
+                    <div className="row g-4">
+                        {blogs.map((blog, index) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+                                <div className="blog-card">
+                                    <div className="img-wrapper">
+                                        <img src={blog.img} alt="blog" />
+                                        <span className="tag">{blog.tag}</span>
+                                    </div>
+
+                                    <div className="blog-content">
+                                        <div className="date">
+                                            <i className="fa-regular fa-clock"></i>
+                                            <span>{blog.date}</span>
+                                        </div>
+
+                                        <h4>{blog.title}</h4>
+
+                                        <Link to={`/blog/${blog.id}`} className="read-more" style={{color:"#ff6f61"}}>
+                                            Read More <i className="fa-solid fa-arrow-right"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <div className="footer2-cta">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-lg-8 d-flex align-items-center gap-4">
+                            <img
+                                src={footerImg}
+                                alt="agent"
+                                className="cta-img"
+                            />
+                            <div>
+                                <h3>Find a Local Real Estate Agent Today</h3>
+                                <p>
+                                    If you’re looking to buy or sell a home. We’ll help you make
+                                    the most money possible.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                            <div className="cta-search2">
+                                <input type="text" placeholder="Find your location agent" />
+                                <i className="fas fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          ))}
-        </div>
-        <br></br>
 
-        <p className="agents-footer-text mt-4">
-          Explore Property agents are here to help with all your buying,
-          renting and selling goals. Find the home of your dreams with an
-          expert you can trust. Let’s chat
-        </p>
+            <footer className="footer2">
+                <div className="container">
+                    <div className="footer-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <div className="footer-logo2">
+                            <img src={footerlogo} alt="logo" />
+                        </div>
 
-        <button className="agents-btn">
-          Find your location agent <i className="fas fa-search ms-2"></i>
-        </button>
+                        <div className="footer-contact2">
+                            <div>
+                                <i className="fas fa-phone-alt"></i>
+                                <span>Call us</span>
+                                <strong>(603) 555-0123</strong>
+                            </div>
 
-      </div>
-    </section>
+                            <div>
+                                <i className="fas fa-envelope"></i>
+                                <span>Need live help</span>
+                                <strong>proty-support@gmail.com</strong>
+                            </div>
+                        </div>
+                    </div>
 
+                    <hr />
+
+                    <div className="row footer-main">
+                        <div className="col-lg-3 col-md-6">
+                            <h5>About us</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right"></i> Contact</li>
+                                <li><i className="fas fa-angle-right"></i> Why choose us?</li>
+                                <li><i className="fas fa-angle-right"></i> Customer reviews</li>
+                                <li><i className="fas fa-angle-right"></i> Our team</li>
+                                <li><i className="fas fa-angle-right"></i> Careers with realty</li>
+                                <li><i className="fas fa-angle-right"></i> Work with us</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Popular house</h5>
+                            <ul>
+                                <li>#Penthouses</li>
+                                <li>#Villa</li>
+                                <li>#Smart home</li>
+                                <li>#Apartments</li>
+                                <li>#Office</li>
+                                <li>#Bungalow</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Quick links</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right"></i> Terms of use</li>
+                                <li><i className="fas fa-angle-right"></i> Privacy policy</li>
+                                <li><i className="fas fa-angle-right"></i> Our services</li>
+                                <li><i className="fas fa-angle-right"></i> Contact support</li>
+                                <li><i className="fas fa-angle-right"></i> Pricing plans</li>
+                                <li><i className="fas fa-angle-right"></i> FAQs</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Newsletter</h5>
+                            <p>Sign up to receive the latest articles</p>
+
+                            <input
+                                type="email"
+                                placeholder="Your email address"
+                                className="newsletter-input"
+                            />
+                            <button className="subscribe-btn2">Subscribe</button>
+
+                            <div className="terms">
+                                <input type="checkbox" />
+                                <span>
+                                    I have read and agree to the terms & conditions
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <p>
+                            © Copyright 2024 <strong>PROTY</strong> – REAL ESTATE. Designed &
+                            Developed by Themesflat
+                        </p>
+
+                        <div className="social">
+                            <span>Follow us</span>
+                            <i className="fab fa-facebook-f"></i>
+                            <i className="fab fa-x-twitter"></i>
+                            <i className="fab fa-linkedin-in"></i>
+                            <i className="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
         </>
     )
