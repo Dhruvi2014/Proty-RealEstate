@@ -943,7 +943,6 @@
   background: #ffffff;
 }
 
-/* TITLE */
 .agents-title {
   font-size: 36px;
   font-weight: 700;
@@ -956,7 +955,6 @@
   margin: 10px auto 0;
 }
 
-/* CARD */
 .agent-card {
   text-align: center;
 }
@@ -975,7 +973,6 @@
   border-radius: 16px;
 }
 
-/* SOCIAL ICONS */
 .agent-social {
   position: absolute;
   left: 50%;

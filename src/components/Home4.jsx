@@ -1,5 +1,5 @@
-import "../Home3.css";
-import logo from "../assets/logo4.png";
+import "../Home4.css";
+import logo from "../assets/home4logo1.png";
 import heroBg from "../assets/herohome.jpeg";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -7,7 +7,8 @@ import home3person1 from "../assets/home3person1.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
-import person from "../assets/home2person1.jpg";
+import boxhouse1 from "../assets/box-house1.jpg";
+import boxhouse2 from "../assets/box-house2.jpg";
 
 import home2box1 from "../assets/home2box1.jpg";
 import home2box2 from "../assets/home2box2.jpg";
@@ -16,17 +17,24 @@ import home2box4 from "../assets/home2box4.jpg";
 import home2box5 from "../assets/home2box5.jpg";
 import home2box6 from "../assets/home2box6.jpg";
 
-import agent1 from "../assets/home2person1.jpg";
-import agent2 from "../assets/home2person2.jpg";
-import agent3 from "../assets/home2person3.jpg";
-import agent4 from "../assets/home2person4.jpg";
+import cat1 from "../assets/img1.jpg";
+import cat2 from "../assets/img2.jpg";
+import cat3 from "../assets/img3.jpg";
+import cat4 from "../assets/img4.jpg";
+import cat5 from "../assets/img5.jpg";
+import cat6 from "../assets/img6.jpg";
+import cat7 from "../assets/img7.jpg";
+import cat8 from "../assets/img1.jpg";
+import cat9 from "../assets/img2.jpg";
 
-import home3 from "../assets/home3.jpg";
-import t1 from "../assets/home2t1.jpg";
-import t2 from "../assets/home2t2.jpg";
-import t3 from "../assets/home2t3.jpg";
-import t4 from "../assets/testimonials-2.jpg";
-import t5 from "../assets/testimonials-3.jpg";
+import agent from "../assets/person-1.png";
+
+import home2t1 from "../assets/home2t1.jpg";
+import home2t2 from "../assets/home2t2.jpg";
+import home2t3 from "../assets/home2t3.jpg";
+import home2t4 from "../assets/home2t1.jpg";
+import home2t5 from "../assets/home2t2.jpg";
+
 
 import logo1 from "../assets/vector1.png";
 import logo2 from "../assets/vector2.png";
@@ -34,16 +42,22 @@ import logo3 from "../assets/vector3.png";
 import logo4 from "../assets/vector4.png";
 import logo5 from "../assets/vector5.png";
 
+import heroBg1 from "../assets/home2building.jpeg";
+
 import bloggrid1 from "../assets/blog-grid-1.jpg";
 import bloggrid2 from "../assets/blog-grid-2.jpg";
 import bloggrid3 from "../assets/blog-grid-3.jpg";
 
 import footerImg from "../assets/footerImg.png";
-import footerlogo from "../assets/logo4-4.png";
+import footerlogo from "../assets/home4logo2.png";
+
 
 export default function Home2() {
     const [type, setType] = useState("rent");
     const [showFilter, setShowFilter] = useState(false);
+
+    const rowOneLogos = [logo1, logo2, logo3, logo4, logo5];
+    const rowTwoLogos = [logo5, logo4, logo3, logo2, logo1];
 
     const propertyTypes = [
         { title: "Apartment", count: "234 Property", icon: "fa-building" },
@@ -79,72 +93,79 @@ export default function Home2() {
         }
     };
 
-    const agents = [
-        { id: 1, name: "Leslie Alexander", role: "Sale agent", img: agent1 },
-        { id: 2, name: "Leslie Alexander", role: "Sale agent", img: agent2 },
-        { id: 3, name: "Leslie Alexander", role: "Sale agent", img: agent3 },
-        { id: 4, name: "Leslie Alexander", role: "Sale agent", img: agent4 },
+    const propertyCategories = [
+        { id: 1, title: "New York", count: "2,491 Properties", img: cat1 },
+        { id: 2, title: "New York", count: "2,491 Properties", img: cat2 },
+        { id: 3, title: "New York", count: "2,491 Properties", img: cat3 },
+        { id: 4, title: "New York", count: "1,320 Properties", img: cat4 },
+        { id: 5, title: "New York", count: "980 Properties", img: cat5 },
+        { id: 6, title: "New York", count: "640 Properties", img: cat6 },
+        { id: 7, title: "New York", count: "410 Properties", img: cat7 },
+        { id: 8, title: "New York", count: "290 Properties", img: cat8 },
+        { id: 9, title: "New York", count: "150 Properties", img: cat9 }
     ];
 
-    const testimonialsData = [
+    const [activeCard, setActiveCard] = useState(0);
+
+    const maxSlideLimit = propertyCategories.length - 3;
+
+    const handleNextCategory = () => {
+        if (activeCard < maxSlideLimit) {
+            setActiveCard(activeCard + 1);
+        }
+    };
+
+    const handlePrevCategory = () => {
+        if (activeCard > 0) {
+            setActiveCard(activeCard - 1);
+        }
+    };
+
+    const testimonialDataList = [
         {
-            img: t1,
-            text:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
-            name: "Brooklyn Simmons",
-            location: "Los Angeles, CA",
-        },
-        {
-            img: t2,
-            text:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
-            name: "Leslie Alexander",
-            location: "Los Angeles, CA",
-        },
-        {
-            img: t3,
-            text:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
-            name: "Kristin Watson",
-            location: "San Diego, CA",
-        },
-        {
-            img: t4,
-            text:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
+            img: home2t1,
+            text: "Phasellus efficitur dictum urna, non elementum mauris mollis a. Duis lacinia arcu ac lorem ultricies porta.",
             name: "Ronald Richards",
-            location: "Miami, FL",
+            role: "CEO Themesflat",
         },
         {
-            img: t5,
-            text:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis, lorem in fringilla feugiat.",
+            img: home2t2,
+            text: "Proin auctor, mauris at tristique ullamcorper, nunc nisi sagittis velit, eget blandit dolor arcu sed ante.",
             name: "Courtney Henry",
-            location: "New York, NY",
+            role: "CEO Themesflat",
+        },
+        {
+            img: home2t3,
+            text: "Phasellus efficitur dictum urna, non elementum mauris mollis a. Duis lacinia arcu ac lorem ultricies porta.",
+            name: "Ronald Richards",
+            role: "CEO Themesflat",
+        },
+        {
+            img: home2t4,
+            text: "Aliquam felis eros, eleifend non faucibus at, viverra sed lorem. Fusce euismod varius massa.",
+            name: "Esther Howard",
+            role: "Marketing Head",
+        },
+        {
+            img: home2t5,
+            text: "Suspendisse potenti. Cras ultricies ligula sed magna dictum porta.",
+            name: "Brooklyn Simmons",
+            role: "Product Manager",
         },
     ];
+    const [testimonialPointer, setTestimonialPointer] = useState(0);
 
-    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-
-    const goToNextSlide = () => {
-        if (activeSlideIndex < testimonialsData.length - 2) {
-            setActiveSlideIndex(activeSlideIndex + 1);
+    const handleTestimonialNext = () => {
+        if (testimonialPointer < testimonialDataList.length - 3) {
+            setTestimonialPointer(testimonialPointer + 1);
         }
     };
 
-    const goToPrevSlide = () => {
-        if (activeSlideIndex > 0) {
-            setActiveSlideIndex(activeSlideIndex - 1);
+    const handleTestimonialPrev = () => {
+        if (testimonialPointer > 0) {
+            setTestimonialPointer(testimonialPointer - 1);
         }
     };
-
-    const logos = [
-        { image: logo1 },
-        { image: logo2 },
-        { image: logo3 },
-        { image: logo4 },
-        { image: logo5 },
-    ];
 
     const blogs = [
         {
@@ -170,7 +191,8 @@ export default function Home2() {
 
     return (
         <>
-            <div className="home3-page">
+
+            <div className="home4-page">
                 <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
                     <div className="container">
 
@@ -202,7 +224,7 @@ export default function Home2() {
                                             <li><Link to="/">Home Page 1</Link></li>
                                             <li><Link to="/home2">Home Page 2</Link></li>
                                             <li><Link to="/home3">Home Page 3</Link></li>
-                                            <li><Link to="/home4">Home Page 4</Link></li>
+                                            <li>Home Page 4</li>
                                             <li>Home Page 5</li>
                                             <li>Home Page 6</li>
                                             <li>Home Page 7</li>
@@ -609,88 +631,79 @@ export default function Home2() {
                 </section>
             </div>
 
+            <section className="agents-section-wrapper">
+                <div className="container">
+                    <div className="row align-items-center agents-main-row">
 
-            <section className="help-section">
-                <div className="container text-center">
-                    <h2 className="help-title">How Can We Help You?</h2>
-                    <p className="help-subtitle">
-                        Thousands of luxury home enthusiasts just like you visit our website.
-                    </p>
+                        <div className="col-lg-6">
+                            <h2 className="agents-title">
+                                Selling Agents And Property<br />Management Specialists
+                            </h2>
 
-                    <div className="row justify-content-center">
-                        <div className="col-lg-4 col-md-6 mb-4">
-                            <div className="help-card">
-                                <div className="help-icon">
-                                    <i className="fa-solid fa-magnifying-glass"></i>
+                            <p className="agents-text">
+                                Our team of real estate professionals have helped hundreds of buyers,
+                                sellers and investors make decisions that they feel were and continue
+                                to be right for them years down the road.
+                            </p>
+
+                            <p className="agents-text">
+                                We measure success not by the sales volume that ranks us among the top
+                                1% of local agents, but by delivering results and fulfilling the trust
+                                placed on us by clients.
+                            </p>
+
+                            <p className="agents-text">
+                                We stand ready to serve you as your California real estate team.
+                            </p>
+
+                            <button className="agents-btn-primary">
+                                Meet The Team
+                            </button>
+
+
+                            <div className="row agents-stats mt-5">
+                                <div className="col-4 text-center">
+                                    <i className="fa-solid fa-house stats-icon"></i>
+                                    <h4>900+</h4>
+                                    <p>Homes for Sale</p>
                                 </div>
-                                <h4>Buy a Home</h4>
-                                <p>
-                                    Find your place with an immersive photo experience and the most
-                                    listings, including things you won’t find anywhere else.
-                                </p>
-                                <button className="help-btn outline-btn">Learn More</button>
+
+                                <div className="col-4 text-center">
+                                    <i className="fa-solid fa-user stats-icon"></i>
+                                    <h4>287</h4>
+                                    <p>Real Estate Agents</p>
+                                </div>
+
+                                <div className="col-4 text-center">
+                                    <i className="fa-solid fa-shield-halved stats-icon"></i>
+                                    <h4>3.600+</h4>
+                                    <p>Properties Sold</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 mb-4">
-                            <div className="help-card">
-                                <div className="help-icon">
-                                    <i className="fa-solid fa-dollar-sign"></i>
+                        <div className="col-lg-6 agents-right-content">
+                            <div className="agents-image-area">
+                                <div className="agents-main-wrapper">
+                                    <img src={boxhouse1} alt="Main" />
                                 </div>
-                                <h4>Rent a Home</h4>
-                                <p>
-                                    Find your place with an immersive photo experience and the most
-                                    listings, including things you won’t find anywhere else.
-                                </p>
-                                <button className="help-btn outline-btn">Learn More</button>
+
+                                <div className="agents-overlay-wrapper">
+                                    <img src={boxhouse2} alt="Overlay" />
+                                </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 mb-4">
-                            <div className="help-card">
-                                <div className="help-icon">
-                                    <i className="fa-solid fa-arrow-trend-up"></i>
-                                </div>
-                                <h4>Sell a Home</h4>
-                                <p>
-                                    Find your place with an immersive photo experience and the most
-                                    listings, including things you won’t find anywhere else.
-                                </p>
-                                <button className="help-btn outline-btn">Learn More</button>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </section>
 
-            <section className="sell-banner-wrapper">
-                <div className="sell-banner">
-                    <div className="sell-content">
-                        <h1>
-                            Have confidence in any market with us
-                        </h1>
-                        <p>
-                            Proty® agents have the experience to get the job done in today’s market,
-                            backed by a robust network of over 140,000 agents in more than 9,000
-                            offices worldwide. With our extensive global connections and deep local
-                            insights, you gain an edge that transcends what you'll find online.
-                        </p>
-                        <button>Find your Agent Today</button>
-                    </div>
 
-                    <div className="sell-image">
-                        <img
-                            src={home3person1}
-                            alt="Agent"
-                        />
-                    </div>
-                </div>
-            </section>
-
-            <section className="property-types-section  pt-5 pb-0">
+            <section className="property-types-section1 pt-5 pb-0">
                 <div className="container text-center">
-                    <h2 className="section-title">Try Searching For</h2>
-                    <p className="section-subtitle">
+                    <h2 className="section-title1">Try Searching For</h2>
+                    <p className="section-subtitle1">
                         Thousands of luxury home enthusiasts just like you have found their dream home
                     </p>
 
@@ -699,15 +712,14 @@ export default function Home2() {
                         slidesPerView="auto"
                         spaceBetween={24}
                         pagination={{ clickable: true }}
-                        className="property-swiper"
+                        className="property-swiper1"
                     >
-
                         {propertyTypes.map((item, index) => (
-                            <SwiperSlide key={index}>
-                                <div className={`property-card ${item.active ? "active" : ""}`}>
-                                    <span className="spill-bg"></span>
+                            <SwiperSlide key={index} className="property-slide1">
+                                <div className={`property-card1 ${item.active ? "active" : ""}`}>
+                                    <span className="spill-bg1"></span>
 
-                                    <div className="property-icon">
+                                    <div className="property-icon1">
                                         <i className={`fa-solid ${item.icon}`}></i>
                                     </div>
 
@@ -720,60 +732,61 @@ export default function Home2() {
                 </div>
             </section>
 
-            <section className="cp-properties-section">
+            <section className="cpp-properties-section">
                 <div className="container">
 
-                    <h2 className="cp-title text-center">Current Properties</h2>
-                    <p className="cp-subtitle text-center">
+                    <h2 className="cpp-title text-center">Featured Properties</h2>
+                    <p className="cpp-subtitle text-center">
                         Thousands of luxury home enthusiasts just like you visit our website.
                     </p>
 
-                    <div className="cp-slider-wrapper">
-                        <div className="cp-slider-window">
+                    <div className="cpp-slider-wrapper">
 
+                        <div className="cpp-slider-window">
                             <div
-                                className="cp-slider-track"
+                                className="cpp-slider-track"
                                 style={{ transform: `translateX(-${startIndex * 33.333}%)` }}
                             >
                                 {houses.map((item) => (
-                                    <div className="cp-property-col" key={item.id}>
-                                        <div className="cp-property-card">
+                                    <div className="cpp-property-col" key={item.id}>
+                                        <div className="cpp-property-card">
 
-                                            <div className="cp-image-box">
+                                            <div className="cpp-image-box">
                                                 <img src={item.img} alt="property" />
 
-                                                <span className="cp-badge cp-featured">Featured</span>
-                                                <span className="cp-badge cp-sale">For Sale</span>
+                                                <span className="cpp-badge cpp-featured">Featured</span>
+                                                <span className="cpp-badge cpp-sale">For Sale</span>
 
-                                                <div className="cp-hover-icons">
+                                                <div className="cpp-hover-icons">
                                                     <span><i className="fa-regular fa-bookmark"></i></span>
                                                     <span><i className="fa-solid fa-magnifying-glass"></i></span>
                                                 </div>
                                             </div>
 
-                                            <div className="cp-card-body">
-                                                <h5 className="cp-card-title">Elegant studio flat</h5>
-                                                <p className="cp-location">
+                                            <div className="cpp-card-body">
+                                                <h5 className="cpp-card-title">Elegant studio flat</h5>
+
+                                                <p className="cpp-location">
                                                     <i className="fa-solid fa-location-dot"></i>
                                                     &nbsp;102 Ingraham St, Brooklyn, NY 11237
                                                 </p>
 
-                                                <p className="cp-meta">
+                                                <p className="cpp-meta">
                                                     <strong>3</strong> Beds &nbsp;
                                                     <strong>3</strong> Baths &nbsp;
                                                     <strong>4,043</strong> Sqft
                                                 </p>
 
-                                                <div className="cp-card-footer">
-                                                    <span className="cp-price">$8.600</span>
+                                                <div className="cpp-card-footer">
+                                                    <span className="cpp-price">$8.600</span>
 
-                                                    <div className="cp-actions">
-                                                        <span className="cp-compare">
+                                                    <div className="cpp-actions">
+                                                        <span className="cpp-compare">
                                                             <i className="fa-solid fa-arrow-right-arrow-left"></i>
                                                             &nbsp;Compare
                                                         </span>
 
-                                                        <button className="cp-details-btn">Details</button>
+                                                        <button className="cpp-details-btn">Details</button>
                                                     </div>
                                                 </div>
 
@@ -786,28 +799,28 @@ export default function Home2() {
                         </div>
                     </div>
 
-                    <div className="cp-pagination-row">
+                    <div className="cpp-pagination-row">
 
                         <button
-                            className="cp-pagination-btn"
+                            className="cpp-pagination-btn"
                             onClick={handlePrev}
                             disabled={startIndex === 0}
                         >
                             <i className="fa-solid fa-chevron-left"></i>
                         </button>
 
-                        <div className="cp-dots-wrapper">
+                        <div className="cpp-dots-wrapper">
                             {houses.slice(0, houses.length - visibleCards + 1).map((_, index) => (
                                 <span
                                     key={index}
-                                    className={`cp-dot ${startIndex === index ? "active" : ""}`}
+                                    className={`cpp-dot ${startIndex === index ? "active" : ""}`}
                                     onClick={() => setStartIndex(index)}
                                 ></span>
                             ))}
                         </div>
 
                         <button
-                            className="cp-pagination-btn"
+                            className="cpp-pagination-btn"
                             onClick={handleNext}
                             disabled={startIndex === houses.length - visibleCards}
                         >
@@ -816,294 +829,463 @@ export default function Home2() {
 
                     </div>
 
-
                 </div>
             </section>
 
-            <section className="agents-section">
-                <div className="container text-center">
-
-                    <h2 className="agents-title">Agents Specializing In California</h2>
-                    <p className="agents-subtitle">
-                        We connect you directly to the person that knows the most about a
-                        property for sale, the listing agent.
-                    </p>
-
-                    <div className="row mt-5">
-                        {agents.map((agent) => (
-                            <div key={agent.id} className="col-lg-3 col-md-6 mb-4">
-                                <div className="agent-card">
-
-                                    <div className="agent-img-wrap">
-                                        <img src={agent.img} alt={agent.name} />
-
-                                        <div className="agent-social">
-                                            <a href="#"><i className="fab fa-facebook-f"></i></a>
-                                            <a href="#"><i className="fab fa-x-twitter"></i></a>
-                                            <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                                            <a href="#"><i className="fab fa-instagram"></i></a>
-                                        </div>
-                                    </div>
-
-                                    <h5 className="agent-name">{agent.name}</h5>
-                                    <p className="agent-role">{agent.role}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <br></br>
-
-                    <p className="agents-footer-text mt-4">
-                        Explore Property agents are here to help with all your buying,
-                        renting and selling goals. Find the home of your dreams with an
-                        expert you can trust. Let’s chat
-                    </p>
-
-                    <button className="agents-btn">
-                        Find your location agent <i className="fas fa-search ms-2"></i>
-                    </button>
-
-                </div>
-            </section>
-
-            <section className="home3-wrapper">
-                <div className="container-fluid">
-                    <div className="row g-0 align-items-stretch">
-
-                        <div className="col-lg-6 col-md-12">
-                            <div className="home3-image">
-                                <img src={home3} alt="Property" />
-                            </div>
-                        </div>
-
-                        <div className="col-lg-6 col-md-12">
-                            <div className="home3-content">
-
-                                <h2 className="home3-title">Featured Properties</h2>
-
-                                <div className="home3-tags">
-                                    <span className="tag-sale">For Sale</span>
-                                    <span className="tag-featured">Featured</span>
-                                </div>
-
-                                <h3 className="home3-property-title">
-                                    Rancho Vista Verde, Santa Barbara
-                                </h3>
-
-                                <div className="home3-features">
-                                    <span><i className="fa-solid fa-bed"></i> Beds 4</span>
-                                    <span><i className="fa-solid fa-bath"></i> Baths 2</span>
-                                    <span><i className="fa-solid fa-ruler-combined"></i> Sqft 1150</span>
-                                    <span><i className="fa-solid fa-warehouse"></i> Garage 2</span>
-                                </div>
-
-                                <p className="home3-location">
-                                    <i className="fa-solid fa-location-dot"></i>
-                                    102 Ingraham St, Brooklyn, NY 11237
-                                </p>
-
-                                <div className="home3-agent">
-                                    <img
-                                        src={person}
-                                        alt="Agent"
-                                    />
-                                    <div>
-                                        <small>Agent</small>
-                                        <h6>John Smith</h6>
-                                    </div>
-                                </div>
-
-                                <hr />
-
-                                <div className="home3-footer">
-                                    <h4 className="home3-price">
-                                        $250,00 <span>/month</span>
-                                    </h4>
-
-                                    <div className="home3-actions">
-                                        <button className="compare-btn">
-                                            <i className="fa-solid fa-arrow-right-arrow-left"></i> Compare
-                                        </button>
-                                        <button className="details-btn">
-                                            Details
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section className="wcus-section">
+            <section className="help-section">
                 <div className="container">
 
-                    <div className="wcus-header text-center">
-                        <h2>Why Choose Us?</h2>
-                        <p>
-                            Here’s just a few reasons why homeowners are choosing Realty
-                            to sell their property.
+                    <div className="text-center mb-5">
+                        <h2 className="help-title">How Can We Help You?</h2>
+                        <p className="help-subtitle">
+                            Thousands of luxury home enthusiasts just like you visit our website.
                         </p>
                     </div>
 
-                    <div className="row wcus-card-row">
-
-                        <div className="col-lg-3 col-md-6 col-sm-12">
-                            <div className="wcus-card">
-                                <div className="wcus-icon-box">
-                                    <i className="fa-solid fa-calendar-check"></i>
+                    <div className="row g-4">
+                        <div className="col-lg-6">
+                            <div className="help-card">
+                                <div className="icon-box">
+                                    <i className="fas fa-user-tie"></i>
                                 </div>
-                                <h4>30+ Years of Local Property Experience</h4>
-                                <p>
-                                    We are not loud, noisy and full of our own self-importance.
-                                    As your agent we know we work for you.
-                                </p>
+                                <div className="content">
+                                    <h5>Find the Best Agent for You</h5>
+                                    <p>
+                                        Explore video tours, in-depth research, and articles on
+                                        20,000 neighborhoods. Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-3 col-md-6 col-sm-12">
-                            <div className="wcus-card">
-                                <div className="wcus-icon-box">
-                                    <i className="fa-solid fa-user-group"></i>
+                        <div className="col-lg-6">
+                            <div className="help-card">
+                                <div className="icon-box bg-gold">
+                                    <i className="fas fa-map-marker-alt"></i>
                                 </div>
-                                <h4>We Have Happy Clients</h4>
-                                <p>
-                                    Not all agents have the skills or experience to ensure you
-                                    get the highest price for your property.
-                                </p>
+                                <div className="content">
+                                    <h5>Explore Great Neighborhoods</h5>
+                                    <p>
+                                        Explore video tours, in-depth research, and articles on
+                                        20,000 neighborhoods. Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-3 col-md-6 col-sm-12">
-                            <div className="wcus-card">
-                                <div className="wcus-icon-box">
-                                    <i className="fa-solid fa-house-user"></i>
+                        <div className="col-lg-6">
+                            <div className="help-card">
+                                <div className="icon-box">
+                                    <i className="fas fa-home"></i>
                                 </div>
-                                <h4>We Are not Like Other Agents You Know</h4>
-                                <p>
-                                    We are not loud, noisy and full of our own self-importance.
-                                    As your agent we know we work for you.
-                                </p>
+                                <div className="content">
+                                    <h5>Find highly rated apartments</h5>
+                                    <p>
+                                        Explore video tours, in-depth research, and articles on
+                                        20,000 neighborhoods. Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-3 col-md-6 col-sm-12">
-                            <div className="wcus-card">
-                                <div className="wcus-icon-box">
-                                    <i className="fa-solid fa-location-dot"></i>
+                        <div className="col-lg-6">
+                            <div className="help-card">
+                                <div className="icon-box">
+                                    <i className="fas fa-chart-line"></i>
                                 </div>
-                                <h4>Intimate Local Knowledge</h4>
-                                <p>
-                                    Not all agents have the skills or experience to ensure you
-                                    get the highest price for your property.
-                                </p>
+                                <div className="content">
+                                    <h5>Search Recent Property Sales</h5>
+                                    <p>
+                                        Explore video tours, in-depth research, and articles on
+                                        20,000 neighborhoods. Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-
-                    <p className="wcus-footer-text text-center">
-                        You can obtain more information and an appraisal of your property by{" "}
-                        <span>clicking this link</span> now.
-                    </p>
-
-                    <div className="text-center">
-                        <button className="wcus-btn">Get Started Now</button>
                     </div>
 
                 </div>
             </section>
+            <br></br>
+            <section>
+                <div className="container pcs-slider-wrapper">
+                    <h2 className="cpp-title text-center">Explore Property Categories</h2>
+                    <p className="cpp-subtitle text-center">
+                        We connect you directly to the person that knows the most about a property for sale, the
+                        listing agent.                    </p>
+                    <div className="pcs-slider-window">
+                        <div
+                            className="pcs-slider-track"
+                            style={{
+                                transform: `translateX(-${activeCard * 33.3333}%)`
+                            }}
 
-            <section className="tslider-section">
-                <div className="container">
+                        >
+                            {propertyCategories.map((item) => (
+                                <div className="pcs-card" key={item.id}>
+                                    <img src={item.img} alt={item.title} />
 
-                    <div className="tslider-header text-center">
-                        <h2>What Our Clients Say?</h2>
-                        <p>
-                            Here’s just a few reasons why homeowners are choosing Realty
-                            to sell their property.
-                        </p>
-                    </div>
-
-                    <div className="row tslider-row">
-                        {testimonialsData.slice(activeSlideIndex, activeSlideIndex + 2).map((item, idx) => (
-                            <div className="col-lg-6 col-md-12" key={idx}>
-                                <div className="tslider-card">
-                                    <img src={item.img} alt="client" className="tslider-avatar" />
-
-                                    <p className="tslider-text">{item.text}</p>
-
-                                    <div className="tslider-stars">
-                                        <i className="fa-solid fa-star"></i>
-                                        <i className="fa-solid fa-star"></i>
-                                        <i className="fa-solid fa-star"></i>
-                                        <i className="fa-solid fa-star"></i>
-                                        <i className="fa-solid fa-star"></i>
+                                    <div className="pcs-overlay">
+                                        <h5>{item.title}</h5>
+                                        <span>
+                                            {item.count}
+                                            <i className="fa-solid fa-arrow-right"></i>
+                                        </span>
                                     </div>
-
-                                    <h5>{item.name}</h5>
-                                    <span>{item.location}</span>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
 
-                    <div className="tslider-controls">
+                    <div className="pcs-controls">
                         <button
-                            className="tslider-btn"
-                            onClick={goToPrevSlide}
-                            disabled={activeSlideIndex === 0}
+                            className="pcs-control-btn"
+                            onClick={handlePrevCategory}
+                            disabled={activeCard === 0}
                         >
                             <i className="fa-solid fa-arrow-left"></i>
                         </button>
 
-                        <div className="tslider-dots">
-                            {testimonialsData.slice(0, testimonialsData.length - 1).map((_, i) => (
+                        <div className="pcs-dots">
+                            {Array.from({ length: maxSlideLimit + 1 }).map((_, dotIndex) => (
                                 <span
-                                    key={i}
-                                    className={
-                                        activeSlideIndex === i
-                                            ? "tslider-dot active"
-                                            : "tslider-dot"
-                                    }
+                                    key={dotIndex}
+                                    className={`pcs-dot ${activeCard === dotIndex ? "active" : ""
+                                        }`}
+                                    onClick={() => setActiveCard(dotIndex)}
                                 ></span>
                             ))}
                         </div>
 
                         <button
-                            className="tslider-btn"
-                            onClick={goToNextSlide}
-                            disabled={activeSlideIndex === testimonialsData.length - 2}
+                            className="pcs-control-btn"
+                            onClick={handleNextCategory}
+                            disabled={activeCard === maxSlideLimit}
                         >
                             <i className="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
 
                 </div>
+
             </section>
 
-            <section className="logo-section container">
-                <h2>Let’s Work Together</h2>
-                <p>Thousands of luxury home enthusiasts just like you visit our website.</p>
+            <section className="cta-wrapper1 mt-5">
+                <div className="cta-card1">
+                    <div className="row align-items-center">
+                        <div className="col-lg-6 col-md-12">
+                            <h2>
+                                Are You Selling Or <br /> Renting Your Property?
+                            </h2>
+                            <p>
+                                Thousands of luxury home enthusiasts just like you visit our
+                                website.
+                            </p>
+                            <button className="btn cta-btn1">
+                                Request your free appraisal
+                            </button>
+                        </div>
 
-                <div className="logo-slider">
-                    <div className="logo-track">
-                        {[...logos, ...logos].map((logo, index) => (
-                            <div className="logo-card" key={index}>
-                                <img src={logo.image} alt="Real Estate Logo" />
+                        <div className="col-lg-6 col-md-12 text-center">
+                            <img src={agent} className="agent-img1" alt="agent" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="cpp-properties-section">
+                <div className="container">
+
+                    <h2 className="cpp-title text-center">Best Properties For Sale</h2>
+                    <p className="cpp-subtitle text-center">
+                        Thousands of luxury home enthusiasts just like you visit our website.
+                    </p>
+
+                    <div className="cpp-slider-wrapper">
+
+                        <div className="cpp-slider-window">
+                            <div
+                                className="cpp-slider-track"
+                                style={{ transform: `translateX(-${startIndex * 33.333}%)` }}
+                            >
+                                {houses.map((item) => (
+                                    <div className="cpp-property-col" key={item.id}>
+                                        <div className="cpp-property-card">
+
+                                            <div className="cpp-image-box">
+                                                <img src={item.img} alt="property" />
+
+                                                <span className="cpp-badge cpp-featured">Featured</span>
+                                                <span className="cpp-badge cpp-sale">For Sale</span>
+
+                                                <div className="cpp-hover-icons">
+                                                    <span><i className="fa-regular fa-bookmark"></i></span>
+                                                    <span><i className="fa-solid fa-magnifying-glass"></i></span>
+                                                </div>
+                                            </div>
+
+                                            <div className="cpp-card-body">
+                                                <h5 className="cpp-card-title">Elegant studio flat</h5>
+
+                                                <p className="cpp-location">
+                                                    <i className="fa-solid fa-location-dot"></i>
+                                                    &nbsp;102 Ingraham St, Brooklyn, NY 11237
+                                                </p>
+
+                                                <p className="cpp-meta">
+                                                    <strong>3</strong> Beds &nbsp;
+                                                    <strong>3</strong> Baths &nbsp;
+                                                    <strong>4,043</strong> Sqft
+                                                </p>
+
+                                                <div className="cpp-card-footer">
+                                                    <span className="cpp-price">$8.600</span>
+
+                                                    <div className="cpp-actions">
+                                                        <span className="cpp-compare">
+                                                            <i className="fa-solid fa-arrow-right-arrow-left"></i>
+                                                            &nbsp;Compare
+                                                        </span>
+
+                                                        <button className="cpp-details-btn">Details</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="cpp-pagination-row">
+
+                        <button
+                            className="cpp-pagination-btn"
+                            onClick={handlePrev}
+                            disabled={startIndex === 0}
+                        >
+                            <i className="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <div className="cpp-dots-wrapper">
+                            {houses.slice(0, houses.length - visibleCards + 1).map((_, index) => (
+                                <span
+                                    key={index}
+                                    className={`cpp-dot ${startIndex === index ? "active" : ""}`}
+                                    onClick={() => setStartIndex(index)}
+                                ></span>
+                            ))}
+                        </div>
+
+                        <button
+                            className="cpp-pagination-btn"
+                            onClick={handleNext}
+                            disabled={startIndex === houses.length - visibleCards}
+                        >
+                            <i className="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section className="testimonialSectionWrap container-fluid">
+                <div className="container text-center">
+                    <h2 className="testimonialMainTitle">Clients Testimonials</h2>
+                    <p className="testimonialSubTitle">
+                        Thousands of luxury home enthusiasts just like you visit our website.
+                    </p>
+
+                    <div className="testimonialSliderWrapper">
+                        <div
+                            className="testimonialSliderTrack"
+                            style={{
+                                transform: `translateX(-${testimonialPointer * 33.33}%)`,
+                            }}
+                        >
+                            {testimonialDataList.map((item, idx) => (
+                                <div className="testimonialBox" key={idx}>
+                                    <img
+                                        src={item.img}
+                                        alt={item.name}
+                                        className="testimonialUserImg"
+                                    />
+
+                                    <p className="testimonialDesc">{item.text}</p>
+
+                                    <div className="testimonialStars">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                    </div>
+
+                                    <h5 className="testimonialUserName">{item.name}</h5>
+                                    <span className="testimonialUserRole">{item.role}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="testimonialNavControls1">
+                        <div className="testimonialFooterControls">
+                            <button
+                                className="testimonialArrowBtn1"
+                                onClick={handleTestimonialPrev}
+                            >
+                                <i className="fas fa-arrow-left"></i>
+                            </button>
+
+                            <div className="testimonialDotsWrap1">
+                                {Array.from({ length: testimonialDataList.length - 2 }).map(
+                                    (_, dotIndex) => (
+                                        <span
+                                            key={dotIndex}
+                                            className={`testimonialDot ${testimonialPointer === dotIndex ? "activeDot" : ""
+                                                }`}
+                                            onClick={() => setTestimonialPointer(dotIndex)}
+                                        ></span>
+                                    )
+                                )}
+                            </div>
+
+                            <button
+                                className="testimonialArrowBtn1"
+                                onClick={handleTestimonialNext}
+                            >
+                                <i className="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section className="wt-main-section container">
+                <div className="container text-center">
+                    <h2 className="wt-title">Let’s Work Together</h2>
+                    <p className="wt-subtitle">
+                        Thousands of luxury home enthusiasts just like you visit our website.
+                    </p>
+                </div>
+
+                <div className="wt-slider-wrapper">
+                    <div className="wt-slider wt-slider-left">
+                        {[...rowOneLogos, ...rowOneLogos].map((logo, index) => (
+                            <div className="wt-logo-card" key={`row1-${index}`}>
+                                <img src={logo} alt="Real Estate Logo" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="wt-slider-wrapper">
+                    <div className="wt-slider wt-slider-right">
+                        {[...rowTwoLogos, ...rowTwoLogos].map((logo, index) => (
+                            <div className="wt-logo-card" key={`row2-${index}`}>
+                                <img src={logo} alt="Real Estate Logo" />
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            <section className="insight-section">
+            <section
+                className="agency-hero-section"
+                style={{ backgroundImage: `url(${heroBg1})` }}
+            >
+                <div className="agency-hero-overlay"></div>
+
+                <div className="container position-relative">
+                    <div className="agency-hero-content text-center text-white">
+                        <h1>
+                            Sell Your Home With One Of <br />
+                            California’s Leading Real Estate Agencies
+                        </h1>
+                        <p>
+                            Find a lender who can offer competitive mortgage rates and help you
+                            with pre-approval.
+                        </p>
+
+                        <a href="#" className="agency-hero-btn mb-5">
+                            Meet The Team
+                        </a>
+                    </div>
+
+                    <div className="row agency-card-row">
+                        <div className="col-lg-4 col-md-6 mb-4">
+                            <div className="agency-service-card">
+                                <div className="agency-icon">
+                                    <i class="fa-solid fa-person-shelter"></i>                                </div>
+                                <h4>Property Management</h4>
+                                <p>
+                                    Realty real estate specialise in property management, with
+                                    services that cover all aspects of residential and commercial
+                                    leasing.
+                                </p>
+
+                                <a href="#" className="agency-card-btn">
+                                    Find out more
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4 col-md-6 mb-4">
+                            <div className="agency-service-card">
+                                <div className="agency-icon">
+                                    <i class="fa-solid fa-house-user"></i>                                </div>
+                                <h4>Rent a Home</h4>
+                                <p>
+                                    Realty real estate specialise in property management, with
+                                    services that cover all aspects of residential and commercial
+                                    leasing.
+                                </p>
+
+                                <a href="#" className="agency-card-btn">
+                                    Find out more
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4 col-md-12 mb-4">
+                            <div className="agency-service-card">
+                                <div className="agency-icon">
+                                    <i className="fas fa-tag"></i>
+                                </div>
+                                <h4>Sell a Home</h4>
+                                <p>
+                                    Realty real estate specialise in property management, with
+                                    services that cover all aspects of residential and commercial
+                                    leasing.
+                                </p>
+
+                                <a href="#" className="agency-card-btn">
+                                    Find out more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <section className="insight-section4 mb-5">
                 <div className="container">
                     <div className="text-center mb-5">
-                        <h2 className="section-title">Insight & Opinion</h2>
-                        <p className="section-subtitle">
+                        <h2 className="section-title4">Insight & Opinion</h2>
+                        <p className="section-subtitle4">
                             Thousands of luxury home enthusiasts just like you visit our website.
                         </p>
                     </div>
@@ -1111,21 +1293,25 @@ export default function Home2() {
                     <div className="row g-4">
                         {blogs.map((blog, index) => (
                             <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
-                                <div className="blog-card">
-                                    <div className="img-wrapper">
+                                <div className="blog-card4">
+                                    <div className="img-wrapper4">
                                         <img src={blog.img} alt="blog" />
-                                        <span className="tag">{blog.tag}</span>
+                                        <span className="tag4">{blog.tag}</span>
                                     </div>
 
-                                    <div className="blog-content">
-                                        <div className="date">
+                                    <div className="blog-content4">
+                                        <div className="date4">
                                             <i className="fa-regular fa-clock"></i>
                                             <span>{blog.date}</span>
                                         </div>
 
                                         <h4>{blog.title}</h4>
 
-                                        <Link to={`/blog/${blog.id}`} className="read-more" style={{color:"#ff6f61"}}>
+                                        <Link
+                                            to={`/blog/${blog.id}`}
+                                            className="read-more4"
+                                            style={{ color: "#b88e2e" }}
+                                        >
                                             Read More <i className="fa-solid fa-arrow-right"></i>
                                         </Link>
                                     </div>
@@ -1136,7 +1322,7 @@ export default function Home2() {
                 </div>
             </section>
 
-            <div className="footer2-cta">
+            <div className="footer4-cta">
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-8 d-flex align-items-center gap-4">
@@ -1164,14 +1350,14 @@ export default function Home2() {
                 </div>
             </div>
 
-            <footer className="footer2">
+            <footer className="footer4">
                 <div className="container">
                     <div className="footer-top d-flex flex-column flex-md-row justify-content-between align-items-center">
-                        <div className="footer-logo2">
+                        <div className="footer-logo4">
                             <img src={footerlogo} alt="logo" />
                         </div>
 
-                        <div className="footer-contact2">
+                        <div className="footer-contact4">
                             <div>
                                 <i className="fas fa-phone-alt"></i>
                                 <span>Call us</span>
@@ -1234,7 +1420,7 @@ export default function Home2() {
                                 placeholder="Your email address"
                                 className="newsletter-input"
                             />
-                            <button className="subscribe-btn2">Subscribe</button>
+                            <button className="subscribe-btn4">Subscribe</button>
 
                             <div className="terms">
                                 <input type="checkbox" />
@@ -1263,6 +1449,9 @@ export default function Home2() {
                     </div>
                 </div>
             </footer>
+
+
+
 
         </>
     )
