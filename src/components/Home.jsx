@@ -247,8 +247,8 @@ const Home = () => {
                                         <li><Link to="/home2">Home Page 2</Link></li>
                                         <li><Link to="/home3">Home Page 3</Link></li>
                                         <li><Link to="/home4">Home Page 4</Link></li>
-                                        <li>Home Page 5</li>
-                                        <li>Home Page 6</li>
+                                        <li><Link to="/home5">Home Page 5</Link></li>
+                                        <li><Link to="/home6">Home Page 6</Link></li>
                                         <li>Home Page 7</li>
                                         <li>Home Page 8</li>
                                         <li>Home Page 9</li>

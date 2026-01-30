@@ -52,7 +52,7 @@ import footerImg from "../assets/footerImg.png";
 import footerlogo from "../assets/home4logo2.png";
 
 
-export default function Home2() {
+export default function Home4() {
     const [type, setType] = useState("rent");
     const [showFilter, setShowFilter] = useState(false);
 
@@ -224,9 +224,9 @@ export default function Home2() {
                                             <li><Link to="/">Home Page 1</Link></li>
                                             <li><Link to="/home2">Home Page 2</Link></li>
                                             <li><Link to="/home3">Home Page 3</Link></li>
-                                            <li>Home Page 4</li>
-                                            <li>Home Page 5</li>
-                                            <li>Home Page 6</li>
+                                            <li><Link to="/home4">Home Page 4</Link></li>
+                                            <li><Link to="/home5">Home Page 5</Link></li>
+                                            <li><Link to="/home6">Home Page 6</Link></li>
                                             <li>Home Page 7</li>
                                             <li>Home Page 8</li>
                                             <li>Home Page 9</li>
