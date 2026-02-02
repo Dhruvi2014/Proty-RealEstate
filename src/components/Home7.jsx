@@ -4,6 +4,53 @@ import heroBg from "../assets/herohome.jpeg";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import heroImg from "../assets/home2box6.jpg";
+import user1 from "../assets/home2t1.jpg";
+import user2 from "../assets/home2t2.jpg";
+import user3 from "../assets/home2t3.jpg";
+import user4 from "../assets/testimonials-3.jpg";
+
+import imgMain from "../assets/home7img1.jpg";
+import imgSmall from "../assets/home7img2.jpg";
+
+import help1 from "../assets/help1.jpg";
+import help2 from "../assets/help2.jpg";
+import help3 from "../assets/help3.jpg";
+
+import img1 from "../assets/home2box1.jpg";
+import img2 from "../assets/home2box2.jpg";
+import img3 from "../assets/home2box3.jpg";
+import img4 from "../assets/home2box4.jpg";
+import img5 from "../assets/home2box5.jpg";
+import img6 from "../assets/home2box6.jpg";
+
+
+const helpData = [
+    {
+        title: "Buy or rent a property",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        img: help1,
+    },
+    {
+        title: "Advertise your property",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        img: help2,
+    },
+    {
+        title: "Advertise your property",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        img: help3,
+    },
+];
+
+const listings = [
+  { img: img1, featured: true, sale: false },
+  { img: img2, featured: false, sale: false },
+  { img: img3, featured: true, sale: true },
+  { img: img4, featured: false, sale: false },
+  { img: img5, featured: true, sale: true },
+  { img: img6, featured: true, sale: true },
+];
 export default function Home6() {
     return (
         <>
@@ -320,19 +367,16 @@ export default function Home6() {
             <section className="home7-hero-wrapper">
                 <div className="container text-center">
 
-                    {/* BIG TEXT IMAGE MASK */}
                     <h1 className="home7-mask-title">
                         PROTY
                     </h1>
 
-                    {/* SUB TEXT */}
                     <p className="home7-subtitle">
                         WE ARE A LEADING REAL ESTATE AGENCY SPECIALIZING <br />
                         IN CONNECTING CLIENTS WITH THEIR <br />
                         DREAM PROPERTIES.
                     </p>
 
-                    {/* BUTTONS */}
                     <div className="home7-btn-group">
                         <button className="home7-btn-primary">
                             Explore our homes <i className="fas fa-arrow-right"></i>
@@ -345,6 +389,175 @@ export default function Home6() {
 
                 </div>
             </section>
+
+            <section className="home7-hero-section">
+                <div
+                    className="home7-hero-bg"
+                    style={{ backgroundImage: `url(${heroImg})` }}
+                >
+                    <div className="home7-hero-overlay"></div>
+
+                    <div className="container home7-hero-content">
+                        <div className="home7-hero-tags">
+                            <span>Residential Sales and Leasing<i class="fa-solid fa-arrow-right"></i></span>
+                            <span>Commercial Real Estate <i class="fa-solid fa-arrow-right"></i></span>
+                            <span>Property Management <i class="fa-solid fa-arrow-right"></i></span>
+                            <span>Investment Advisory <i class="fa-solid fa-arrow-right"></i></span>
+                            <span>12 Year of experience <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+
+                        <div className="home7-hero-clients">
+                            <span className="home7-client-count">1200+ Happy Clients</span>
+                            <div className="home7-client-avatars">
+                                <img src={user1} alt="" />
+                                <img src={user2} alt="" />
+                                <img src={user3} alt="" />
+                                <img src={user4} alt="" />
+                            </div>
+                        </div>
+
+                        <h1 className="home7-hero-title">
+                            Our success is driven by our passion for real estate and our
+                            dedication to exceeding client expectations.
+                        </h1>
+                    </div>
+                </div>
+            </section>
+
+            <section className="home7-about-section">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-lg-6 col-md-12">
+                            <div className="home7-about-content">
+                                <h2>
+                                    We pride ourselves on our extensive market knowledge and
+                                    commitment to client satisfaction.
+                                </h2>
+
+                                <p>
+                                    At Proty, we're more than just a real estate company; we're
+                                    architects of dreams, crafting spaces where life flourishes and
+                                    businesses thrive. With a rich history spanning 12 years, we've
+                                    established ourselves as a trusted leader in the real estate
+                                    market, renowned for our unwavering commitment to excellence,
+                                    innovation, and client satisfaction.
+                                </p>
+
+                                <button className="home7-about-btn">
+                                    Explore our homes
+                                    <i className="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6 col-md-12">
+                            <div className="home7-about-images">
+                                <div className="home7-main-img">
+                                    <img src={imgMain} alt="main" />
+                                </div>
+
+                                <div className="home7-small-img">
+                                    <img src={imgSmall} alt="small" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="home7-help-section">
+                <div className="container">
+                    <div className="home7-help-header">
+                        <h2>See how Proty can help</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit
+                            amet dapibus justo. Nam nec libero diam. Pellentesque vel efficitur
+                            justo. Ut at ipsum turpis.
+                        </p>
+                    </div>
+
+                    <div className="row mt-5">
+                        {helpData.map((item, index) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={index}>
+                                <div className="home7-help-card">
+                                    <img src={item.img} alt="help" />
+
+                                    <div className="home7-help-arrow">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+
+                                    <div className="home7-help-overlay">
+                                        <h5>{item.title}</h5>
+                                        <p>{item.desc}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+             <section className="homepage7-listing-section">
+      <div className="container">
+        {/* Heading */}
+        <div className="homepage7-heading text-center">
+          <h2>Discover best listing</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit
+            amet dapibus justo. Nam nec libero diam.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="row mt-5">
+          {listings.map((item, index) => (
+            <div
+              className="col-lg-4 col-md-6 col-sm-12 mb-4"
+              key={index}
+            >
+              <div className="homepage7-card">
+                {/* Image */}
+                <div className="homepage7-img">
+                  <img src={item.img} alt="listing" />
+
+                  {/* Badges */}
+                  <div className="homepage7-badges">
+                    {item.featured && (
+                      <span className="badge-featured">Featured</span>
+                    )}
+                    {item.sale && (
+                      <span className="badge-sale">For Sale</span>
+                    )}
+                  </div>
+
+                  {/* Hover icons */}
+                  <div className="homepage7-hover-icons">
+                    <span>
+                      <i className="fa-regular fa-bookmark"></i>
+                    </span>
+                    <span>
+                      <i className="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                  </div>
+
+                  {/* Price */}
+                  <div className="homepage7-price">$8.600</div>
+                </div>
+
+                {/* Content */}
+                <div className="homepage7-content">
+                  <h5>Elegant studio flat</h5>
+                  <p>
+                    <i className="fa-solid fa-location-dot"></i>
+                    102 Ingraham St, Brooklyn, NY 11237
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
         </>
     )
 
