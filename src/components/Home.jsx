@@ -249,7 +249,7 @@ const Home = () => {
                                         <li><Link to="/home4">Home Page 4</Link></li>
                                         <li><Link to="/home5">Home Page 5</Link></li>
                                         <li><Link to="/home6">Home Page 6</Link></li>
-                                        <li>Home Page 7</li>
+                                        <li><Link to="/home7">Home Page 7</Link></li>
                                         <li>Home Page 8</li>
                                         <li>Home Page 9</li>
                                         <li>Home Page 10</li>
@@ -1145,7 +1145,7 @@ const Home = () => {
                             <img src={footerlogo} alt="logo" />
                         </div>
 
-                        <div className="footer-contact">
+                        <div className="footer-contact0">
                             <div>
                                 <i className="fas fa-phone-alt"></i>
                                 <span>Call us</span>
@@ -1162,16 +1162,16 @@ const Home = () => {
 
                     <hr />
 
-                    <div className="row footer-main">
+                    <div className="row footer-main0">
                         <div className="col-lg-3 col-md-6">
                             <h5>About us</h5>
                             <ul>
-                                <li><i className="fas fa-angle-right"></i> Contact</li>
-                                <li><i className="fas fa-angle-right"></i> Why choose us?</li>
-                                <li><i className="fas fa-angle-right"></i> Customer reviews</li>
-                                <li><i className="fas fa-angle-right"></i> Our team</li>
-                                <li><i className="fas fa-angle-right"></i> Careers with realty</li>
-                                <li><i className="fas fa-angle-right"></i> Work with us</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Contact</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Why choose us?</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Customer reviews</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Our team</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Careers with realty</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Work with us</li>
                             </ul>
                         </div>
 
@@ -1190,12 +1190,12 @@ const Home = () => {
                         <div className="col-lg-3 col-md-6">
                             <h5>Quick links</h5>
                             <ul>
-                                <li><i className="fas fa-angle-right"></i> Terms of use</li>
-                                <li><i className="fas fa-angle-right"></i> Privacy policy</li>
-                                <li><i className="fas fa-angle-right"></i> Our services</li>
-                                <li><i className="fas fa-angle-right"></i> Contact support</li>
-                                <li><i className="fas fa-angle-right"></i> Pricing plans</li>
-                                <li><i className="fas fa-angle-right"></i> FAQs</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Terms of use</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Privacy policy</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Our services</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Contact support</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> Pricing plans</li>
+                                <li><i className="fas fa-angle-right" style={{color:"#f89b3c"}}></i> FAQs</li>
                             </ul>
                         </div>
 
@@ -1208,7 +1208,7 @@ const Home = () => {
                                 placeholder="Your email address"
                                 className="newsletter-input"
                             />
-                            <button className="subscribe-btn">Subscribe</button>
+                            <button className="subscribe-btn0">Subscribe</button>
 
                             <div className="terms">
                                 <input type="checkbox" />

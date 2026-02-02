@@ -1859,12 +1859,12 @@ blockquote {
   letter-spacing: 2px;
 }
 
-.footer-contact {
+.footer-contact0 {
   display: flex;
   gap: 40px;
 }
 
-.footer-contact i {
+.footer-contact0 i {
   color: #f89b3c;
   margin-right: 10px;
 }
@@ -1879,7 +1879,7 @@ blockquote {
   margin-bottom: 15px;
 }
 
-.subscribe-btn {
+.subscribe-btn0 {
   width: 100%;
   padding: 14px;
   background: #f89b3c;
@@ -1971,7 +1971,7 @@ blockquote {
     font-size: 14px;
   }
 
-  .footer-main {
+  .footer-main0 {
     text-align: center;
   }
 

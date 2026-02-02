@@ -1317,3 +1317,122 @@
   animation-play-state: paused;
   color: #f1913d;
 }
+.git-section {
+  background: #1c1f26;
+  padding: 100px 0;
+  color: #fff;
+}
+
+.git-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.git-desc {
+  color: #b5b7c0;
+  max-width: 450px;
+  margin-bottom: 40px;
+}
+
+.git-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.git-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.git-info-item i {
+  font-size: 20px;
+  color: #ff9f43;
+  margin-top: 5px;
+}
+
+.git-info-item span {
+  font-size: 13px;
+  color: #9da0aa;
+}
+
+.git-info-item p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.git-phone {
+  color: #ff9f43;
+  font-weight: 600;
+}
+
+.git-email {
+  color: #ff9f43;
+}
+
+.git-form-box {
+  background: #2a2d35;
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.git-form-box h4 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.git-form-box p {
+  color: #b5b7c0;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.git-input {
+  background: #3a3d45;
+  border: none;
+  color: #fff;
+  padding: 12px 15px;
+}
+
+.git-input::placeholder {
+  color: #a5a7b0;
+}
+
+.git-input:focus {
+  background: #3a3d45;
+  color: #fff;
+  box-shadow: none;
+}
+
+.git-btn {
+  background: #ff9f43;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.git-btn:hover {
+  background: #ffa94d;
+}
+
+@media (max-width: 768px) {
+  .git-title {
+    font-size: 36px;
+  }
+
+  .git-section {
+    padding: 70px 20px;
+  }
+
+  .git-form-box {
+    padding: 30px;
+  }
+}

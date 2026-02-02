@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import footerlogo from "../assets/logo2.png";
 
 import img1 from "../assets/house1.jpg";
 import img2 from "../assets/house2.jpg";
@@ -106,26 +107,26 @@ const logos = [
     { image: logo5 },
 ];
 const blogs = [
-            {
-                img: bloggrid1,
-                tag: "Real estate",
-                title: "Building gains into housing stocks and how to trade the...",
-                date: "26 August, 2024",
-            },
-            {
-                img: bloggrid2,
-                tag: "News",
-                title: "Building gains into housing stocks and how to trade the...",
-                date: "26 August, 2024",
-            },
-            {
-                img: bloggrid3,
-                tag: "Real estate",
-                title: "Building gains into housing stocks and how to trade the...",
-                date: "26 August, 2024",
-            },
-        ];
-    
+    {
+        img: bloggrid1,
+        tag: "Real estate",
+        title: "Building gains into housing stocks and how to trade the...",
+        date: "26 August, 2024",
+    },
+    {
+        img: bloggrid2,
+        tag: "News",
+        title: "Building gains into housing stocks and how to trade the...",
+        date: "26 August, 2024",
+    },
+    {
+        img: bloggrid3,
+        tag: "Real estate",
+        title: "Building gains into housing stocks and how to trade the...",
+        date: "26 August, 2024",
+    },
+];
+
 export default function Home6() {
     const [index, setIndex] = useState(0);
     const [propertyCount, setPropertyCount] = useState(0);
@@ -220,7 +221,7 @@ export default function Home6() {
                                                 <li><Link to="/home4">Home Page 4</Link></li>
                                                 <li><Link to="/home5">Home Page 5</Link></li>
                                                 <li><Link to="/home6">Home Page 6</Link></li>
-                                                <li>Home Page 7</li>
+                                                <li><Link to="/home7">Home Page 7</Link></li>
                                                 <li>Home Page 8</li>
                                                 <li>Home Page 9</li>
                                                 <li>Home Page 10</li>
@@ -836,42 +837,234 @@ export default function Home6() {
                 </section>
 
 
-            <section className="insight-section" style={{backgroundColor:"#1c1f24"}}>
-                <div className="container">
-                    <div className="text-center mb-5">
-                        <h2 className="section-title" style={{color:"#fff"}}>Insight & Opinion</h2>
-                        <p className="section-subtitle" style={{color:"#fff"}}>
-                            Thousands of luxury home enthusiasts just like you visit our website.
-                        </p>
-                    </div>
+                <section className="insight-section" style={{ backgroundColor: "#1c1f24" }}>
+                    <div className="container">
+                        <div className="text-center mb-5">
+                            <h2 className="section-title" style={{ color: "#fff" }}>Insight & Opinion</h2>
+                            <p className="section-subtitle" style={{ color: "#fff" }}>
+                                Thousands of luxury home enthusiasts just like you visit our website.
+                            </p>
+                        </div>
 
-                    <div className="row g-4">
-                        {blogs.map((blog, index) => (
-                            <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
-                                <div className="blog-card">
-                                    <div className="img-wrapper">
-                                        <img src={blog.img} alt="blog" />
-                                        <span className="tag">{blog.tag}</span>
-                                    </div>
-
-                                    <div className="blog-content">
-                                        <div className="date">
-                                            <i className="fa-regular fa-clock" style={{color:"#fff"}}></i>
-                                            <span style={{color:"#fff"}}>{blog.date}</span>
+                        <div className="row g-4">
+                            {blogs.map((blog, index) => (
+                                <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+                                    <div className="blog-card">
+                                        <div className="img-wrapper">
+                                            <img src={blog.img} alt="blog" />
+                                            <span className="tag">{blog.tag}</span>
                                         </div>
 
-                                        <h4 style={{color:"#fff"}}>{blog.title}</h4>
+                                        <div className="blog-content">
+                                            <div className="date">
+                                                <i className="fa-regular fa-clock" style={{ color: "#fff" }}></i>
+                                                <span style={{ color: "#fff" }}>{blog.date}</span>
+                                            </div>
 
-                                        <Link to={`/blog/${blog.id}`} className="read-more">
-                                            Read More <i className="fa-solid fa-arrow-right"></i>
-                                        </Link>
+                                            <h4 style={{ color: "#fff" }}>{blog.title}</h4>
+
+                                            <Link to={`/blog/${blog.id}`} className="read-more">
+                                                Read More <i className="fa-solid fa-arrow-right"></i>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="git-section">
+                    <div className="container">
+                        <div className="row align-items-center g-5">
+
+                            {/* LEFT CONTENT */}
+                            <div className="col-lg-6">
+                                <h2 className="git-title">Get In Touch</h2>
+                                <p className="git-desc">
+                                    Estimate your payment with our easy-to-use loan calculator.
+                                    Then get pre-qualified to buy by a local lender.
+                                </p>
+
+                                <div className="git-info">
+                                    <div className="git-info-item">
+                                        <i className="fas fa-map-marker-alt"></i>
+                                        <div>
+                                            <span>Office address</span>
+                                            <p>102 Ingraham St, Brooklyn, NY 11237</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="git-info-item">
+                                        <i className="fas fa-phone-alt"></i>
+                                        <div>
+                                            <span>Office address</span>
+                                            <p className="git-phone">(603) 555-0123</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="git-info-item">
+                                        <i className="fas fa-envelope"></i>
+                                        <div>
+                                            <span>Email us</span>
+                                            <p className="git-email">themesflat@gmail.com</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        ))}
+
+                            {/* RIGHT FORM */}
+                            <div className="col-lg-6">
+                                <div className="git-form-box">
+                                    <h4>Request a call back</h4>
+                                    <p>
+                                        We'll get to know you to understand your selling goals,
+                                        explain the selling process so you know what to expect.
+                                    </p>
+
+                                    <form>
+                                        <div className="row g-3">
+                                            <div className="col-md-6">
+                                                <input
+                                                    type="text"
+                                                    className="form-control git-input"
+                                                    placeholder="Your name"
+                                                />
+                                            </div>
+                                            <div className="col-md-6">
+                                                <input
+                                                    type="email"
+                                                    className="form-control git-input"
+                                                    placeholder="Email"
+                                                />
+                                            </div>
+                                            <div className="col-12">
+                                                <input
+                                                    type="text"
+                                                    className="form-control git-input"
+                                                    placeholder="Your phone number"
+                                                />
+                                            </div>
+                                            <div className="col-12">
+                                                <textarea
+                                                    rows="4"
+                                                    className="form-control git-input"
+                                                    placeholder="Your message"
+                                                ></textarea>
+                                            </div>
+                                            <div className="col-12">
+                                                <button className="git-btn">
+                                                    Contact our experts <i className="fas fa-arrow-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                <footer className="footer">
+                    <div className="container">
+                        <div className="footer-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                            <div className="footer-logo">
+                                <img src={footerlogo} alt="logo" />
+                            </div>
+
+                            <div className="footer-contact0">
+                                <div>
+                                    <i className="fas fa-phone-alt"></i>
+                                    <span>Call us</span>
+                                    <strong>(603) 555-0123</strong>
+                                </div>
+
+                                <div>
+                                    <i className="fas fa-envelope"></i>
+                                    <span>Need live help</span>
+                                    <strong>proty-support@gmail.com</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div className="row footer-main0">
+                            <div className="col-lg-3 col-md-6">
+                                <h5>About us</h5>
+                                <ul>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Why choose us?</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Customer reviews</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our team</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Careers with realty</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Work with us</li>
+                                </ul>
+                            </div>
+
+                            <div className="col-lg-3 col-md-6">
+                                <h5>Popular house</h5>
+                                <ul>
+                                    <li>#Penthouses</li>
+                                    <li>#Villa</li>
+                                    <li>#Smart home</li>
+                                    <li>#Apartments</li>
+                                    <li>#Office</li>
+                                    <li>#Bungalow</li>
+                                </ul>
+                            </div>
+
+                            <div className="col-lg-3 col-md-6">
+                                <h5>Quick links</h5>
+                                <ul>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Terms of use</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Privacy policy</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our services</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact support</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Pricing plans</li>
+                                    <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> FAQs</li>
+                                </ul>
+                            </div>
+
+                            <div className="col-lg-3 col-md-6">
+                                <h5>Newsletter</h5>
+                                <p>Sign up to receive the latest articles</p>
+
+                                <input
+                                    type="email"
+                                    placeholder="Your email address"
+                                    className="newsletter-input"
+                                />
+                                <button className="subscribe-btn0">Subscribe</button>
+
+                                <div className="terms">
+                                    <input type="checkbox" />
+                                    <span>
+                                        I have read and agree to the terms & conditions
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                            <p>
+                                © Copyright 2024 <strong>PROTY</strong> – REAL ESTATE. Designed &
+                                Developed by Themesflat
+                            </p>
+
+                            <div className="social">
+                                <span>Follow us</span>
+                                <i className="fab fa-facebook-f"></i>
+                                <i className="fab fa-x-twitter"></i>
+                                <i className="fab fa-linkedin-in"></i>
+                                <i className="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </>
     )

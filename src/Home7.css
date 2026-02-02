@@ -1,0 +1,98 @@
+.home7-hero-wrapper {
+  background: #ffffff;
+  padding: 120px 0 100px;
+  overflow: hidden;
+}
+
+.home7-mask-title {
+  font-size: 350px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  line-height: 1;
+  margin-bottom: 40px;
+
+  background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c");
+  background-size: cover;
+  background-position: center;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home7-subtitle {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #1c1f26;
+  max-width: 900px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.home7-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.home7-btn-primary {
+  background: #ff9f43;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.home7-btn-primary:hover {
+  background: #ffa94d;
+}
+
+.home7-btn-outline {
+  background: transparent;
+  border: 1.5px solid #ff9f43;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ff9f43;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.home7-btn-outline:hover {
+  background: #ff9f43;
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .home7-mask-title {
+    font-size: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home7-mask-title {
+    font-size: 90px;
+    letter-spacing: 4px;
+  }
+
+  .home7-subtitle {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home7-mask-title {
+    font-size: 70px;
+  }
+}
