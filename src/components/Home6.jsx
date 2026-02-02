@@ -35,6 +35,16 @@ import user1 from "../assets/testimonials-1.jpg";
 import user2 from "../assets/testimonials-2.jpg";
 import user3 from "../assets/testimonials-3.jpg";
 
+import logo1 from "../assets/vector1.png";
+import logo2 from "../assets/vector2.png";
+import logo3 from "../assets/vector3.png";
+import logo4 from "../assets/vector4.png";
+import logo5 from "../assets/vector5.png";
+
+import bloggrid1 from "../assets/blog-grid-1.jpg";
+import bloggrid2 from "../assets/blog-grid-2.jpg";
+import bloggrid3 from "../assets/blog-grid-3.jpg";
+
 const images = [img1, img2, img3, img4];
 const projects = [
     { id: "01", title: "Accy apartment for rent", img: p1 },
@@ -69,26 +79,53 @@ const agents = [
 ];
 
 const testimonials = [
-  {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rhoncus faucibus lacinia. Nunc ac augue facilisis, vestibulum dolor sed, blandit lectus. Sed ac dolor et eros suscipit.",
-    name: "Courtney Henry",
-    role: "CEO & Founder at Themesflat",
-    img: user1,
-  },
-  {
-    text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
-    name: "Albert Flores",
-    role: "Real Estate Agent",
-    img: user2,
-  },
-  {
-    text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.",
-    name: "Jenny Wilson",
-    role: "Property Manager",
-    img: user3,
-  },
+    {
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rhoncus faucibus lacinia. Nunc ac augue facilisis, vestibulum dolor sed, blandit lectus. Sed ac dolor et eros suscipit.",
+        name: "Courtney Henry",
+        role: "CEO & Founder at Themesflat",
+        img: user1,
+    },
+    {
+        text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+        name: "Albert Flores",
+        role: "Real Estate Agent",
+        img: user2,
+    },
+    {
+        text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.",
+        name: "Jenny Wilson",
+        role: "Property Manager",
+        img: user3,
+    },
 ];
-
+const logos = [
+    { image: logo1 },
+    { image: logo2 },
+    { image: logo3 },
+    { image: logo4 },
+    { image: logo5 },
+];
+const blogs = [
+            {
+                img: bloggrid1,
+                tag: "Real estate",
+                title: "Building gains into housing stocks and how to trade the...",
+                date: "26 August, 2024",
+            },
+            {
+                img: bloggrid2,
+                tag: "News",
+                title: "Building gains into housing stocks and how to trade the...",
+                date: "26 August, 2024",
+            },
+            {
+                img: bloggrid3,
+                tag: "Real estate",
+                title: "Building gains into housing stocks and how to trade the...",
+                date: "26 August, 2024",
+            },
+        ];
+    
 export default function Home6() {
     const [index, setIndex] = useState(0);
     const [propertyCount, setPropertyCount] = useState(0);
@@ -644,150 +681,198 @@ export default function Home6() {
 
                     </div>
                 </section>
-            </div>
 
-            <section className="home6-section">
+                <section className="home6-section">
+                    <div className="container">
+
+                        <div className="home6-header text-center">
+                            <h2>Discovery our Latest Projects</h2>
+                            <p>
+                                We are proud to present our recently completed projects, each
+                                meticulously crafted with exceptional quality and attention to
+                                detail, setting new standards for modern living
+                            </p>
+                        </div>
+
+                        <div className="home6-grid-fixed">
+
+                            <div className="card card-1"><img src={p1} /><Overlay id="01" title="Accy apartment for rent" /></div>
+                            <div className="card card-2"><img src={p2} /><Overlay id="02" title="Mirror house sudd" /></div>
+                            <div className="card card-3"><img src={p3} /><Overlay id="03" title="Aruna grandview residences at sinar valley" /></div>
+                            <div className="card card-4"><img src={p4} /><Overlay id="04" title="Whispering pines lakeview estate" /></div>
+                            <div className="card card-5"><img src={p5} /><Overlay id="05" title="Gorgeous Apartment Building" /></div>
+
+                            <div className="card card-6"><img src={p6} /><Overlay id="06" title="Whispering pines lakeview estate" /></div>
+                            <div className="card card-7"><img src={p7} /><Overlay id="07" title="Golden valley hillside retreat" /></div>
+                            <div className="card card-8"><img src={p8} /><Overlay id="08" title="Seaside breeze luxury residence" /></div>
+
+                            <div className="home6-cta-card">
+                                <i className="fa-solid fa-location-dot"></i>
+                                <h5>PROTY</h5>
+                                <p>
+                                    Discover our wide selection of properties and find the one that
+                                    suits you best
+                                </p>
+                                <button>
+                                    View all project <i className="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+
+                            <div className="card card-9"><img src={p9} /><Overlay id="09" title="Reverbend grove country villa" /></div>
+                            <div className="card card-10"><img src={p10} /><Overlay id="10" title="Seaside breeze luxury residence" /></div>
+                            <div className="card card-11"><img src={p11} /><Overlay id="11" title="Accy apartment for rent" /></div>
+                            <div className="card card-12"><img src={p12} /><Overlay id="12" title="Gorgeous Apartment Building" /></div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section className="home6-agents-section">
+                    <div className="container">
+                        <p className="home6-agents-text text-center">
+                            Our vision is to be the premier real estate company in New York,
+                            recognized for our unwavering commitment to excellence, innovation,
+                            and community impact.
+                        </p>
+
+                        <div className="row justify-content-center mt-5">
+                            {agents.map((agent, index) => (
+                                <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={index}>
+                                    <div className="home6-agent-card">
+                                        <div className="home6-agent-img">
+                                            <img src={agent.img} alt="agent" />
+
+                                            <div className="home6-agent-social">
+                                                <a href="#"><i className="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i className="fab fa-x-twitter"></i></a>
+                                                <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                                                <a href="#"><i className="fab fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div className="home6-agent-info">
+                                            <h5>{agent.name}</h5>
+                                            <p>{agent.role}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="text-center mt-4">
+                            <button className="home6-view-btn">
+                                View all services <i className="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="home6-testimonial-section">
+                    <div className="container text-center">
+                        <h2 className="home6-testimonial-title">
+                            What our customers says
+                        </h2>
+
+                        <p className="home6-testimonial-subtitle">
+                            Our vision is to be the premier real estate company in New York,
+                            recognized for our unwavering commitment to excellence, innovation,
+                            and community impact.
+                        </p>
+
+                        <div className="home6-testimonial-wrapper">
+                            {testimonials.map((item, index) => {
+                                let position = "next";
+
+                                if (index === active) position = "active";
+                                if (
+                                    index === active - 1 ||
+                                    (active === 0 && index === testimonials.length - 1)
+                                ) {
+                                    position = "prev";
+                                }
+
+                                return (
+                                    <div
+                                        className={`home6-testimonial-card ${position}`}
+                                        key={index}
+                                    >
+                                        <p className="home6-testimonial-text">{item.text}</p>
+
+                                        <div className="home6-testimonial-user">
+                                            <img src={item.img} alt="user" />
+                                            <div>
+                                                <h6>{item.name}</h6>
+                                                <span>{item.role}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+
+                        </div>
+
+                        <div className="home6-testimonial-dots">
+                            {testimonials.map((_, i) => (
+                                <span
+                                    key={i}
+                                    className={i === active ? "active" : ""}
+                                    onClick={() => setActive(i)}
+                                ></span>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="logo-section container" style={{ backgroundColor: "" }}>
+                    <div className="logo-slider">
+                        <div className="logo-track">
+                            {[...logos, ...logos].map((logo, index) => (
+                                <div className="logo-card" key={index}>
+                                    <img src={logo.image} alt="Real Estate Logo" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+
+            <section className="insight-section" style={{backgroundColor:"#1c1f24"}}>
                 <div className="container">
-
-                    <div className="home6-header text-center">
-                        <h2>Discovery our Latest Projects</h2>
-                        <p>
-                            We are proud to present our recently completed projects, each
-                            meticulously crafted with exceptional quality and attention to
-                            detail, setting new standards for modern living
+                    <div className="text-center mb-5">
+                        <h2 className="section-title" style={{color:"#fff"}}>Insight & Opinion</h2>
+                        <p className="section-subtitle" style={{color:"#fff"}}>
+                            Thousands of luxury home enthusiasts just like you visit our website.
                         </p>
                     </div>
 
-                    <div className="home6-grid-fixed">
-
-                        <div className="card card-1"><img src={p1} /><Overlay id="01" title="Accy apartment for rent" /></div>
-                        <div className="card card-2"><img src={p2} /><Overlay id="02" title="Mirror house sudd" /></div>
-                        <div className="card card-3"><img src={p3} /><Overlay id="03" title="Aruna grandview residences at sinar valley" /></div>
-                        <div className="card card-4"><img src={p4} /><Overlay id="04" title="Whispering pines lakeview estate" /></div>
-                        <div className="card card-5"><img src={p5} /><Overlay id="05" title="Gorgeous Apartment Building" /></div>
-
-                        <div className="card card-6"><img src={p6} /><Overlay id="06" title="Whispering pines lakeview estate" /></div>
-                        <div className="card card-7"><img src={p7} /><Overlay id="07" title="Golden valley hillside retreat" /></div>
-                        <div className="card card-8"><img src={p8} /><Overlay id="08" title="Seaside breeze luxury residence" /></div>
-
-                        <div className="home6-cta-card">
-                            <i className="fa-solid fa-location-dot"></i>
-                            <h5>PROTY</h5>
-                            <p>
-                                Discover our wide selection of properties and find the one that
-                                suits you best
-                            </p>
-                            <button>
-                                View all project <i className="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
-
-                        <div className="card card-9"><img src={p9} /><Overlay id="09" title="Reverbend grove country villa" /></div>
-                        <div className="card card-10"><img src={p10} /><Overlay id="10" title="Seaside breeze luxury residence" /></div>
-                        <div className="card card-11"><img src={p11} /><Overlay id="11" title="Accy apartment for rent" /></div>
-                        <div className="card card-12"><img src={p12} /><Overlay id="12" title="Gorgeous Apartment Building" /></div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section className="home6-agents-section">
-                <div className="container">
-                    <p className="home6-agents-text text-center">
-                        Our vision is to be the premier real estate company in New York,
-                        recognized for our unwavering commitment to excellence, innovation,
-                        and community impact.
-                    </p>
-
-                    <div className="row justify-content-center mt-5">
-                        {agents.map((agent, index) => (
-                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={index}>
-                                <div className="home6-agent-card">
-                                    <div className="home6-agent-img">
-                                        <img src={agent.img} alt="agent" />
-
-                                        <div className="home6-agent-social">
-                                            <a href="#"><i className="fab fa-facebook-f"></i></a>
-                                            <a href="#"><i className="fab fa-x-twitter"></i></a>
-                                            <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                                            <a href="#"><i className="fab fa-instagram"></i></a>
-                                        </div>
+                    <div className="row g-4">
+                        {blogs.map((blog, index) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+                                <div className="blog-card">
+                                    <div className="img-wrapper">
+                                        <img src={blog.img} alt="blog" />
+                                        <span className="tag">{blog.tag}</span>
                                     </div>
 
-                                    <div className="home6-agent-info">
-                                        <h5>{agent.name}</h5>
-                                        <p>{agent.role}</p>
+                                    <div className="blog-content">
+                                        <div className="date">
+                                            <i className="fa-regular fa-clock" style={{color:"#fff"}}></i>
+                                            <span style={{color:"#fff"}}>{blog.date}</span>
+                                        </div>
+
+                                        <h4 style={{color:"#fff"}}>{blog.title}</h4>
+
+                                        <Link to={`/blog/${blog.id}`} className="read-more">
+                                            Read More <i className="fa-solid fa-arrow-right"></i>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-
-                    <div className="text-center mt-4">
-                        <button className="home6-view-btn">
-                            View all services <i className="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
                 </div>
             </section>
-
-            <section className="home6-testimonial-section">
-      <div className="container text-center">
-        <h2 className="home6-testimonial-title">
-          What our customers says
-        </h2>
-
-        <p className="home6-testimonial-subtitle">
-          Our vision is to be the premier real estate company in New York,
-          recognized for our unwavering commitment to excellence, innovation,
-          and community impact.
-        </p>
-
-        <div className="home6-testimonial-wrapper">
-          {testimonials.map((item, index) => {
-            let position = "next";
-
-            if (index === active) position = "active";
-            if (
-              index === active - 1 ||
-              (active === 0 && index === testimonials.length - 1)
-            ) {
-              position = "prev";
-            }
-
-            return (
-              <div
-                className={`home6-testimonial-card ${position}`}
-                key={index}
-              >
-                <p className="home6-testimonial-text">{item.text}</p>
-
-                <div className="home6-testimonial-user">
-                  <img src={item.img} alt="user" />
-                  <div>
-                    <h6>{item.name}</h6>
-                    <span>{item.role}</span>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-
-        </div>
-
-        <div className="home6-testimonial-dots">
-          {testimonials.map((_, i) => (
-            <span
-              key={i}
-              className={i === active ? "active" : ""}
-              onClick={() => setActive(i)}
-            ></span>
-          ))}
-        </div>
-      </div>
-    </section>
-
-
+            </div>
         </>
     )
 }
