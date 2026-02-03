@@ -24,6 +24,12 @@ import img4 from "../assets/home2box4.jpg";
 import img5 from "../assets/home2box5.jpg";
 import img6 from "../assets/home2box6.jpg";
 
+import galleryImg1 from "../assets/gallery-1.jpg";
+import galleryImg2 from "../assets/gallery-2.jpg";
+
+import bloggrid1 from "../assets/blog-grid-1.jpg";
+import bloggrid2 from "../assets/blog-grid-2.jpg";
+import bloggrid3 from "../assets/blog-grid-3.jpg";
 
 const helpData = [
     {
@@ -88,6 +94,27 @@ const testimonials = [
         text: "Mauris at tristique ullamcorper, nunc nisi sagittis velit.",
         name: "Brooklyn Simmons",
         role: "Designer",
+    },
+];
+
+const blogs = [
+    {
+        img: bloggrid1,
+        tag: "Real estate",
+        title: "Building gains into housing stocks and how to trade the...",
+        date: "26 August, 2024",
+    },
+    {
+        img: bloggrid2,
+        tag: "News",
+        title: "Building gains into housing stocks and how to trade the...",
+        date: "26 August, 2024",
+    },
+    {
+        img: bloggrid3,
+        tag: "Real estate",
+        title: "Building gains into housing stocks and how to trade the...",
+        date: "26 August, 2024",
     },
 ];
 
@@ -452,11 +479,11 @@ export default function Home6() {
 
                     <div className="container home7-hero-content">
                         <div className="home7-hero-tags">
-                            <span>Residential Sales and Leasing<i class="fa-solid fa-arrow-right"></i></span>
-                            <span>Commercial Real Estate <i class="fa-solid fa-arrow-right"></i></span>
-                            <span>Property Management <i class="fa-solid fa-arrow-right"></i></span>
-                            <span>Investment Advisory <i class="fa-solid fa-arrow-right"></i></span>
-                            <span>12 Year of experience <i class="fa-solid fa-arrow-right"></i></span>
+                            <span>Residential Sales and Leasing<i className="fa-solid fa-arrow-right"></i></span>
+                            <span>Commercial Real Estate <i className="fa-solid fa-arrow-right"></i></span>
+                            <span>Property Management <i className="fa-solid fa-arrow-right"></i></span>
+                            <span>Investment Advisory <i className="fa-solid fa-arrow-right"></i></span>
+                            <span>12 Year of experience <i className="fa-solid fa-arrow-right"></i></span>
                         </div>
 
                         <div className="home7-hero-clients">
@@ -665,9 +692,77 @@ export default function Home6() {
                             <i className="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
+                </div>
+            </section>
 
+            <section className="home7-gallery-section">
+                <div className="container">
+                    <div className="home7-gallery-header">
+                        <div>
+                            <h2>Explore our gallery</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit
+                                amet dapibus justo. Nam nec libero diam. Pellentesque vel
+                                efficitur justo. Ut at ipsum turpis.
+                            </p>
+                        </div>
 
+                        <a href="#" className="home7-gallery-btn">
+                            See all agent
+                            <i className="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
 
+                    <div className="row g-4 home7-gallery-images">
+                        <div className="col-lg-6 col-md-12">
+                            <div className="home7-gallery-card">
+                                <img src={galleryImg1} alt="Gallery 1" />
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6 col-md-12">
+                            <div className="home7-gallery-card">
+                                <img src={galleryImg2} alt="Gallery 2" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="insight-section">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="section-title">Insight & Opinion</h2>
+                        <p className="section-subtitle">
+                            Thousands of luxury home enthusiasts just like you visit our website.
+                        </p>
+                    </div>
+
+                    <div className="row g-4">
+                        {blogs.map((blog, index) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+                                <div className="blog-card">
+                                    <div className="img-wrapper">
+                                        <img src={blog.img} alt="blog" />
+                                        <span className="tag">{blog.tag}</span>
+                                    </div>
+
+                                    <div className="blog-content">
+                                        <div className="date">
+                                            <i className="fa-regular fa-clock"></i>
+                                            <span>{blog.date}</span>
+                                        </div>
+
+                                        <h4>{blog.title}</h4>
+
+                                        <Link to={`/blog/${blog.id}`} className="read-more">
+                                            Read More <i className="fa-solid fa-arrow-right"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
         </>

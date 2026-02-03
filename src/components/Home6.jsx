@@ -878,7 +878,6 @@ export default function Home6() {
                     <div className="container">
                         <div className="row align-items-center g-5">
 
-                            {/* LEFT CONTENT */}
                             <div className="col-lg-6">
                                 <h2 className="git-title">Get In Touch</h2>
                                 <p className="git-desc">
