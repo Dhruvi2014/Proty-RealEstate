@@ -44,14 +44,67 @@ const helpData = [
 ];
 
 const listings = [
-  { img: img1, featured: true, sale: false },
-  { img: img2, featured: false, sale: false },
-  { img: img3, featured: true, sale: true },
-  { img: img4, featured: false, sale: false },
-  { img: img5, featured: true, sale: true },
-  { img: img6, featured: true, sale: true },
+    { img: img1, featured: true, sale: false },
+    { img: img2, featured: false, sale: false },
+    { img: img3, featured: true, sale: true },
+    { img: img4, featured: false, sale: false },
+    { img: img5, featured: true, sale: true },
+    { img: img6, featured: true, sale: true },
 ];
+
+const testimonials = [
+    {
+        img: "https://randomuser.me/api/portraits/women/44.jpg",
+        text: "Proin auctor, mauris at tristique ullamcorper, nunc nisi sagittis velit, eget blandit dolor arcu sed ante.",
+        name: "Ronald Richards",
+        role: "CEO Themesflat",
+    },
+    {
+        img: "https://randomuser.me/api/portraits/men/32.jpg",
+        text: "Fusce euismod varius massa, id viverra nisl semper ut. Aliquam felis eros, eleifend non faucibus at.",
+        name: "Ronald Richards",
+        role: "CEO Themesflat",
+    },
+    {
+        img: "https://randomuser.me/api/portraits/women/65.jpg",
+        text: "Proin auctor, mauris at tristique ullamcorper, nunc nisi sagittis velit, eget blandit dolor arcu sed ante.",
+        name: "Courtney Henry",
+        role: "CEO Themesflat",
+    },
+    {
+        img: "https://randomuser.me/api/portraits/men/45.jpg",
+        text: "Aliquam felis eros, eleifend non faucibus at. Fusce euismod varius massa.",
+        name: "Albert Flores",
+        role: "Manager",
+    },
+    {
+        img: "https://randomuser.me/api/portraits/women/12.jpg",
+        text: "Nunc nisi sagittis velit, eget blandit dolor arcu sed ante.",
+        name: "Jenny Wilson",
+        role: "Founder",
+    },
+    {
+        img: "https://randomuser.me/api/portraits/men/76.jpg",
+        text: "Mauris at tristique ullamcorper, nunc nisi sagittis velit.",
+        name: "Brooklyn Simmons",
+        role: "Designer",
+    },
+];
+
 export default function Home6() {
+    const [index, setIndex] = useState(0);
+
+    const nextSlide = () => {
+        if (index < testimonials.length - 3) {
+            setIndex(index + 1);
+        }
+    };
+
+    const prevSlide = () => {
+        if (index > 0) {
+            setIndex(index - 1);
+        }
+    };
     return (
         <>
 
@@ -497,67 +550,126 @@ export default function Home6() {
                 </div>
             </section>
 
-             <section className="homepage7-listing-section">
-      <div className="container">
-        {/* Heading */}
-        <div className="homepage7-heading text-center">
-          <h2>Discover best listing</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit
-            amet dapibus justo. Nam nec libero diam.
-          </p>
-        </div>
+            <section className="homepage7-listing-section">
+                <div className="container">
+                    <div className="homepage7-heading text-center">
+                        <h2>Discover best listing</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit
+                            amet dapibus justo. Nam nec libero diam.
+                        </p>
+                    </div>
 
-        {/* Cards */}
-        <div className="row mt-5">
-          {listings.map((item, index) => (
-            <div
-              className="col-lg-4 col-md-6 col-sm-12 mb-4"
-              key={index}
-            >
-              <div className="homepage7-card">
-                {/* Image */}
-                <div className="homepage7-img">
-                  <img src={item.img} alt="listing" />
+                    <div className="row mt-5">
+                        {listings.map((item, index) => (
+                            <div
+                                className="col-lg-4 col-md-6 col-sm-12 mb-4"
+                                key={index}
+                            >
+                                <div className="homepage7-card">
+                                    <div className="homepage7-img">
+                                        <img src={item.img} alt="listing" />
 
-                  {/* Badges */}
-                  <div className="homepage7-badges">
-                    {item.featured && (
-                      <span className="badge-featured">Featured</span>
-                    )}
-                    {item.sale && (
-                      <span className="badge-sale">For Sale</span>
-                    )}
-                  </div>
+                                        <div className="homepage7-badges">
+                                            {item.featured && (
+                                                <span className="badge-featured">Featured</span>
+                                            )}
+                                            {item.sale && (
+                                                <span className="badge-sale">For Sale</span>
+                                            )}
+                                        </div>
 
-                  {/* Hover icons */}
-                  <div className="homepage7-hover-icons">
-                    <span>
-                      <i className="fa-regular fa-bookmark"></i>
-                    </span>
-                    <span>
-                      <i className="fa-solid fa-magnifying-glass"></i>
-                    </span>
-                  </div>
+                                        {/* Hover icons */}
+                                        <div className="homepage7-hover-icons">
+                                            <span>
+                                                <i className="fa-regular fa-bookmark"></i>
+                                            </span>
+                                            <span>
+                                                <i className="fa-solid fa-magnifying-glass"></i>
+                                            </span>
+                                        </div>
 
-                  {/* Price */}
-                  <div className="homepage7-price">$8.600</div>
+                                        <div className="homepage7-price">$8.600</div>
+                                    </div>
+
+                                    <div className="homepage7-content">
+                                        <h5>Elegant studio flat</h5>
+                                        <p>
+                                            <i className="fa-solid fa-location-dot"></i>
+                                            102 Ingraham St, Brooklyn, NY 11237
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
+            </section>
 
-                {/* Content */}
-                <div className="homepage7-content">
-                  <h5>Elegant studio flat</h5>
-                  <p>
-                    <i className="fa-solid fa-location-dot"></i>
-                    102 Ingraham St, Brooklyn, NY 11237
-                  </p>
+            <section className="home7-testimonial-section">
+                <div className="container text-center">
+                    <h2 className="home7-title">What our customers says</h2>
+                    <p className="home7-subtitle">
+                        We are committed to building long-term relationships with our clients
+                        based on trust and integrity.
+                    </p>
+
+                    <div className="home7-slider-wrapper">
+
+
+                        <div className="home7-slider">
+                            <div
+                                className="home7-slider-track"
+                                style={{ transform: `translateX(-${index * 33.333}%)` }}
+                            >
+                                {testimonials.map((item, i) => (
+                                    <div className="home7-card" key={i}>
+                                        <img src={item.img} alt="user" />
+                                        <p>{item.text}</p>
+
+                                        <div className="home7-stars">
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                            <i className="fa-solid fa-star"></i>
+                                        </div>
+
+                                        <h5>{item.name}</h5>
+                                        <span>{item.role}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div className="home7-navigation">
+                        <button className="home7-nav-btn" onClick={prevSlide}>
+                            <i className="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <div className="home7-dots">
+                            {testimonials.slice(0, testimonials.length - 2).map((_, i) => (
+                                <span
+                                    key={i}
+                                    className={`home7-dot ${index === i ? "active" : ""}`}
+                                    onClick={() => setIndex(i)}
+                                ></span>
+                            ))}
+                        </div>
+
+                        <button className="home7-nav-btn" onClick={nextSlide}>
+                            <i className="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+
+
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+            </section>
         </>
     )
 
