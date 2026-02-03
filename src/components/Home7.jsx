@@ -31,6 +31,17 @@ import bloggrid1 from "../assets/blog-grid-1.jpg";
 import bloggrid2 from "../assets/blog-grid-2.jpg";
 import bloggrid3 from "../assets/blog-grid-3.jpg";
 
+import contactBg from "../assets/banner-1.jpg";
+
+import logo1 from "../assets/vector1.png";
+import logo2 from "../assets/vector2.png";
+import logo3 from "../assets/vector3.png";
+import logo4 from "../assets/vector4.png";
+import logo5 from "../assets/vector5.png";
+
+import footerlogo from "../assets/logo2.png";
+
+
 const helpData = [
     {
         title: "Buy or rent a property",
@@ -132,6 +143,10 @@ export default function Home6() {
             setIndex(index - 1);
         }
     };
+
+    const rowOneLogos = [logo1, logo2, logo3, logo4, logo5];
+    const rowTwoLogos = [logo5, logo4, logo3, logo2, logo1];
+
     return (
         <>
 
@@ -563,7 +578,7 @@ export default function Home6() {
                                     <img src={item.img} alt="help" />
 
                                     <div className="home7-help-arrow">
-                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i className="fa-solid fa-arrow-right"></i>
                                     </div>
 
                                     <div className="home7-help-overlay">
@@ -765,6 +780,203 @@ export default function Home6() {
                     </div>
                 </div>
             </section>
+
+            <section className="home7-contact-section">
+                <div className="container-fluid">
+                    <div className="home7-contact-wrapper">
+                        <div
+                            className="home7-contact-bg"
+                            style={{ backgroundImage: `url(${contactBg})` }}
+                        ></div>
+
+                        <div className="home7-contact-card">
+                            <h3>Get in touch</h3>
+                            <p>
+                                We'll get to know you to understand your selling goals, explain
+                                the selling process so you know what to expect.
+                            </p>
+
+                            <form>
+                                <div className="row">
+                                    <div className="col-md-6 mb-3">
+                                        <label>Name</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="Your name"
+                                        />
+                                    </div>
+
+                                    <div className="col-md-6 mb-3">
+                                        <label>Email</label>
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            placeholder="Email"
+                                        />
+                                    </div>
+
+                                    <div className="col-12 mb-3">
+                                        <label>Phone number</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="Your phone number"
+                                        />
+                                    </div>
+
+                                    <div className="col-12 mb-4">
+                                        <label>Message</label>
+                                        <textarea
+                                            className="form-control"
+                                            rows="4"
+                                            placeholder="Your message"
+                                        ></textarea>
+                                    </div>
+
+                                    <div className="col-12">
+                                        <button type="submit" className="home7-contact-btn">
+                                            Contact our experts
+                                            <i className="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section className="wt-main-section container">
+                <div className="container text-center">
+                    <h2 className="wt-title">Let’s Work Together</h2>
+                    <p className="wt-subtitle">
+                        Thousands of luxury home enthusiasts just like you visit our website.
+                    </p>
+                </div>
+
+                <div className="wt-slider-wrapper">
+                    <div className="wt-slider wt-slider-left">
+                        {[...rowOneLogos, ...rowOneLogos].map((logo, index) => (
+                            <div className="wt-logo-card" key={`row1-${index}`}>
+                                <img src={logo} alt="Real Estate Logo" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="wt-slider-wrapper">
+                    <div className="wt-slider wt-slider-right">
+                        {[...rowTwoLogos, ...rowTwoLogos].map((logo, index) => (
+                            <div className="wt-logo-card" key={`row2-${index}`}>
+                                <img src={logo} alt="Real Estate Logo" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <footer className="footer">
+                                <div className="container">
+                                    <div className="footer-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                                        <div className="footer-logo">
+                                            <img src={footerlogo} alt="logo" />
+                                        </div>
+            
+                                        <div className="footer-contact0">
+                                            <div>
+                                                <i className="fas fa-phone-alt"></i>
+                                                <span>Call us</span>
+                                                <strong>(603) 555-0123</strong>
+                                            </div>
+            
+                                            <div>
+                                                <i className="fas fa-envelope"></i>
+                                                <span>Need live help</span>
+                                                <strong>proty-support@gmail.com</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <hr />
+            
+                                    <div className="row footer-main0">
+                                        <div className="col-lg-3 col-md-6">
+                                            <h5>About us</h5>
+                                            <ul>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Why choose us?</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Customer reviews</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our team</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Careers with realty</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Work with us</li>
+                                            </ul>
+                                        </div>
+            
+                                        <div className="col-lg-3 col-md-6">
+                                            <h5>Popular house</h5>
+                                            <ul>
+                                                <li>#Penthouses</li>
+                                                <li>#Villa</li>
+                                                <li>#Smart home</li>
+                                                <li>#Apartments</li>
+                                                <li>#Office</li>
+                                                <li>#Bungalow</li>
+                                            </ul>
+                                        </div>
+            
+                                        <div className="col-lg-3 col-md-6">
+                                            <h5>Quick links</h5>
+                                            <ul>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Terms of use</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Privacy policy</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our services</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact support</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Pricing plans</li>
+                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> FAQs</li>
+                                            </ul>
+                                        </div>
+            
+                                        <div className="col-lg-3 col-md-6">
+                                            <h5>Newsletter</h5>
+                                            <p>Sign up to receive the latest articles</p>
+            
+                                            <input
+                                                type="email"
+                                                placeholder="Your email address"
+                                                className="newsletter-input"
+                                            />
+                                            <button className="subscribe-btn0">Subscribe</button>
+            
+                                            <div className="terms">
+                                                <input type="checkbox" />
+                                                <span>
+                                                    I have read and agree to the terms & conditions
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <hr />
+            
+                                    <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                                        <p>
+                                            © Copyright 2024 <strong>PROTY</strong> – REAL ESTATE. Designed &
+                                            Developed by Themesflat
+                                        </p>
+            
+                                        <div className="social">
+                                            <span>Follow us</span>
+                                            <i className="fab fa-facebook-f"></i>
+                                            <i className="fab fa-x-twitter"></i>
+                                            <i className="fab fa-linkedin-in"></i>
+                                            <i className="fab fa-instagram"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer>
+
         </>
     )
 
