@@ -189,7 +189,6 @@ export default function Home6() {
                                             <li><Link to="/home8">Home Page 8</Link></li>
                                             <li>Home Page 9</li>
                                             <li>Home Page 10</li>
-
                                         </ul>
                                     </div>
                                 </li>

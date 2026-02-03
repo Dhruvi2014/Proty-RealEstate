@@ -17,12 +17,47 @@ import img8 from "../assets/house4.jpg";
 import aboutImg1 from "../assets/home7img2.jpg";
 import aboutImg2 from "../assets/home7img1.jpg";
 
+import bg1 from "../assets/house1.jpg";
+import bg2 from "../assets/house2.jpg";
+import bg3 from "../assets/house3.jpg";
+import agentImg from "../assets/testimonials-6.jpg";
+
+import logo1 from "../assets/vector1.png";
+import logo2 from "../assets/vector2.png";
+import logo3 from "../assets/vector3.png";
+import logo4 from "../assets/vector4.png";
+import logo5 from "../assets/vector5.png";
+
+import property1 from "../assets/box-house1.jpg";
+import property2 from "../assets/box-house2.jpg";
+import property3 from "../assets/box-house3.jpg";
+import property4 from "../assets/box-house4.jpg";
+
+import user1 from "../assets/testimonials-1.jpg";
+import user2 from "../assets/testimonials-2.jpg";
+import user3 from "../assets/testimonials-3.jpg";
+
 const images = [img1, img2, img3, img4, img5, img6, img7, img8];
 const counters = [
     { id: 1, label: "Dream house", value: 950 },
     { id: 2, label: "Happy clients", value: 2200 },
     { id: 3, label: "Local Agent", value: 470 },
     { id: 4, label: "Property Available", value: 2500 },
+];
+
+const logos = [
+    { image: logo1 },
+    { image: logo2 },
+    { image: logo3 },
+    { image: logo4 },
+    { image: logo5 },
+];
+
+const properties = [
+    { img: property1 },
+    { img: property2 },
+    { img: property3 },
+    { img: property4 },
 ];
 
 export default function Home6() {
@@ -54,6 +89,61 @@ export default function Home6() {
         return () => clearInterval(interval);
     }, []);
 
+    const bgImages = [bg1, bg2, bg3];
+    const [activeBg, setActiveBg] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveBg((prev) => (prev + 1) % bgImages.length);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const testimonials = [
+        {
+            name: "Annette Black",
+            role: "CEO Themesflat",
+            text:
+                "My experience with property management services has exceeded expectations. They efficiently manage properties with professionalism.",
+            img: user1,
+        },
+        {
+            name: "Cody Fisher",
+            role: "CEO Themesflat",
+            text:
+                "Aenean orci lorem, pharetra ac imperdiet eget, tristique ac magna. In aliquet efficitur turpis.",
+            img: user2,
+        },
+        {
+            name: "Jacob Jones",
+            role: "CEO Themesflat",
+            text:
+                "Vivamus at nisl ornare, vulputate turpis finibus, posuere metus.",
+            img: user3,
+        },
+        {
+            name: "Annette Black",
+            role: "CEO Themesflat",
+            text:
+                "My experience with property management services has exceeded expectations. They efficiently manage properties with professionalism.",
+            img: user1,
+        },
+        {
+            name: "Cody Fisher",
+            role: "CEO Themesflat",
+            text:
+                "Aenean orci lorem, pharetra ac imperdiet eget, tristique ac magna. In aliquet efficitur turpis.",
+            img: user2,
+        },
+        {
+            name: "Jacob Jones",
+            role: "CEO Themesflat",
+            text:
+                "Vivamus at nisl ornare, vulputate turpis finibus, posuere metus.",
+            img: user3,
+        },
+    ];
+
     return (
         <>
             <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
@@ -62,7 +152,6 @@ export default function Home6() {
                     <a className="navbar-brand d-flex align-items-center" href="#">
                         <img src={logo} alt="logo" className="header-logo" />
                     </a>
-
 
                     <button
                         className="navbar-toggler"
@@ -523,6 +612,179 @@ export default function Home6() {
                 </div>
             </section>
 
+            <section
+                className="home8-hero"
+                style={{ backgroundImage: `url(${bgImages[activeBg]})` }}
+            >
+                <div className="home7-overlay"></div>
+
+                <div className="container home8-content">
+                    <div className="row justify-content-end">
+                        <div className="col-lg-5 col-md-8">
+                            <div className="home8-card">
+                                <h3>Nextgen riverside 152</h3>
+                                <p className="home8-location">
+                                    <i className="fa fa-map-marker-alt"></i>
+                                    102 Ingraham St, Brooklyn, NY 11237
+                                </p>
+
+                                <div className="home8-info">
+                                    <div>
+                                        <h4>4</h4>
+                                        <p><i className="fa fa-bed"></i> Beds</p>
+                                    </div>
+                                    <div>
+                                        <h4>3</h4>
+                                        <p><i className="fa fa-bath"></i> Baths</p>
+                                    </div>
+                                    <div>
+                                        <h4>1,484</h4>
+                                        <p><i class="fa-regular fa-square-caret-up"></i> sqft</p>
+                                    </div>
+                                </div>
+
+                                <h2 className="home8-price">$1,250,000</h2>
+
+                                <div className="home8-agent">
+                                    <img src={agentImg} alt="agent" />
+                                    <div>
+                                        <h6>Marvin McKinney</h6>
+                                        <span>Local agent</span>
+                                    </div>
+                                </div>
+
+                                <button className="home8-btn">
+                                    Request a tour
+                                    <span>Earliest at 11:00 tomorrow</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="logo-section container">
+                <h2>Let’s Work Together</h2>
+                <p>Thousands of luxury home enthusiasts just like you visit our website.</p>
+
+                <div className="logo-slider">
+                    <div className="logo-track">
+                        {[...logos, ...logos].map((logo, index) => (
+                            <div className="logo-card" key={index}>
+                                <img src={logo.image} alt="Real Estate Logo" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="home8-property-section">
+                <div className="container-fluid">
+                    <div className="home8-header text-center">
+                        <h2>Explore the latest property listings</h2>
+                        <p>
+                            Proin auctor, mauris at tristique ullamcorper, nunc nisi sagittis
+                            velit, eget blandit dolor arcu sed ante.
+                        </p>
+                    </div>
+
+                    <div className="row g-4">
+                        {properties.map((item, index) => (
+                            <div className="col-lg-3 col-md-6" key={index}>
+                                <div className="home8-card">
+                                    <div className="home8-img-wrapper">
+                                        <img src={item.img} alt="property" />
+
+                                        <div className="home8-badges">
+                                            <span className="featured">Featured</span>
+                                            <span className="sale">For Sale</span>
+                                        </div>
+
+                                        <div className="home8-hover-icons">
+                                            <span><i className="fa-regular fa-bookmark"></i></span>
+                                            <span><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div className="home8-card-body">
+                                        <h5>Elegant studio flat</h5>
+                                        <p className="home8-location">
+                                            <i className="fa-solid fa-location-dot"></i>
+                                            102 Ingraham St, Brooklyn, NY 11237
+                                        </p>
+
+                                        <div className="home8-info">
+                                            <span><i className="fa-solid fa-house"></i> Studio</span>
+                                            <span><i className="fa-solid fa-bed"></i> 3</span>
+                                            <span><i className="fa-solid fa-bath"></i> 3</span>
+                                            <span><i className="fa-solid fa-ruler-combined"></i> 4,043 Sqft</span>
+                                        </div>
+
+                                        <div className="home8-footer">
+                                            <h6>$8,600</h6>
+                                            <span>December 20, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+
+            <section className="proty-ts-section">
+                <div className="proty-ts-strips">
+                    <div className="proty-ts-strip proty-ts-strip-orange">
+                        Proty Real Estate * Best Listing * Proty Real Estate * Best Listing * Proty Real Estate *
+                        Best Listing * Proty Real Estate * Best Listing * Proty Real Estate *
+                        Best Listing * Proty Real Estate * Best Listing *
+                        Best Listing * Proty Real Estate * Best Listing * Proty Real Estate *
+                    </div>
+                    <div className="proty-ts-strip proty-ts-strip-black">
+                        Best Listing * Proty Real Estate * Best Listing * Proty Real Estate * Best Listing * Proty Real Estate * Best Listing * Proty Real Estate *
+                        Best Listing * Proty Real Estate * Best Listing * Proty Real Estate *
+                        Best Listing * Proty Real Estate * Best Listing * Proty Real Estate *
+                    </div>
+                </div>
+                <br></br><br></br>
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="proty-ts-title">Customer Reviews</h2>
+                        <p className="proty-ts-subtitle">
+                            We are committed to building long-term relationships based on trust
+                            and integrity.
+                        </p>
+                    </div>
+
+                    <div className="row g-4 proty-ts-animation-wrapper">
+                        {testimonials.map((item, index) => (
+                            <div className="col-lg-4 col-md-6" key={index}>
+                                <div className="proty-ts-card">
+                                    <div className="proty-ts-stars">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                    </div>
+
+                                    <p className="proty-ts-text">{item.text}</p>
+
+                                    <div className="proty-ts-user">
+                                        <img src={item.img} alt={item.name} />
+                                        <div>
+                                            <h6>{item.name}</h6>
+                                            <span>{item.role}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+            </section>
 
         </>
     )
