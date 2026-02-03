@@ -37,6 +37,11 @@ import user1 from "../assets/testimonials-1.jpg";
 import user2 from "../assets/testimonials-2.jpg";
 import user3 from "../assets/testimonials-3.jpg";
 
+import agent1 from "../assets/home2person1.jpg";
+import agent2 from "../assets/home2person2.jpg";
+import agent3 from "../assets/home2person3.jpg";
+import agent4 from "../assets/home2person4.jpg";
+
 const images = [img1, img2, img3, img4, img5, img6, img7, img8];
 const counters = [
     { id: 1, label: "Dream house", value: 950 },
@@ -59,6 +64,30 @@ const properties = [
     { img: property3 },
     { img: property4 },
 ];
+
+const agents = [
+    {
+        img: agent1,
+        name: "Leslie Alexander",
+        role: "Sale agent",
+    },
+    {
+        img: agent2,
+        name: "Leslie Alexander",
+        role: "Sale agent",
+    },
+    {
+        img: agent3,
+        name: "Leslie Alexander",
+        role: "Sale agent",
+    },
+    {
+        img: agent4,
+        name: "Leslie Alexander",
+        role: "Sale agent",
+    },
+];
+
 
 export default function Home6() {
     const [index, setIndex] = useState(0);
@@ -778,6 +807,141 @@ export default function Home6() {
                                             <span>{item.role}</span>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+            </section>
+
+            <section className="help-section">
+                <div className="container">
+
+                    <div className="text-center mb-5">
+                        <h2 className="help-title">How Can We Help You?</h2>
+                        <p className="help-subtitle">
+                            Thousands of luxury home enthusiasts just like you visit our website.
+                        </p>
+                    </div>
+
+                    <div className="row g-4">
+                        <div className="col-lg-6">
+                            <div className="help-card">
+                                <div className="icon-box">
+                                    <i className="fas fa-user-tie"></i>
+                                </div>
+                                <div className="content">
+                                    <h5>Find the Best Agent for You</h5>
+                                    <p>
+                                        Explore video tours, in-depth research, and articles on
+                                        20,000 neighborhoods. Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6">
+                            <div className="help-card">
+                                <div className="icon-box bg-gold">
+                                    <i className="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div className="content">
+                                    <h5>Explore Great Neighborhoods</h5>
+                                    <p>
+                                        Explore video tours, in-depth research, and articles on
+                                        20,000 neighborhoods. Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6">
+                            <div className="help-card">
+                                <div className="icon-box">
+                                    <i className="fas fa-home"></i>
+                                </div>
+                                <div className="content">
+                                    <h5>Find highly rated apartments</h5>
+                                    <p>
+                                        Explore video tours, in-depth research, and articles on
+                                        20,000 neighborhoods. Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6">
+                            <div className="help-card">
+                                <div className="icon-box">
+                                    <i className="fas fa-chart-line"></i>
+                                </div>
+                                <div className="content">
+                                    <h5>Search Recent Property Sales</h5>
+                                    <p>
+                                        Explore video tours, in-depth research, and articles on
+                                        20,000 neighborhoods. Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section className="home8-agents-section py-5">
+                <div className="container">
+
+                    <div className="home8-heading-wrapper">
+
+                        <div className="home8-heading-text">
+                            <h2 className="home8-title">Agents Specializing in California</h2>
+
+                            <p className="home8-subtitle">
+                                Explore Property agents are here to help with all your buying,
+                                renting and selling goals. Find the home of your dreams with an
+                                expert you can trust.
+                            </p>
+                        </div>
+
+                        <button className="home8-btn0">
+                            See all agent
+                            <i className="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div className="row g-4">
+                        {agents.map((agent, index) => (
+                            <div className="col-lg-3 col-md-6 col-12" key={index}>
+                                <div className="home8-agent-card">
+
+                                    <div className="home8-img-wrapper">
+                                        <img src={agent.img} alt="agent" />
+
+                                        <div className="home8-social">
+                                            <i className="fa-brands fa-facebook-f"></i>
+                                            <i className="fa-brands fa-x-twitter"></i>
+                                            <i className="fa-brands fa-linkedin-in"></i>
+                                            <i className="fa-brands fa-instagram"></i>
+                                        </div>
+                                    </div>
+
+                                    <div className="text-center mt-3">
+                                        <h5 className="home8-agent-name">{agent.name}</h5>
+                                        <p className="home8-agent-role">{agent.role}</p>
+                                    </div>
+
                                 </div>
                             </div>
                         ))}
