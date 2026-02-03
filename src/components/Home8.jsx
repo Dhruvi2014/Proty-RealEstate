@@ -1,0 +1,529 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import "../Home8.css";
+import logo from "../assets/logo.png";
+
+import heroBg from "../assets/herohome.jpeg";
+import img1 from "../assets/house1.jpg";
+import img2 from "../assets/house2.jpg";
+import img3 from "../assets/house3.jpg";
+import img4 from "../assets/house4.jpg";
+import img5 from "../assets/house1.jpg";
+import img6 from "../assets/house2.jpg";
+import img7 from "../assets/house3.jpg";
+import img8 from "../assets/house4.jpg";
+
+import aboutImg1 from "../assets/home7img2.jpg";
+import aboutImg2 from "../assets/home7img1.jpg";
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8];
+const counters = [
+    { id: 1, label: "Dream house", value: 950 },
+    { id: 2, label: "Happy clients", value: 2200 },
+    { id: 3, label: "Local Agent", value: 470 },
+    { id: 4, label: "Property Available", value: 2500 },
+];
+
+export default function Home6() {
+    const [index, setIndex] = useState(0);
+
+    const nextSlide = () => {
+        setIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevSlide = () => {
+        setIndex((prev) =>
+            prev === 0 ? images.length - 1 : prev - 1
+        );
+    };
+
+    const [count, setCount] = useState(counters.map(() => 0));
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCount((prev) =>
+                prev.map((num, i) =>
+                    num < counters[i].value
+                        ? Math.min(num + Math.ceil(counters[i].value / 40), counters[i].value)
+                        : num
+                )
+            );
+        }, 40);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <>
+            <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
+                <div className="container">
+
+                    <a className="navbar-brand d-flex align-items-center" href="#">
+                        <img src={logo} alt="logo" className="header-logo" />
+                    </a>
+
+
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileMenu"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+
+
+                    <div className="collapse navbar-collapse" id="mainMenu">
+                        <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                            <li className="nav-item dropdown mega-dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    Home
+                                </a>
+
+                                <div className="dropdown-menu mega-menu narrow animate">
+                                    <ul className="list-unstyled mb-0">
+
+                                        <li><Link to="/">Home Page 1</Link></li>
+                                        <li><Link to="/home2">Home Page 2</Link></li>
+                                        <li><Link to="/home3">Home Page 3</Link></li>
+                                        <li><Link to="/home4">Home Page 4</Link></li>
+                                        <li><Link to="/home5">Home Page 5</Link></li>
+                                        <li><Link to="/home6">Home Page 6</Link></li>
+                                        <li><Link to="/home7">Home Page 7</Link></li>
+                                        <li><Link to="/home8">Home Page 8</Link></li>
+                                        <li>Home Page 9</li>
+                                        <li>Home Page 10</li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li className="nav-item dropdown mega-dropdown">
+                                <a
+                                    className="nav-link dropdown-toggle"
+                                    href="#"
+                                    data-bs-toggle="dropdown"
+                                >
+                                    Listing
+                                </a>
+
+                                <div className="dropdown-menu mega-menu">
+                                    <div className="row">
+
+                                        <div className="col-md-4">
+                                            <h6>Layout</h6>
+                                            <ul className="list-unstyled">
+                                                <li>Grid Style - Full Width</li>
+                                                <li>Grid Style - Top Search</li>
+                                                <li>Grid Style - Sidebar Left</li>
+                                                <li>List Style - Full Width</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="col-md-4">
+                                            <h6>Feature</h6>
+                                            <ul className="list-unstyled">
+                                                <li>Property Half Map Grid</li>
+                                                <li>Property Half Map List</li>
+                                                <li>Property Filter Popup</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="col-md-4">
+                                            <h6>Listing Details</h6>
+                                            <ul className="list-unstyled">
+                                                <li>Property Details 1</li>
+                                                <li>Property Details 2</li>
+                                                <li>Property Details 3</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li className="nav-item dropdown mega-dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    Pages
+                                </a>
+
+                                <div className="dropdown-menu mega-menu narrow animate">
+                                    <ul className="list-unstyled mb-0">
+
+                                        <li className="submenu-item">
+                                            <span>
+                                                Agents <i className="fa-solid fa-angle-right"></i>
+                                            </span>
+
+                                            <ul className="submenu list-unstyled" >
+                                                <li>Agents</li>
+                                                <li>Agent Details</li>
+                                            </ul>
+                                        </li>
+
+                                        <li className="submenu-item">
+                                            <span>
+                                                Agencies <i className="fa-solid fa-angle-right"></i>
+                                            </span>
+
+                                            <ul className="submenu list-unstyled">
+                                                <li>Agencies Grid</li>
+                                                <li>Agencies Grid</li>
+                                                <li>Agencies Details</li>
+                                            </ul>
+                                        </li>
+
+                                        <li>Home Loan Process</li>
+                                        <li>Career</li>
+                                        <li>Faq's</li>
+                                        <li>Compare</li>
+                                        <li>Project List</li>
+                                        <li>Project Details</li>
+                                        <li>Page 404</li>
+                                        <li>Dashboard</li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            <li className="nav-item dropdown mega-dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    Blog
+                                </a>
+
+                                <div className="dropdown-menu mega-menu narrow animate">
+                                    <ul className="list-unstyled mb-0">
+                                        <li>Blog Grid </li>
+                                        <li>Blog List </li>
+                                        <li>Blog Details </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+
+                        <div className="d-flex align-items-center gap-3">
+
+                            <button className="btn btn-outline-warning rounded-pill px-4">
+                                Book a visit
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+
+            <div
+                className="offcanvas offcanvas-start mobile-menu"
+                tabIndex="-1"
+                id="mobileMenu"
+            >
+                <div className="offcanvas-header">
+                    <img src={logo} alt="logo" className="header-logo" />
+                    <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="offcanvas"
+                    ></button>
+                </div>
+
+                <div className="offcanvas-body">
+                    <ul className="mobile-nav list-unstyled">
+
+                        <li>
+                            <a data-bs-toggle="collapse" href="#mHome">
+                                Home <i className="fa-solid fa-angle-down"></i>
+                            </a>
+                            <ul id="mHome" className="collapse list-unstyled">
+                                <li>Home Page 1</li>
+                                <li>Home Page 2</li>
+                                <li>Home Page 3</li>
+                                <li>Home Page 4</li>
+                                <li>Home Page 5</li>
+                                <li>Home Page 6</li>
+                                <li>Home Page 7</li>
+                                <li>Home Page 8</li>
+                                <li>Home Page 9</li>
+                                <li>Home Page 10</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a data-bs-toggle="collapse" href="#mListing">
+                                Listing <i className="fa-solid fa-angle-down"></i>
+                            </a>
+                            <ul id="mListing" className="collapse list-unstyled">
+                                <li className="submenu-mobile">
+                                    <a data-bs-toggle="collapse" href="#mAgents">
+                                        Layout <i className="fa-solid fa-angle-right"></i>
+                                    </a>
+                                    <ul id="mAgents" className="collapse list-unstyled">
+                                        <li>Grid Style-Full Width</li>
+                                        <li>Grid Style-Top Search</li>
+                                        <li>Grid Style-Sidebar Left</li>
+                                        <li>Grid Style-Sidebar Right</li>
+                                        <li>Grid Style-Full Width</li>
+                                        <li>Grid Style-Top Search</li>
+                                        <li>Grid Style-Sidebar Left</li>
+                                        <li>Grid Style-Sidebar Right</li>
+                                    </ul>
+                                </li>
+                                <li className="submenu-mobile">
+                                    <a data-bs-toggle="collapse" href="#mAgents">
+                                        Feature <i className="fa-solid fa-angle-right"></i>
+                                    </a>
+                                    <ul id="mAgents" className="collapse list-unstyled">
+                                        <li>Property Half Map Grid</li>
+                                        <li>Property Half Map List</li>
+                                        <li>Property Half Top Map</li>
+                                        <li>Property Filter Popup</li>
+                                        <li>Property Filter Popup Left</li>
+                                        <li>Property Filter Popup Right</li>
+                                    </ul>
+                                </li>
+                                <li className="submenu-mobile">
+                                    <a data-bs-toggle="collapse" href="#mAgents">
+                                        Listing Details <i className="fa-solid fa-angle-right"></i>
+                                    </a>
+                                    <ul id="mAgents" className="collapse list-unstyled">
+                                        <li>Property Details 1</li>
+                                        <li>Property Details 2</li>
+                                        <li>Property Details 3</li>
+                                        <li>Property Details 4</li>
+                                        <li>Property Details 5</li>
+                                    </ul>
+                                </li>
+                                <li className="submenu-mobile">
+                                    <a data-bs-toggle="collapse" href="#mAgents">
+                                        Agents <i className="fa-solid fa-angle-right"></i>
+                                    </a>
+                                    <ul id="mAgents" className="collapse list-unstyled">
+                                        <li>Agents</li>
+                                        <li>Agent Details</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a data-bs-toggle="collapse" href="#mPages">
+                                Pages <i className="fa-solid fa-angle-down"></i>
+                            </a>
+
+                            <ul id="mPages" className="collapse list-unstyled">
+
+                                <li className="submenu-mobile">
+                                    <a data-bs-toggle="collapse" href="#mAgents">
+                                        Agents <i className="fa-solid fa-angle-right"></i>
+                                    </a>
+                                    <ul id="mAgents" className="collapse list-unstyled">
+                                        <li>Agents</li>
+                                        <li>Agent Details</li>
+                                    </ul>
+                                </li>
+
+                                <li className="submenu-mobile">
+                                    <a data-bs-toggle="collapse" href="#mAgencies">
+                                        Agencies <i className="fa-solid fa-angle-right"></i>
+                                    </a>
+                                    <ul id="mAgencies" className="collapse list-unstyled">
+                                        <li>Agencies Grid</li>
+                                        <li>Agencies List</li>
+                                        <li>Agency Details</li>
+                                    </ul>
+                                </li>
+
+                                <li>Career</li>
+                                <li>Faq's</li>
+                                <li>Compare</li>
+                                <li>Project List</li>
+                                <li>Page 404</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a data-bs-toggle="collapse" href="#mBlog">
+                                Blog <i className="fa-solid fa-angle-down"></i>
+                            </a>
+                            <ul id="mBlog" className="collapse list-unstyled">
+                                <li>Blog List</li>
+                                <li>Blog Grid</li>
+                                <li>Blog Details</li>
+                            </ul>
+                        </li>
+
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section
+                className="home7-hero-section"
+                style={{ backgroundImage: `url(${heroBg})` }}
+            >
+                <div className="home7-overlay"></div>
+
+                <div className="container">
+                    <div className="row align-items-center">
+                        {/* LEFT CONTENT */}
+                        <div className="col-lg-6">
+                            <h1 className="home7-hero-title">
+                                Find nearby <br /> luxurious estates
+                            </h1>
+                            <p className="home7-hero-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Maecenas ultrices sapien dolor, non consequat risus feugiat eu.
+                            </p>
+
+                            {/* Thumbnail Slider */}
+                            <div className="home7-thumb-wrapper">
+                                <button className="home7-thumb-btn" onClick={prevSlide}>
+                                    <i className="fa-solid fa-chevron-left"></i>
+                                </button>
+
+                                <div className="home7-thumb-slider">
+                                    <div
+                                        className="home7-thumb-track"
+                                        style={{
+                                            transform: `translateX(-${index * 110}px)`,
+                                        }}
+                                    >
+                                        {images.map((img, i) => (
+                                            <img
+                                                key={i}
+                                                src={img}
+                                                alt="property"
+                                                className={`home7-thumb-img ${index === i ? "active" : ""
+                                                    }`}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <button className="home7-thumb-btn" onClick={nextSlide}>
+                                    <i className="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* RIGHT FORM */}
+                        <div className="col-lg-6">
+                            <div className="home7-form-card">
+                                <h3>Get in touch</h3>
+
+                                <form>
+                                    <div className="row">
+                                        <div className="col-md-6 mb-3">
+                                            <label>Name</label>
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                placeholder="Your name"
+                                            />
+                                        </div>
+
+                                        <div className="col-md-6 mb-3">
+                                            <label>Email</label>
+                                            <input
+                                                type="email"
+                                                className="form-control"
+                                                placeholder="Email"
+                                            />
+                                        </div>
+
+                                        <div className="col-12 mb-3">
+                                            <label>Phone number</label>
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                placeholder="Your phone number"
+                                            />
+                                        </div>
+
+                                        <div className="col-12 mb-4">
+                                            <label>Message</label>
+                                            <textarea
+                                                className="form-control"
+                                                rows="4"
+                                                placeholder="Your message"
+                                            ></textarea>
+                                        </div>
+
+                                        <div className="col-12">
+                                            <button className="home7-form-btn">
+                                                Contact our experts
+                                                <i className="fa-solid fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="home8-wrapper">
+                <div className="container">
+
+                    {/* Heading */}
+                    <div className="home8-heading text-center">
+                        <h2>Market leader in real estate</h2>
+                        <p>
+                            At Proty, we’re more than just a real estate company; we’re architects
+                            of dreams, crafting spaces where life flourishes and businesses thrive.
+                        </p>
+                    </div>
+
+                    {/* Counters */}
+                    <div className="row home8-counter-row">
+                        {counters.map((item, index) => (
+                            <div className="col-lg-3 col-md-6" key={item.id}>
+                                <div className="home8-counter-box">
+                                    <h3>{count[index]}+</h3>
+                                    <p>{item.label}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* About Section */}
+                    <div className="row home8-about align-items-center">
+                        <div className="col-lg-6 position-relative">
+                            <img src={aboutImg1} className="home8-img-main" alt="about" />
+                            <img src={aboutImg2} className="home8-img-overlay" alt="about" />
+                        </div>
+
+                        <div className="col-lg-6">
+                            <h3>Welcome to Proty</h3>
+                            <p>
+                                At Proty, we’re more than just a real estate company; we’re architects
+                                of dreams, crafting spaces where life flourishes and businesses thrive.
+                            </p>
+
+                            <ul className="home8-list">
+                                <li><i className="fa fa-check-circle"></i> Nam malesuada risus non tortor laoreet fringilla.</li>
+                                <li><i className="fa fa-check-circle"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li><i className="fa fa-check-circle"></i> Ut malesuada dolor convallis erat iaculis varius.</li>
+                                <li><i className="fa fa-check-circle"></i> Sed ultrices erat in nisi pulvinar tristique.</li>
+                            </ul>
+
+                            <button className="home8-btn">
+                                Explore our homes <i className="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+        </>
+    )
+}

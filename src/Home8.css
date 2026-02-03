@@ -1,0 +1,244 @@
+/* HERO */
+.home7-hero-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.home7-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.home7-hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* LEFT TEXT */
+.home7-hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.home7-hero-text {
+  color: #eee;
+  max-width: 420px;
+  margin-bottom: 30px;
+}
+
+/* THUMB SLIDER */
+.home7-thumb-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.home7-thumb-slider {
+  overflow: hidden;
+  width: 340px;
+}
+
+.home7-thumb-track {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.5s ease;
+}
+
+.home7-thumb-img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.home7-thumb-img.active {
+  opacity: 1;
+  outline: 2px solid #ff8a00;
+}
+
+.home7-thumb-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* FORM CARD */
+.home7-form-card {
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 22px;
+  max-width: 420px;
+  margin-left: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.home7-form-card h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.home7-form-card label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.home7-form-card .form-control {
+  border-radius: 25px;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.home7-form-card textarea {
+  border-radius: 16px;
+  resize: none;
+}
+
+.home7-form-btn {
+  background: #ff8a00;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .home7-hero-title {
+    font-size: 38px;
+  }
+
+  .home7-form-card {
+    margin: 40px auto 0;
+  }
+
+  .home7-thumb-slider {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .home7-hero-title {
+    font-size: 32px;
+  }
+}
+.home8-wrapper {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.home8-heading h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.home8-heading p {
+  max-width: 750px;
+  margin: auto;
+  color: #6b6b6b;
+}
+
+/* Counters */
+.home8-counter-row {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.home8-counter-box {
+  text-align: center;
+}
+
+.home8-counter-box h3 {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.home8-counter-box p {
+  color: #6b6b6b;
+}
+
+/* About Section */
+.home8-about h3 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.home8-about p {
+  color: #6b6b6b;
+  margin-bottom: 20px;
+}
+
+.home8-img-main {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.home8-img-overlay {
+  width: 260px;
+  position: absolute;
+  bottom: -40px;
+  right: 40px;
+  border-radius: 20px;
+  border: 6px solid #fff;
+}
+
+/* List */
+.home8-list {
+  list-style: none;
+  padding: 0;
+}
+
+.home8-list li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.home8-list i {
+  color: #ff8c2b;
+  margin-right: 8px;
+}
+
+/* Button */
+.home8-btn {
+  background: #ff8c2b;
+  border: none;
+  padding: 14px 30px;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.home8-btn i {
+  margin-left: 8px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .home8-img-overlay {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .home8-about {
+    text-align: center;
+  }
+}

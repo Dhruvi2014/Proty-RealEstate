@@ -245,7 +245,7 @@ export default function Home2() {
                                             <li><Link to="/home5">Home Page 5</Link></li>
                                             <li><Link to="/home6">Home Page 6</Link></li>
                                             <li><Link to="/home7">Home Page 7</Link></li>
-                                            <li>Home Page 8</li>
+                                            <li><Link to="/home8">Home Page 8</Link></li>
                                             <li>Home Page 9</li>
                                             <li>Home Page 10</li>
 
