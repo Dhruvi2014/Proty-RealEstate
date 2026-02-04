@@ -42,6 +42,12 @@ import agent2 from "../assets/home2person2.jpg";
 import agent3 from "../assets/home2person3.jpg";
 import agent4 from "../assets/home2person4.jpg";
 
+import bloggrid1 from "../assets/blog-grid-1.jpg";
+import bloggrid2 from "../assets/blog-grid-2.jpg";
+import bloggrid3 from "../assets/blog-grid-3.jpg";
+
+import footerlogo from "../assets/logo2.png";
+
 const images = [img1, img2, img3, img4, img5, img6, img7, img8];
 const counters = [
     { id: 1, label: "Dream house", value: 950 },
@@ -87,9 +93,29 @@ const agents = [
         role: "Sale agent",
     },
 ];
+const blogs = [
+    {
+        img: bloggrid1,
+        tag: "Real estate",
+        title: "Building gains into housing stocks and how to trade the...",
+        date: "26 August, 2024",
+    },
+    {
+        img: bloggrid2,
+        tag: "News",
+        title: "Building gains into housing stocks and how to trade the...",
+        date: "26 August, 2024",
+    },
+    {
+        img: bloggrid3,
+        tag: "Real estate",
+        title: "Building gains into housing stocks and how to trade the...",
+        date: "26 August, 2024",
+    },
+];
 
 
-export default function Home6() {
+export default function Home8() {
     const [index, setIndex] = useState(0);
 
     const nextSlide = () => {
@@ -211,7 +237,7 @@ export default function Home6() {
                                         <li><Link to="/home6">Home Page 6</Link></li>
                                         <li><Link to="/home7">Home Page 7</Link></li>
                                         <li><Link to="/home8">Home Page 8</Link></li>
-                                        <li>Home Page 9</li>
+                                        <li><Link to="/home9">Home Page 9</Link></li>
                                         <li>Home Page 10</li>
 
                                     </ul>
@@ -489,7 +515,6 @@ export default function Home6() {
 
                 <div className="container">
                     <div className="row align-items-center">
-                        {/* LEFT CONTENT */}
                         <div className="col-lg-6">
                             <h1 className="home7-hero-title">
                                 Find nearby <br /> luxurious estates
@@ -949,6 +974,143 @@ export default function Home6() {
 
                 </div>
             </section>
+
+            <section className="insight-section">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="section-title">Insight & Opinion</h2>
+                        <p className="section-subtitle">
+                            Explore Property agents are here to help with all your buying, renting and selling goals.<br></br>
+                            Find the home of your dreams with an expert you can trust. Let’s chat                        </p>
+                    </div>
+
+                    <div className="row g-4">
+                        {blogs.map((blog, index) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+                                <div className="blog-card">
+                                    <div className="img-wrapper">
+                                        <img src={blog.img} alt="blog" />
+                                        <span className="tag">{blog.tag}</span>
+                                    </div>
+
+                                    <div className="blog-content">
+                                        <div className="date">
+                                            <i className="fa-regular fa-clock"></i>
+                                            <span>{blog.date}</span>
+                                        </div>
+
+                                        <h4>{blog.title}</h4>
+
+                                        <Link to={`/blog/${blog.id}`} className="read-more">
+                                            Read More <i className="fa-solid fa-arrow-right"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <footer className="footer">
+                <div className="container">
+                    <div className="footer-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <div className="footer-logo">
+                            <img src={footerlogo} alt="logo" />
+                        </div>
+
+                        <div className="footer-contact0">
+                            <div>
+                                <i className="fas fa-phone-alt"></i>
+                                <span>Call us</span>
+                                <strong>(603) 555-0123</strong>
+                            </div>
+
+                            <div>
+                                <i className="fas fa-envelope"></i>
+                                <span>Need live help</span>
+                                <strong>proty-support@gmail.com</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="row footer-main0">
+                        <div className="col-lg-3 col-md-6">
+                            <h5>About us</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Why choose us?</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Customer reviews</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our team</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Careers with realty</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Work with us</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Popular house</h5>
+                            <ul>
+                                <li>#Penthouses</li>
+                                <li>#Villa</li>
+                                <li>#Smart home</li>
+                                <li>#Apartments</li>
+                                <li>#Office</li>
+                                <li>#Bungalow</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Quick links</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Terms of use</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Privacy policy</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our services</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact support</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Pricing plans</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> FAQs</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Newsletter</h5>
+                            <p>Sign up to receive the latest articles</p>
+
+                            <input
+                                type="email"
+                                placeholder="Your email address"
+                                className="newsletter-input"
+                            />
+                            <button className="subscribe-btn0">Subscribe</button>
+
+                            <div className="terms">
+                                <input type="checkbox" />
+                                <span>
+                                    I have read and agree to the terms & conditions
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <p>
+                            © Copyright 2024 <strong>PROTY</strong> – REAL ESTATE. Designed &
+                            Developed by Themesflat
+                        </p>
+
+                        <div className="social">
+                            <span>Follow us</span>
+                            <i className="fab fa-facebook-f"></i>
+                            <i className="fab fa-x-twitter"></i>
+                            <i className="fab fa-linkedin-in"></i>
+                            <i className="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
         </>
     )

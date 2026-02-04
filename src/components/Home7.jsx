@@ -187,7 +187,7 @@ export default function Home6() {
                                             <li><Link to="/home6">Home Page 6</Link></li>
                                             <li><Link to="/home7">Home Page 7</Link></li>
                                             <li><Link to="/home8">Home Page 8</Link></li>
-                                            <li>Home Page 9</li>
+                                            <li><Link to="/home9">Home Page 9</Link></li>
                                             <li>Home Page 10</li>
                                         </ul>
                                     </div>
@@ -746,9 +746,9 @@ export default function Home6() {
             <section className="insight-section">
                 <div className="container">
                     <div className="text-center mb-5">
-                        <h2 className="section-title">Insight & Opinion</h2>
+                        <h2 className="section-title">Our latest news and blog</h2>
                         <p className="section-subtitle">
-                            Thousands of luxury home enthusiasts just like you visit our website.
+                            We are committed to building long-term relationships with our clients based on trust and integrity.
                         </p>
                     </div>
 
@@ -877,104 +877,104 @@ export default function Home6() {
             </section>
 
             <footer className="footer">
-                                <div className="container">
-                                    <div className="footer-top d-flex flex-column flex-md-row justify-content-between align-items-center">
-                                        <div className="footer-logo">
-                                            <img src={footerlogo} alt="logo" />
-                                        </div>
-            
-                                        <div className="footer-contact0">
-                                            <div>
-                                                <i className="fas fa-phone-alt"></i>
-                                                <span>Call us</span>
-                                                <strong>(603) 555-0123</strong>
-                                            </div>
-            
-                                            <div>
-                                                <i className="fas fa-envelope"></i>
-                                                <span>Need live help</span>
-                                                <strong>proty-support@gmail.com</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <hr />
-            
-                                    <div className="row footer-main0">
-                                        <div className="col-lg-3 col-md-6">
-                                            <h5>About us</h5>
-                                            <ul>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Why choose us?</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Customer reviews</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our team</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Careers with realty</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Work with us</li>
-                                            </ul>
-                                        </div>
-            
-                                        <div className="col-lg-3 col-md-6">
-                                            <h5>Popular house</h5>
-                                            <ul>
-                                                <li>#Penthouses</li>
-                                                <li>#Villa</li>
-                                                <li>#Smart home</li>
-                                                <li>#Apartments</li>
-                                                <li>#Office</li>
-                                                <li>#Bungalow</li>
-                                            </ul>
-                                        </div>
-            
-                                        <div className="col-lg-3 col-md-6">
-                                            <h5>Quick links</h5>
-                                            <ul>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Terms of use</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Privacy policy</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our services</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact support</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Pricing plans</li>
-                                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> FAQs</li>
-                                            </ul>
-                                        </div>
-            
-                                        <div className="col-lg-3 col-md-6">
-                                            <h5>Newsletter</h5>
-                                            <p>Sign up to receive the latest articles</p>
-            
-                                            <input
-                                                type="email"
-                                                placeholder="Your email address"
-                                                className="newsletter-input"
-                                            />
-                                            <button className="subscribe-btn0">Subscribe</button>
-            
-                                            <div className="terms">
-                                                <input type="checkbox" />
-                                                <span>
-                                                    I have read and agree to the terms & conditions
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <hr />
-            
-                                    <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
-                                        <p>
-                                            © Copyright 2024 <strong>PROTY</strong> – REAL ESTATE. Designed &
-                                            Developed by Themesflat
-                                        </p>
-            
-                                        <div className="social">
-                                            <span>Follow us</span>
-                                            <i className="fab fa-facebook-f"></i>
-                                            <i className="fab fa-x-twitter"></i>
-                                            <i className="fab fa-linkedin-in"></i>
-                                            <i className="fab fa-instagram"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </footer>
+                <div className="container">
+                    <div className="footer-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <div className="footer-logo">
+                            <img src={footerlogo} alt="logo" />
+                        </div>
+
+                        <div className="footer-contact0">
+                            <div>
+                                <i className="fas fa-phone-alt"></i>
+                                <span>Call us</span>
+                                <strong>(603) 555-0123</strong>
+                            </div>
+
+                            <div>
+                                <i className="fas fa-envelope"></i>
+                                <span>Need live help</span>
+                                <strong>proty-support@gmail.com</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="row footer-main0">
+                        <div className="col-lg-3 col-md-6">
+                            <h5>About us</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Why choose us?</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Customer reviews</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our team</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Careers with realty</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Work with us</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Popular house</h5>
+                            <ul>
+                                <li>#Penthouses</li>
+                                <li>#Villa</li>
+                                <li>#Smart home</li>
+                                <li>#Apartments</li>
+                                <li>#Office</li>
+                                <li>#Bungalow</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Quick links</h5>
+                            <ul>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Terms of use</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Privacy policy</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Our services</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Contact support</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> Pricing plans</li>
+                                <li><i className="fas fa-angle-right" style={{ color: "#f89b3c" }}></i> FAQs</li>
+                            </ul>
+                        </div>
+
+                        <div className="col-lg-3 col-md-6">
+                            <h5>Newsletter</h5>
+                            <p>Sign up to receive the latest articles</p>
+
+                            <input
+                                type="email"
+                                placeholder="Your email address"
+                                className="newsletter-input"
+                            />
+                            <button className="subscribe-btn0">Subscribe</button>
+
+                            <div className="terms">
+                                <input type="checkbox" />
+                                <span>
+                                    I have read and agree to the terms & conditions
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <p>
+                            © Copyright 2024 <strong>PROTY</strong> – REAL ESTATE. Designed &
+                            Developed by Themesflat
+                        </p>
+
+                        <div className="social">
+                            <span>Follow us</span>
+                            <i className="fab fa-facebook-f"></i>
+                            <i className="fab fa-x-twitter"></i>
+                            <i className="fab fa-linkedin-in"></i>
+                            <i className="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
         </>
     )

@@ -7,6 +7,7 @@ import Home5 from "./components/Home5";
 import Home6 from "./components/Home6";
 import Home7 from "./components/Home7";
 import Home8 from "./components/Home8";
+import Home9 from "./components/Home9";
 
 import BlogDetails from "./components/BlogDetails";
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/home6" element={<Home6 />} />
         <Route path="/home7" element={<Home7 />} />
         <Route path="/home8" element={<Home8 />} />
+        <Route path="/home9" element={<Home9 />} />
 
         <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>
