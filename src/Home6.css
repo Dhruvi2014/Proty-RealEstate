@@ -1151,7 +1151,6 @@
   line-height: 1.7;
 }
 
-/* Wrapper */
 .home6-testimonial-wrapper {
   position: relative;
   height: 260px;
@@ -1160,7 +1159,6 @@
   justify-content: center;
 }
 
-/* Card */
 .home6-testimonial-card {
   position: absolute;
   width: 520px;
@@ -1172,14 +1170,12 @@
   transition: all 0.5s ease;
 }
 
-/* Active */
 .home6-testimonial-card.active {
   opacity: 1;
   transform: scale(1);
   z-index: 3;
 }
 
-/* Prev / Next (stacked look) */
 .home6-testimonial-card.prev {
   opacity: 0.4;
   transform: translateX(-120px) rotate(-4deg) scale(0.92);
@@ -1198,7 +1194,6 @@
   color: #e0e3ea;
 }
 
-/* User */
 .home6-testimonial-user {
   display: flex;
   align-items: center;
@@ -1223,7 +1218,6 @@
   color: #a5a9b3;
 }
 
-/* Arrows */
 .home6-testimonial-arrow {
   position: absolute;
   top: 50%;

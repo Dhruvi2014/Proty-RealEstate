@@ -366,25 +366,25 @@
     width: 100%;
   }
 }
-.help-section {
+.help-section0 {
   padding: 80px 0;
   background-color: #ffffff;
 }
 
-.help-title {
+.help-title0 {
   font-size: 38px;
   font-weight: 700;
   margin-bottom: 10px;
   color: #222;
 }
 
-.help-subtitle {
+.help-subtitle0 {
   color: #777;
   font-size: 16px;
   margin-bottom: 50px;
 }
 
-.help-card {
+.help-card0 {
   background: #fff;
   padding: 40px 25px;
   border-radius: 16px;
@@ -393,12 +393,12 @@
   height: 100%;
 }
 
-.help-card:hover {
+.help-card0:hover {
   transform: translateY(-12px);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
 }
 
-.help-icon {
+.help-icon0 {
   width: 90px;
   height: 90px;
   margin: 0 auto 20px;
@@ -411,19 +411,19 @@
   color: #ff6b5f;
 }
 
-.help-card h4 {
+.help-card0 h4 {
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-.help-card p {
+.help-card0 p {
   font-size: 15px;
   color: #666;
   line-height: 1.7;
   margin-bottom: 30px;
 }
 
-.help-btn {
+.help-btn0 {
   padding: 12px 32px;
   border-radius: 30px;
   font-size: 15px;
@@ -443,7 +443,7 @@
 }
 
 @media (max-width: 768px) {
-  .help-title {
+  .help-title0 {
     font-size: 28px;
   }
 }

@@ -208,7 +208,7 @@ export default function Home3() {
                                             <li><Link to="/home7">Home Page 7</Link></li>
                                             <li><Link to="/home8">Home Page 8</Link></li>
                                             <li><Link to="/home9">Home Page 9</Link></li>
-                                            <li>Home Page 10</li>
+                                            <li><Link to="/home10">Home Page 10</Link></li>
 
                                         </ul>
                                     </div>
@@ -610,17 +610,17 @@ export default function Home3() {
             </div>
 
 
-            <section className="help-section">
+            <section className="help-section0">
                 <div className="container text-center">
-                    <h2 className="help-title">How Can We Help You?</h2>
-                    <p className="help-subtitle">
+                    <h2 className="help-title0">How Can We Help You?</h2>
+                    <p className="help-subtitle0">
                         Thousands of luxury home enthusiasts just like you visit our website.
                     </p>
 
                     <div className="row justify-content-center">
                         <div className="col-lg-4 col-md-6 mb-4">
-                            <div className="help-card">
-                                <div className="help-icon">
+                            <div className="help-card0">
+                                <div className="help-icon0">
                                     <i className="fa-solid fa-magnifying-glass"></i>
                                 </div>
                                 <h4>Buy a Home</h4>
@@ -628,13 +628,13 @@ export default function Home3() {
                                     Find your place with an immersive photo experience and the most
                                     listings, including things you won’t find anywhere else.
                                 </p>
-                                <button className="help-btn outline-btn">Learn More</button>
+                                <button className="help-btn0 outline-btn">Learn More</button>
                             </div>
                         </div>
 
                         <div className="col-lg-4 col-md-6 mb-4">
-                            <div className="help-card">
-                                <div className="help-icon">
+                            <div className="help-card0">
+                                <div className="help-icon0">
                                     <i className="fa-solid fa-dollar-sign"></i>
                                 </div>
                                 <h4>Rent a Home</h4>
@@ -642,13 +642,13 @@ export default function Home3() {
                                     Find your place with an immersive photo experience and the most
                                     listings, including things you won’t find anywhere else.
                                 </p>
-                                <button className="help-btn outline-btn">Learn More</button>
+                                <button className="help-btn0 outline-btn">Learn More</button>
                             </div>
                         </div>
 
                         <div className="col-lg-4 col-md-6 mb-4">
-                            <div className="help-card">
-                                <div className="help-icon">
+                            <div className="help-card0">
+                                <div className="help-icon0">
                                     <i className="fa-solid fa-arrow-trend-up"></i>
                                 </div>
                                 <h4>Sell a Home</h4>
@@ -656,7 +656,7 @@ export default function Home3() {
                                     Find your place with an immersive photo experience and the most
                                     listings, including things you won’t find anywhere else.
                                 </p>
-                                <button className="help-btn outline-btn">Learn More</button>
+                                <button className="help-btn0 outline-btn">Learn More</button>
                             </div>
                         </div>
                     </div>
