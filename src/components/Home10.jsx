@@ -1,11 +1,28 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../Home9.css";
+import "../Home10.css";
 import logo from "../assets/logo.png";
 
+import heroImg from "../assets/herohome.jpeg";
+import thumbImg from "../assets/boxlist2.jpg";
 
-export default function Home9() {
+import logo1 from "../assets/vector1.png";
+import logo2 from "../assets/vector2.png";
+import logo3 from "../assets/vector3.png";
+import logo4 from "../assets/vector4.png";
+import logo5 from "../assets/vector5.png";
+
+const logos = [
+    { image: logo1 },
+    { image: logo2 },
+    { image: logo3 },
+    { image: logo4 },
+    { image: logo5 },
+];
+
+
+export default function Home10() {
     return (
         <>
             <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
@@ -161,11 +178,11 @@ export default function Home9() {
                         </ul>
 
                         <div className="d-flex align-items-center gap-3">
-                            
+
                             <button className="btn btn-outline-warning rounded-pill px-4">
                                 Book a visit
                             </button>
-                             <button className="btn btn-outline-warning rounded-pill px-4">
+                            <button className="btn btn-outline-warning rounded-pill px-4">
                                 <i className="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </div>
@@ -317,6 +334,92 @@ export default function Home9() {
                     </ul>
                 </div>
             </div>
+
+            <section className="home10-hero-section">
+                <div className="container">
+                    <div className="row align-items-center">
+
+                        {/* LEFT CONTENT */}
+                        <div className="col-lg-6 col-md-12">
+                            <div className="home10-hero-content">
+                                <h1 className="home10-title">
+                                    The path to your <br /> dream home
+                                </h1>
+
+                                <h5 className="home10-subtitle">Nextgen riverside 152</h5>
+
+                                <p className="home10-location">
+                                    <i className="fa-solid fa-location-dot"></i>
+                                    102 Ingraham St, Brooklyn, NY 11237
+                                </p>
+
+                                <div className="home10-features">
+                                    <div className="home10-feature-box">
+                                        <h3>4</h3>
+                                        <p>
+                                            <i className="fa-solid fa-bed"></i> Beds
+                                        </p>
+                                    </div>
+
+                                    <div className="home10-feature-box">
+                                        <h3>3</h3>
+                                        <p>
+                                            <i className="fa-solid fa-bath"></i> Baths
+                                        </p>
+                                    </div>
+
+                                    <div className="home10-feature-box">
+                                        <h3>1,484</h3>
+                                        <p>
+                                            <i className="fa-solid fa-ruler-combined"></i> sqft
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="home10-thumb-card">
+                                    <img src={thumbImg} alt="Property preview" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6 col-md-12">
+                            <div className="home10-image-wrapper">
+                                <img src={heroImg} alt="Hero property" />
+
+                                <div className="home10-floating-card">
+                                    <img src={thumbImg} alt="Studio flat" />
+                                    <div>
+                                        <h6>Elegant studio flat</h6>
+                                        <p>
+                                            <i className="fa-solid fa-location-dot"></i> New York, NY
+                                        </p>
+                                    </div>
+                                    <span className="home10-arrow">
+                                        <i className="fa-solid fa-arrow-right"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section className="logo-section container">
+                <h2>We are trusted by leading company</h2>
+                <p>We offer a comprehensive suite of real estate services, catering to a diverse<br></br>
+                    clientele with varied needs and aspirations.</p>
+
+                <div className="logo-slider">
+                    <div className="logo-track">
+                        {[...logos, ...logos].map((logo, index) => (
+                            <div className="logo-card" key={index}>
+                                <img src={logo.image} alt="Real Estate Logo" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </>
     )
 }
