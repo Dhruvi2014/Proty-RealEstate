@@ -305,8 +305,8 @@ export default function Home9() {
                                                 </span>
 
                                                 <ul className="submenu list-unstyled" >
-                                                    <li>Agents</li>
-                                                    <li>Agent Details</li>
+                                                    <li><Link to="/agents">Agent</Link></li>
+                                                    <li><Link to="/agentdetails">Agent Dtails</Link></li>
                                                 </ul>
                                             </li>
 
@@ -799,7 +799,7 @@ export default function Home9() {
                 </div>
             </section>
 
-            <section className="home9-wrapper">
+            <section className="home9-wrapper1">
                 <div className="container">
 
                     <div className="home9-features text-center">

@@ -316,8 +316,8 @@ const Home = () => {
                                             </span>
 
                                             <ul className="submenu list-unstyled" >
-                                                <li>Agents</li>
-                                                <li>Agent Details</li>
+                                                <li><Link to="/agents">Agent</Link></li>
+                                                <li><Link to="/agentdetails">Agent Dtails</Link></li>
                                             </ul>
                                         </li>
 
@@ -327,9 +327,9 @@ const Home = () => {
                                             </span>
 
                                             <ul className="submenu list-unstyled">
-                                                <li>Agencies Grid</li>
-                                                <li>Agencies Grid</li>
-                                                <li>Agencies Details</li>
+                                                <li><Link to="/agenciesgrid">Agencies Grid</Link></li>
+                                                <li><Link to="/agencieslist">Agencies List</Link></li>
+                                                <li><Link to="/agenciesdetails">Agencies Details</Link></li>
                                             </ul>
                                         </li>
 

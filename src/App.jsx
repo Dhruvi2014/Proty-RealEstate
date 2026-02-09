@@ -10,6 +10,12 @@ import Home8 from "./components/Home8";
 import Home9 from "./components/Home9";
 import Home10 from "./components/Home10";
 
+import Agents from "./components/Agents";
+import AgentDetails from "./components/AgentDetails";
+import AgenciesGrid from "./components/AgenciesGrid";
+import AgenciesList from "./components/AgenciesList";
+import AgenciesDetails from "./components/AgenciesDetails";
+
 import BlogDetails from "./components/BlogDetails";
 
 function App() {
@@ -26,6 +32,12 @@ function App() {
         <Route path="/home8" element={<Home8 />} />
         <Route path="/home9" element={<Home9 />} />
         <Route path="/home10" element={<Home10 />} />
+        <Route path="/agents" element={<Agents />} />
+        <Route path="/agentdetails" element={<AgentDetails />} />
+        <Route path="/agenciesgrid" element={<AgenciesGrid />} />
+        <Route path="/agencieslist" element={<AgenciesList />} />
+        <Route path="/agenciesdetails" element={<AgenciesDetails />} />
+
 
         <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>

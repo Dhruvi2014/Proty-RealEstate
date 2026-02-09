@@ -914,14 +914,12 @@
     font-size: 32px;
   }
 }
-/* ===== WRAPPER ===== */
-.home9-wrapper {
+.home9-wrapper1 {
   background: #1f2326;
   padding: 100px 0;
   color: #fff;
 }
 
-/* ===== HEADINGS ===== */
 .home9-heading {
   font-size: 36px;
   font-weight: 700;
@@ -933,7 +931,6 @@
   color: #bdbdbd;
 }
 
-/* ===== FEATURES ===== */
 .home9-feature-card {
   background: #fff;
   color: #111;

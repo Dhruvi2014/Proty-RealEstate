@@ -239,7 +239,6 @@ export default function Home8() {
                                         <li><Link to="/home8">Home Page 8</Link></li>
                                         <li><Link to="/home9">Home Page 9</Link></li>
                                         <li><Link to="/home10">Home Page 10</Link></li>
-
                                     </ul>
                                 </div>
                             </li>
@@ -302,8 +301,8 @@ export default function Home8() {
                                             </span>
 
                                             <ul className="submenu list-unstyled" >
-                                                <li>Agents</li>
-                                                <li>Agent Details</li>
+                                                <li><Link to="/agents">Agent</Link></li>
+                                                <li><Link to="/agentdetails">Agent Dtails</Link></li>
                                             </ul>
                                         </li>
 
@@ -524,7 +523,6 @@ export default function Home8() {
                                 Maecenas ultrices sapien dolor, non consequat risus feugiat eu.
                             </p>
 
-                            {/* Thumbnail Slider */}
                             <div className="home7-thumb-wrapper">
                                 <button className="home7-thumb-btn" onClick={prevSlide}>
                                     <i className="fa-solid fa-chevron-left"></i>
@@ -555,7 +553,6 @@ export default function Home8() {
                             </div>
                         </div>
 
-                        {/* RIGHT FORM */}
                         <div className="col-lg-6">
                             <div className="home7-form-card">
                                 <h3>Get in touch</h3>
@@ -615,7 +612,6 @@ export default function Home8() {
             <section className="home8-wrapper">
                 <div className="container">
 
-                    {/* Heading */}
                     <div className="home8-heading text-center">
                         <h2>Market leader in real estate</h2>
                         <p>
@@ -624,7 +620,6 @@ export default function Home8() {
                         </p>
                     </div>
 
-                    {/* Counters */}
                     <div className="row home8-counter-row">
                         {counters.map((item, index) => (
                             <div className="col-lg-3 col-md-6" key={item.id}>
@@ -636,7 +631,6 @@ export default function Home8() {
                         ))}
                     </div>
 
-                    {/* About Section */}
                     <div className="row home8-about align-items-center">
                         <div className="col-lg-6 position-relative">
                             <img src={aboutImg1} className="home8-img-main" alt="about" />

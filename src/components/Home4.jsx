@@ -294,8 +294,8 @@ export default function Home4() {
                                                 </span>
 
                                                 <ul className="submenu list-unstyled" >
-                                                    <li>Agents</li>
-                                                    <li>Agent Details</li>
+                                                    <li><Link to="/agents">Agent</Link></li>
+                                                <li><Link to="/agentdetails">Agent Dtails</Link></li>
                                                 </ul>
                                             </li>
 

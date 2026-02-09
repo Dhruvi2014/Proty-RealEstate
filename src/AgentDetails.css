@@ -1,0 +1,294 @@
+.ap-wrapper {
+  padding: 60px 0;
+}
+
+.ap-profile-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  gap: 20px;
+}
+
+.ap-image-box {
+  min-width: 260px;
+}
+
+.ap-image-box img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.ap-info-box {
+  flex: 1;
+}
+
+.ap-name {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.ap-role {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.ap-contact-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.ap-contact-list li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.ap-contact-list i {
+  color: #f7931e;
+  margin-top: 3px;
+}
+
+.ap-about-title {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.ap-about-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.ap-read-more {
+  background: none;
+  border: none;
+  color: #f7931e;
+  font-weight: 600;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.ap-contact-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.ap-form-title {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.ap-contact-card input,
+.ap-contact-card textarea {
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.ap-contact-card textarea {
+  min-height: 110px;
+  resize: none;
+}
+
+.ap-btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.ap-send-btn {
+  flex: 1;
+  background: #f7931e;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.ap-call-btn {
+  background: transparent;
+  border: 1px solid #f7931e;
+  color: #f7931e;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .ap-profile-card {
+    flex-direction: column;
+  }
+
+  .ap-image-box {
+    min-width: 100%;
+  }
+}
+.pl-wrapper {
+  padding: 60px 0;
+}
+
+.pl-title {
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.pl-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.pl-img-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.pl-img-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.pl-card:hover img {
+  transform: scale(1.08);
+}
+
+.pl-badge-featured,
+.pl-badge-sale {
+  position: absolute;
+  top: 12px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.pl-badge-featured {
+  left: 12px;
+  background: #f7931e;
+}
+
+.pl-badge-sale {
+  left: 90px;
+  background: #333;
+}
+
+.pl-hover-icons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.pl-card:hover .pl-hover-icons {
+  opacity: 1;
+}
+
+.pl-hover-icons button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #f7931e;
+  font-size: 16px;
+}
+
+.pl-card-body {
+  padding: 18px;
+}
+
+.pl-location {
+  font-size: 13px;
+  color: #777;
+}
+
+.pl-location i {
+  color: #f7931e;
+  margin-right: 6px;
+}
+
+.pl-features {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.pl-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pl-price {
+  color: #f7931e;
+  font-weight: 700;
+}
+
+.pl-details-btn {
+  border: 1px solid #f7931e;
+  background: transparent;
+  color: #f7931e;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.pl-sidebar {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.pl-side-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.pl-side-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.pl-side-item h6 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.pl-side-item p {
+  font-size: 12px;
+  margin: 2px 0;
+  color: #777;
+}
+
+.pl-side-item span {
+  color: #f7931e;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .pl-img-box img {
+    height: 200px;
+  }
+}
