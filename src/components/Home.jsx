@@ -333,9 +333,9 @@ const Home = () => {
                                             </ul>
                                         </li>
 
-                                        <li>Home Loan Process</li>
-                                        <li>Career</li>
-                                        <li>Faq's</li>
+                                        <li><Link to="/homeloanprocess">Home Loan Process</Link></li>
+                                        <li><Link to="/career">Career</Link></li>
+                                        <li><Link to="/faq">Faq's</Link></li>
                                         <li>Compare</li>
                                         <li>Project List</li>
                                         <li>Project Details</li>

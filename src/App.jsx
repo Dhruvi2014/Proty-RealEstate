@@ -15,6 +15,9 @@ import AgentDetails from "./components/AgentDetails";
 import AgenciesGrid from "./components/AgenciesGrid";
 import AgenciesList from "./components/AgenciesList";
 import AgenciesDetails from "./components/AgenciesDetails";
+import HomeLoanProcess from "./components/HomeLoanProcess";
+import Career from "./components/Career";
+import Faq from "./components/Faq";
 
 import BlogDetails from "./components/BlogDetails";
 
@@ -37,6 +40,9 @@ function App() {
         <Route path="/agenciesgrid" element={<AgenciesGrid />} />
         <Route path="/agencieslist" element={<AgenciesList />} />
         <Route path="/agenciesdetails" element={<AgenciesDetails />} />
+        <Route path="/homeloanprocess" element={<HomeLoanProcess />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/faq" element={<Faq />} />
 
 
         <Route path="/blog/:id" element={<BlogDetails />} />

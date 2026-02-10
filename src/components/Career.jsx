@@ -1,24 +1,36 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../AgenciesDetails.css";
+import "../Career.css";
 import logo from "../assets/logo.png";
 
-import banner from "../assets/blog-grid-1.jpg";
-import bannerlogo from "../assets/brand8.jpg";
-
-import img1 from "../assets/boxlist1.jpg";
-import img2 from "../assets/boxlist2.jpg";
-
-import gridImg from "../assets/img1.jpg";
+import agentImg from "../assets/home3person1.png";
+import testimonial from "../assets/home2t3.jpg"
 
 import footerImg from "../assets/footerImg.png";
 import footerlogo from "../assets/logo2.png";
 
-export default function AgenciesDetails() {
+export default function Career() {
+    const jobs = [
+        { title: "Junior Graphic Designer (Web)", category: "Marketing", location: "New York", salary: "$850 Month" },
+        { title: "Finance Manager & Health", category: "Marketing", location: "New York", salary: "$850 Month" },
+        { title: "Group Marketing Manager", category: "Marketing", location: "New York", salary: "$850 Month" },
+        { title: "Product Sales Specialist", category: "Marketing", location: "New York", salary: "$850 Month" },
+        { title: "Web Developer", category: "Marketing", location: "New York", salary: "$850 Month" },
+        { title: "Software Engineer", category: "Marketing", location: "New York", salary: "$850 Month" },
+        { title: "Junior Graphic Designer (Web)", category: "Marketing", location: "New York", salary: "$850 Month" },
+        { title: "UX/UI Designer Web", category: "Marketing", location: "New York", salary: "$850 Month" },
+        { title: "Full Stack Engineer", category: "Marketing", location: "New York", salary: "$850 Month" },
+        { title: "Product Manager, Studio", category: "Marketing", location: "New York", salary: "$850 Month" },
+    ];
+
+    const benefits = [
+        { icon: "fas fa-heartbeat", title: "Health care" },
+        { icon: "fas fa-piggy-bank", title: "Attractive salary and bonus" },
+        { icon: "fas fa-users", title: "Family life" }
+    ];
     return (
         <>
-
             <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
                 <div className="container">
 
@@ -365,216 +377,199 @@ export default function AgenciesDetails() {
                 </div>
             </div>
 
-            <section className="agd-wrapper">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8">
-                            <div className="agd-banner">
-                                <img
-                                    src={banner}
-                                    alt="agency banner"
-                                    className="agd-banner-img"
-                                />
-
-                                <div className="agd-logo-box">
-                                    <img src={bannerlogo} alt="agency logo" />
-                                </div>
-                            </div>
-
-                            <div className="agd-title-box">
-                                <h2>Lorem House</h2>
-                                <p>
-                                    <i className="fas fa-map-marker-alt"></i>
-                                    2118 Thornridge Cir, Syracuse, Connecticut 35624
-                                </p>
-                            </div>
-
-                            <div className="agd-about-box">
-                                <h4>About Lorem House</h4>
-
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                                    risus leo, blandit vitae diam a, vestibulum viverra nisi.
-                                    Vestibulum ullamcorper velit eget mattis aliquam. Proin dapibus
-                                    luctus pulvinar. Integer et libero ut purus bibendum gravida non
-                                    ac tellus.
-                                </p>
-
-                                <p>
-                                    Aliquam non lorem consequat, luctus dui et, auctor nisi. Aenean
-                                    placerat sapien at augue lacinia, non semper urna tempor.
-                                    Mauris sit amet elit orci.
-                                </p>
-
-                                <div className="container my-5">
-                                    <div className="location-card-wrapper border rounded-3 shadow-sm">
-                                        {/* Header Section */}
-                                        <div className="location-header p-3 border-bottom">
-                                            <h2 className="location-title h5 mb-0 fw-bold">Location</h2>
+            <div className="cib-main-wrapper">
+                <section className="cib-hero-section">
+                    <div className="cib-hero-overlay">
+                        <div className="container text-center">
+                            <h1 className="cib-hero-title">A Culture of Inclusivity and Belonging</h1>
+                            <p className="cib-hero-subtitle">
+                                Thousands of luxury home enthusiasts just like you visit our website.
+                            </p>
+                            <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                            <div className="cib-search-container shadow">
+                                <div className="row g-0 align-items-center">
+                                    <div className="col-md-3 cib-border-end">
+                                        <div className="cib-search-field">
+                                            <span className="cib-label">City</span>
+                                            <select className="form-select cib-select-borderless">
+                                                <option>Select City</option>
+                                                <option>New York</option>
+                                                <option>London</option>
+                                            </select>
                                         </div>
-
-                                        {/* Map Body */}
-                                        <div className="map-container-body position-relative">
-                                            {/* Map Iframe */}
-                                            <iframe
-                                                title="Google Map"
-                                                className="google-map-iframe w-100"
-                                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d192842.123456789!2d-73.87!3d41.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1234567890"
-                                                allowFullScreen=""
-                                                loading="lazy"
-                                                referrerPolicy="no-referrer-when-downgrade"
-                                            ></iframe>
-
-                                            {/* Overlapping "View larger map" Button */}
-                                            <div className="map-overlay-button-box">
-                                                <a
-                                                    href="https://maps.google.com"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="btn btn-light shadow-sm btn-sm px-3 py-2 text-primary fw-medium"
-                                                >
-                                                    View larger map
-                                                </a>
-                                            </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="cib-search-field">
+                                            <input
+                                                type="text"
+                                                className="form-control cib-input-borderless"
+                                                placeholder="Find job here"
+                                            />
                                         </div>
+                                    </div>
+                                    <div className="col-md-3 p-2">
+                                        <button className="btn cib-search-btn w-100">
+                                            Search <i className="fas fa-search ms-2"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
+                    </div>
+                </section>
 
-                        <div className="col-lg-4">
-                            <div className="agd-contact-box">
-                                <h4>Contact Me</h4>
+                <section className="cib-bottom-content py-5">
+                    <div className="container text-center">
+                        <h2 className="cib-section-title">Best Job For You At Proty</h2>
+                        <p className="cib-section-text mx-auto">
+                            We connect you directly to the person who knows the most about a property for sale, the listing agent.
+                        </p>
+                    </div>
+                </section>
+            </div>
 
-                                <input type="text" placeholder="Your name" />
-                                <input type="email" placeholder="Email" />
-                                <input type="text" placeholder="Phone" />
-                                <textarea rows="4" placeholder="Message"></textarea>
 
-                                <div className="agd-btn-group">
-                                    <button className="agd-send-btn">
-                                        <i className="fas fa-envelope"></i> Send message
-                                    </button>
-
-                                    <button className="agd-call-btn">
-                                        <i className="fas fa-phone"></i> Call
-                                    </button>
+            <section className="pj-listings-wrapper py-5">
+                <div className="container">
+                    <div className="row g-4">
+                        {jobs.map((job, index) => (
+                            <div key={index} className="col-lg-6">
+                                <div className="pj-job-card shadow-sm d-flex align-items-center justify-content-between">
+                                    <div className="pj-job-info">
+                                        <h5 className="pj-job-title">{job.title}</h5>
+                                        <div className="pj-job-meta d-flex flex-wrap">
+                                            <span className="pj-meta-item">
+                                                <i className="fas fa-briefcase me-1"></i> {job.category}
+                                            </span>
+                                            <span className="pj-meta-item">
+                                                <i className="fas fa-map-marker-alt me-1"></i> {job.location}
+                                            </span>
+                                            <span className="pj-meta-item">
+                                                <i className="fas fa-money-bill-wave me-1"></i>
+                                                <span className="pj-highlight">{job.salary}</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <button className="btn pj-apply-btn">Apply now</button>
                                 </div>
                             </div>
-                            <br></br>
-                            <div className="pl-sidebar">
-                                <h5>Featured Listings</h5>
+                        ))}
+                    </div>
 
-                                {[img1, img2, img1, img2].map((img, i) => (
-                                    <div className="pl-side-item" key={i}>
-                                        <img src={img} alt="side" />
-                                        <div>
-                                            <h6>Casa Lomas de Machali</h6>
-                                            <p>3 Bed · 3 Bath · 4,043 Sqft</p>
-                                            <span>$7,250.00</span>
+                    <div className="text-center mt-5">
+                        <button className="btn pj-load-more">Load more</button>
+                    </div>
+                </div>
+            </section>
+
+            <section className="pbw-section-wrapper py-5">
+                <div className="container">
+                    <div className="row align-items-center">
+
+                        <div className="col-lg-6 mb-5 mb-lg-0">
+                            <div className="pbw-image-container">
+                                <div className="pbw-img-back">
+                                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=crop" alt="Living Room" />
+                                </div>
+                                <div className="pbw-img-front shadow-lg">
+                                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000&auto=format&fit=crop" alt="Bedroom" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6 ps-lg-5">
+                            <h2 className="pbw-main-title">Benefits when you work at Proty</h2>
+                            <p className="pbw-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin ipsum ullamcorper, pulvinar ipsum in, imperdiet ante. In feugiat tortor semper nibh rhoncus volutpat. Suspendisse potenti.
+                            </p>
+                            <p className="pbw-description-sub">
+                                Proin pharetra rhoncus maximus. Sed est dolor, consectetur eu sagittis a.
+                            </p>
+
+                            <div className="row g-3 my-4">
+                                {benefits.map((item, index) => (
+                                    <div key={index} className="col-4 text-center">
+                                        <div className="pbw-icon-card">
+                                            <div className="pbw-icon-box">
+                                                <i className={`${item.icon} pbw-orange-icon`}></i>
+                                            </div>
+                                            <p className="pbw-icon-label">{item.title}</p>
                                         </div>
                                     </div>
                                 ))}
-
-                            </div>
-                            <br></br>
-                            <div
-                                className="sidebar-box agent-card"
-                                style={{ backgroundImage: `url(${gridImg})` }}
-                            >
-                                <h3>We can help you find a local real estate agent</h3>
-                                <p>
-                                    Connect with a trusted agent who knows the market inside out –
-                                    whether you’re buying or selling.
-                                </p>
-                                <button className="btn btn-warning w-100">
-                                    Connect with an agent
-                                </button>
                             </div>
 
-
-
+                            <button className="btn pbw-join-btn">Join our team</button>
                         </div>
 
+                    </div>
+                </div>
+            </section>
 
+            <section className="per-review-wrapper py-5">
+                <div className="container">
+                    <div className="row align-items-center">
 
-                        <section className="pl-wrapper">
-                            <div className="container">
-                                <div className="row">
+                        <div className="col-lg-5 mb-5 mb-lg-0">
+                            <h2 className="per-main-title">Reviews from employees working at Proty</h2>
+                            <p className="per-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin ipsum ullamcorper, pulvinar ipsum in, imperdiet ante. In feugiat tortor semper nibh rhoncus volutpat.
+                            </p>
+                            <p className="per-description-sub">
+                                Proin pharetra rhoncus maximus. Sed est dolor, consectetur eu sagittis a.
+                            </p>
+                            <button className="btn per-stories-btn">More stories</button>
+                        </div>
 
-                                    <div className="col-lg-8">
-                                        <h3 className="pl-title">Listing</h3>
+                        <div className="col-lg-7">
+                            <div className="per-visual-container">
+                                <div className="per-bg-circle"></div>
 
-                                        <div className="row g-4">
+                                <img
+                                    src={agentImg}
+                                    alt="Main Employee"
+                                    className="per-main-img"
+                                />
 
-                                            {[img1, img2, img1, img2].map((img, i) => (
-                                                <div className="col-md-6" key={i}>
-                                                    <div className="pl-card">
-
-                                                        <div className="pl-img-box">
-                                                            <img src={img} alt="property" />
-
-                                                            <span className="pl-badge-featured">Featured</span>
-                                                            <span className="pl-badge-sale">For Sale</span>
-
-                                                            <div className="pl-hover-icons">
-                                                                <button><i className="fas fa-heart"></i></button>
-                                                                <button><i className="fas fa-random"></i></button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="pl-card-body">
-                                                            <h5>Elegant studio flat</h5>
-                                                            <p className="pl-location">
-                                                                <i className="fas fa-map-marker-alt"></i>
-                                                                102 Ingraham St, Brooklyn, NY 11237
-                                                            </p>
-
-                                                            <div className="pl-features">
-                                                                <span>3 Beds</span>
-                                                                <span>3 Baths</span>
-                                                                <span>4,043 Sqft</span>
-                                                            </div>
-
-                                                            <div className="pl-footer">
-                                                                <span className="pl-price">$8,600</span>
-                                                                <button className="pl-details-btn">Details</button>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            ))}
-
+                                <div className="per-float-card per-top-card shadow-sm">
+                                    <div className="d-flex align-items-center gap-2">
+                                        <img src={testimonial} alt="Avatar" className="per-avatar-sm" />
+                                        <div>
+                                            <h6 className="per-name-sm mb-0">Cody Fisher</h6>
+                                            <p className="per-role-sm mb-0">CEO Themesflat</p>
                                         </div>
                                     </div>
-
                                 </div>
-                            </div>
-                        </section>
 
+                                <div className="per-float-card per-star-badge shadow-sm">
+                                    <div className="per-stars text-warning">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                    </div>
+                                </div>
 
-                        <div className="container pp-wrapper d-flex flex-wrap align-items-center justify-content-between">
-
-                            <div className="pp-pagination d-flex align-items-center">
-
-                                <button className="pp-page-btn">
-                                    <i className="fas fa-chevron-left"></i>
-                                </button>
-
-                                <button className="pp-page-number">1</button>
-                                <button className="pp-page-number active">2</button>
-                                <span className="pp-dots">…</span>
-                                <button className="pp-page-number">20</button>
-
-                                <button className="pp-page-btn">
-                                    <i className="fas fa-chevron-right"></i>
-                                </button>
+                                <div className="per-float-card per-bottom-card shadow">
+                                    <div className="per-stars text-warning mb-2">
+                                        <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i>
+                                    </div>
+                                    <p className="per-review-text">
+                                        Vivamus at nisl ornare, vulputate turpis finibus, posuere metus. Donec in placerat felis. Praesent ante tellus, dignissim nec imperdiet ac.
+                                    </p>
+                                    <div className="d-flex align-items-center gap-2 mt-3">
+                                        <img src="https://i.pravatar.cc/150?u=cody" alt="Avatar" className="per-avatar-lg" />
+                                        <div>
+                                            <h6 className="per-name-lg mb-0">Cody Fisher</h6>
+                                            <p className="per-role-lg mb-0">CEO Themesflat</p>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -706,6 +701,10 @@ export default function AgenciesDetails() {
                     </div>
                 </div>
             </footer>
+
+
+
+
         </>
     )
 }

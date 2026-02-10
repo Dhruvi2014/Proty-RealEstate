@@ -1,21 +1,39 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../AgenciesDetails.css";
+import "../HomeLoanProcess.css";
 import logo from "../assets/logo.png";
+import logobanner from "../assets/logobanner.png";
 
-import banner from "../assets/blog-grid-1.jpg";
-import bannerlogo from "../assets/brand8.jpg";
+import boxhouse1 from "../assets/box-house1.jpg";
+import boxhouse2 from "../assets/box-house2.jpg";
 
-import img1 from "../assets/boxlist1.jpg";
-import img2 from "../assets/boxlist2.jpg";
-
-import gridImg from "../assets/img1.jpg";
+import home2person5 from "../assets/home2person5.png";
 
 import footerImg from "../assets/footerImg.png";
 import footerlogo from "../assets/logo2.png";
-
-export default function AgenciesDetails() {
+export default function HomeLoanProcess() {
+    const steps = [
+        {
+            id: "01",
+            title: "Complete The Questionnaire",
+            description: "Your responses will help our partner. Shortly after your lender is selected, they'll contact you to discuss options for financing your future home.",
+            icon: "fas fa-users"
+        },
+        {
+            id: "02",
+            title: "Get Financial Connections",
+            description: "Your responses will help our partner. Shortly after your lender is selected, they'll contact you to discuss options for financing your future home.",
+            icon: "fas fa-users"
+        },
+        {
+            id: "03",
+            title: "Receive Your Custom Quote",
+            description: "Your responses will help our partner. Shortly after your lender is selected, they'll contact you to discuss options for financing your future home.",
+            icon: "fas fa-users"
+        }
+    ];
+    const [result, setResult] = useState(8000);
     return (
         <>
 
@@ -365,216 +383,227 @@ export default function AgenciesDetails() {
                 </div>
             </div>
 
-            <section className="agd-wrapper">
+            <div className="hlp-hero-container">
+                <div className="hlp-hero-content text-center">
+                    <h1 className="hlp-main-title">Home Loan Process</h1>
+
+                    <nav className="hlp-breadcrumb-nav">
+                        <Link to="/" className="hlp-breadcrumb-link">Home Page 1</Link>
+                        <span className="hlp-breadcrumb-separator"> • </span>
+                        <span className="hlp-breadcrumb-current">Property Listing</span>
+                    </nav>
+                </div>
+
+                <div className="hlp-settings-tab">
+                    <i className="bi bi-gear-fill"></i>
+                </div>
+            </div>
+
+            <section className="agents-section-wrapper">
                 <div className="container">
+                    <div className="row align-items-center agents-main-row">
+
+                        <div className="col-lg-6">
+                            <h2 className="agents-title">
+                                Selling Agents And Property<br />Management Specialists
+                            </h2>
+
+                            <p className="agents-text">
+                                Our team of real estate professionals have helped hundreds of buyers,
+                                sellers and investors make decisions that they feel were and continue
+                                to be right for them years down the road.
+                            </p>
+
+                            <p className="agents-text">
+                                We measure success not by the sales volume that ranks us among the top
+                                1% of local agents, but by delivering results and fulfilling the trust
+                                placed on us by clients.
+                            </p>
+
+                            <p className="agents-text">
+                                We stand ready to serve you as your California real estate team.
+                            </p>
+
+                            <button className="agents-btn" style={{ backgroundColor: "#f39c12" }}>
+                                Meet The Team
+                            </button>
+
+
+                            <div className="row agents-stats mt-5">
+                                <div className="col-4 text-center">
+                                    <i className="fa-solid fa-house stats-icon" style={{ color: "#f39c12" }}></i>
+                                    <h4>900+</h4>
+                                    <p>Homes for Sale</p>
+                                </div>
+
+                                <div className="col-4 text-center">
+                                    <i className="fa-solid fa-user stats-icon" style={{ color: "#f39c12" }}></i>
+                                    <h4>287</h4>
+                                    <p>Real Estate Agents</p>
+                                </div>
+
+                                <div className="col-4 text-center">
+                                    <i className="fa-solid fa-shield-halved stats-icon" style={{ color: "#f39c12" }}></i>
+                                    <h4>3.600+</h4>
+                                    <p>Properties Sold</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6 agents-right-content">
+                            <div className="agents-image-area">
+                                <div className="agents-main-wrapper">
+                                    <img src={boxhouse1} alt="Main" />
+                                </div>
+
+                                <div className="agents-overlay-wrapper">
+                                    <img src={boxhouse2} alt="Overlay" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+            <section className="syh-process-wrapper py-5">
+                <div className="container">
+                    {/* Header Section */}
+                    <div className="text-center mb-5">
+                        <h2 className="syh-main-heading">Selling Your Home With Realty</h2>
+                        <p className="syh-sub-heading mx-auto">
+                            We'll get to know you to understand your selling goals, and explain the selling process so you know what to expect.
+                        </p>
+                    </div>
+
+                    {/* Steps Grid */}
+                    <div className="row justify-content-center position-relative">
+                        {/* Horizontal Dotted Line (Desktop Only) */}
+                        <div className="syh-step-line d-none d-lg-block"></div>
+
+                        {steps.map((step, index) => (
+                            <div key={index} className="col-lg-4 col-md-6 mb-4">
+                                <div className="syh-step-item text-center">
+                                    {/* Step Number Circle */}
+                                    <div className="syh-number-circle">{step.id}</div>
+
+                                    {/* Card Content */}
+                                    <div className="syh-card shadow-sm">
+                                        <div className="syh-icon-box">
+                                            <i className={`${step.icon} syh-icon`}></i>
+                                        </div>
+                                        <h4 className="syh-card-title">{step.title}</h4>
+                                        <p className="syh-card-text">{step.description}</p>
+                                        <a href="#" className="syh-read-more">
+                                            Read More <i className="fas fa-arrow-circle-right ms-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="rmc-calculator-wrapper py-5">
+                <div className="container shadow-sm bg-white rounded-4 overflow-hidden">
                     <div className="row">
-                        <div className="col-lg-8">
-                            <div className="agd-banner">
-                                <img
-                                    src={banner}
-                                    alt="agency banner"
-                                    className="agd-banner-img"
-                                />
+                        <div className="col-12 p-0">
+                            <img
+                                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+                                alt="Interior"
+                                className="rmc-banner-img"
+                            />
+                        </div>
+                    </div>
 
-                                <div className="agd-logo-box">
-                                    <img src={bannerlogo} alt="agency logo" />
+                    <div className="p-4 p-md-5">
+                        <h2 className="rmc-title">Calculate Mortgage Payments</h2>
+                        <p className="rmc-subtitle">
+                            Estimate your payment with our easy-to-use loan calculator. Then get pre-qualified to buy by a local lender.
+                        </p>
+
+                        <form className="rmc-form mt-4">
+                            <div className="row g-4">
+                                <div className="col-md-6">
+                                    <label className="rmc-label">Total Amount</label>
+                                    <input type="number" className="form-control rmc-input" placeholder="1000" />
                                 </div>
-                            </div>
 
-                            <div className="agd-title-box">
-                                <h2>Lorem House</h2>
-                                <p>
-                                    <i className="fas fa-map-marker-alt"></i>
-                                    2118 Thornridge Cir, Syracuse, Connecticut 35624
-                                </p>
-                            </div>
-
-                            <div className="agd-about-box">
-                                <h4>About Lorem House</h4>
-
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                                    risus leo, blandit vitae diam a, vestibulum viverra nisi.
-                                    Vestibulum ullamcorper velit eget mattis aliquam. Proin dapibus
-                                    luctus pulvinar. Integer et libero ut purus bibendum gravida non
-                                    ac tellus.
-                                </p>
-
-                                <p>
-                                    Aliquam non lorem consequat, luctus dui et, auctor nisi. Aenean
-                                    placerat sapien at augue lacinia, non semper urna tempor.
-                                    Mauris sit amet elit orci.
-                                </p>
-
-                                <div className="container my-5">
-                                    <div className="location-card-wrapper border rounded-3 shadow-sm">
-                                        {/* Header Section */}
-                                        <div className="location-header p-3 border-bottom">
-                                            <h2 className="location-title h5 mb-0 fw-bold">Location</h2>
-                                        </div>
-
-                                        {/* Map Body */}
-                                        <div className="map-container-body position-relative">
-                                            {/* Map Iframe */}
-                                            <iframe
-                                                title="Google Map"
-                                                className="google-map-iframe w-100"
-                                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d192842.123456789!2d-73.87!3d41.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1234567890"
-                                                allowFullScreen=""
-                                                loading="lazy"
-                                                referrerPolicy="no-referrer-when-downgrade"
-                                            ></iframe>
-
-                                            {/* Overlapping "View larger map" Button */}
-                                            <div className="map-overlay-button-box">
-                                                <a
-                                                    href="https://maps.google.com"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="btn btn-light shadow-sm btn-sm px-3 py-2 text-primary fw-medium"
-                                                >
-                                                    View larger map
-                                                </a>
-                                            </div>
-                                        </div>
+                                <div className="col-md-6">
+                                    <label className="rmc-label">Down Payment</label>
+                                    <div className="input-group">
+                                        <input type="number" className="form-control rmc-input" placeholder="2000" />
+                                        <span className="input-group-text rmc-input-badge">20%</span>
                                     </div>
                                 </div>
-                            </div>
 
+                                <div className="col-md-6">
+                                    <label className="rmc-label">Interest Rate</label>
+                                    <input type="number" className="form-control rmc-input" placeholder="0" />
+                                </div>
 
-                        </div>
+                                <div className="col-md-6">
+                                    <label className="rmc-label">Amortization Period (months)</label>
+                                    <select className="form-select rmc-input rmc-select">
+                                        <option>Select amortization period</option>
+                                        <option value="120">120 Months (10 Years)</option>
+                                        <option value="240">240 Months (20 Years)</option>
+                                        <option value="360">360 Months (30 Years)</option>
+                                    </select>
+                                </div>
 
-                        <div className="col-lg-4">
-                            <div className="agd-contact-box">
-                                <h4>Contact Me</h4>
+                                <div className="col-md-6">
+                                    <label className="rmc-label">Property Tax</label>
+                                    <input type="text" className="form-control rmc-input" placeholder="$3000" />
+                                </div>
 
-                                <input type="text" placeholder="Your name" />
-                                <input type="email" placeholder="Email" />
-                                <input type="text" placeholder="Phone" />
-                                <textarea rows="4" placeholder="Message"></textarea>
-
-                                <div className="agd-btn-group">
-                                    <button className="agd-send-btn">
-                                        <i className="fas fa-envelope"></i> Send message
-                                    </button>
-
-                                    <button className="agd-call-btn">
-                                        <i className="fas fa-phone"></i> Call
-                                    </button>
+                                <div className="col-md-6">
+                                    <label className="rmc-label">Home Insurance</label>
+                                    <input type="text" className="form-control rmc-input" placeholder="$3000" />
                                 </div>
                             </div>
-                            <br></br>
-                            <div className="pl-sidebar">
-                                <h5>Featured Listings</h5>
 
-                                {[img1, img2, img1, img2].map((img, i) => (
-                                    <div className="pl-side-item" key={i}>
-                                        <img src={img} alt="side" />
-                                        <div>
-                                            <h6>Casa Lomas de Machali</h6>
-                                            <p>3 Bed · 3 Bath · 4,043 Sqft</p>
-                                            <span>$7,250.00</span>
-                                        </div>
-                                    </div>
-                                ))}
-
-                            </div>
-                            <br></br>
-                            <div
-                                className="sidebar-box agent-card"
-                                style={{ backgroundImage: `url(${gridImg})` }}
-                            >
-                                <h3>We can help you find a local real estate agent</h3>
-                                <p>
-                                    Connect with a trusted agent who knows the market inside out –
-                                    whether you’re buying or selling.
+                            <div className="mt-4">
+                                <p className="rmc-result-text">
+                                    Your estimated monthly payment: <span className="rmc-amount">{result}</span>
                                 </p>
-                                <button className="btn btn-warning w-100">
-                                    Connect with an agent
-                                </button>
                             </div>
 
-
-
-                        </div>
-
-
-
-                        <section className="pl-wrapper">
-                            <div className="container">
-                                <div className="row">
-
-                                    <div className="col-lg-8">
-                                        <h3 className="pl-title">Listing</h3>
-
-                                        <div className="row g-4">
-
-                                            {[img1, img2, img1, img2].map((img, i) => (
-                                                <div className="col-md-6" key={i}>
-                                                    <div className="pl-card">
-
-                                                        <div className="pl-img-box">
-                                                            <img src={img} alt="property" />
-
-                                                            <span className="pl-badge-featured">Featured</span>
-                                                            <span className="pl-badge-sale">For Sale</span>
-
-                                                            <div className="pl-hover-icons">
-                                                                <button><i className="fas fa-heart"></i></button>
-                                                                <button><i className="fas fa-random"></i></button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="pl-card-body">
-                                                            <h5>Elegant studio flat</h5>
-                                                            <p className="pl-location">
-                                                                <i className="fas fa-map-marker-alt"></i>
-                                                                102 Ingraham St, Brooklyn, NY 11237
-                                                            </p>
-
-                                                            <div className="pl-features">
-                                                                <span>3 Beds</span>
-                                                                <span>3 Baths</span>
-                                                                <span>4,043 Sqft</span>
-                                                            </div>
-
-                                                            <div className="pl-footer">
-                                                                <span className="pl-price">$8,600</span>
-                                                                <button className="pl-details-btn">Details</button>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            ))}
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </section>
-
-
-                        <div className="container pp-wrapper d-flex flex-wrap align-items-center justify-content-between">
-
-                            <div className="pp-pagination d-flex align-items-center">
-
-                                <button className="pp-page-btn">
-                                    <i className="fas fa-chevron-left"></i>
+                            <div className="d-flex flex-wrap gap-3 mt-4">
+                                <button type="button" className="btn rmc-btn-calc">
+                                    Calculate now
                                 </button>
-
-                                <button className="pp-page-number">1</button>
-                                <button className="pp-page-number active">2</button>
-                                <span className="pp-dots">…</span>
-                                <button className="pp-page-number">20</button>
-
-                                <button className="pp-page-btn">
-                                    <i className="fas fa-chevron-right"></i>
+                                <button type="button" className="btn rmc-btn-start">
+                                    Start over
                                 </button>
-
                             </div>
-                        </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section className="sell-banner-wrapper0">
+                <div className="sell-banner0">
+                    <div className="sell-content0">
+                        <img src={logobanner} alt="logo" className="header-logo" />
+                        <h1>
+                            Find a Local Real Estate<br></br>
+                            Agent Today
+                        </h1>
+                        <p>
+                            If you’re looking to buy or sell a home. We’ll help you make the
+                            <br></br>most money possible.
+                        </p>
+                        <button>Request your Location agent <i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+
+                    <div className="sell-image0">
+                        <img
+                            src={home2person5}
+                            alt="Agent"
+                        />
                     </div>
                 </div>
             </section>
@@ -706,6 +735,8 @@ export default function AgenciesDetails() {
                     </div>
                 </div>
             </footer>
+
+
         </>
     )
 }

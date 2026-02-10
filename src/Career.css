@@ -1,0 +1,437 @@
+/* Hero Section Styles */
+.cib-hero-section {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  color: white;
+}
+
+.cib-hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4); 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cib-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  max-width: 800px;
+  margin: 0 auto 15px;
+}
+
+.cib-hero-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.cib-search-container {
+  background: white;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -40px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 5px;
+}
+
+.cib-search-field {
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.cib-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.cib-border-end {
+  border-right: 1px solid #eee;
+}
+
+.cib-input-borderless, .cib-select-borderless {
+  border: none !important;
+  box-shadow: none !important;
+  font-weight: 500;
+  color: #666;
+}
+
+.cib-search-btn {
+  background-color: #f39c12 !important;
+  color: white !important;
+  border-radius: 10px !important;
+  padding: 12px 0 !important;
+  font-weight: 600 !important;
+  transition: transform 0.2s ease;
+}
+
+.cib-search-btn:hover {
+  background-color: #e67e22 !important;
+  transform: scale(1.02);
+}
+
+.cib-bottom-content {
+  margin-top: 80px; 
+}
+
+.cib-section-title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1a2b3c;
+  margin-bottom: 15px;
+}
+
+.cib-section-text {
+  max-width: 550px;
+  color: #777;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .cib-hero-title {
+    font-size: 2rem;
+  }
+  .cib-search-container {
+    position: relative;
+    bottom: 0;
+    transform: none;
+    left: 0;
+    margin-top: 20px;
+  }
+  .cib-border-end {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+  .cib-bottom-content {
+    margin-top: 40px;
+  }
+}
+.pj-listings-wrapper {
+  background-color: #ffffff;
+}
+
+/* Job Card Styling */
+.pj-job-card {
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.pj-job-card:hover {
+  border-color: #f39c12;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+}
+
+.pj-job-title {
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+
+/* Meta Info (Category, Location, Salary) */
+.pj-job-meta {
+  gap: 15px;
+}
+
+.pj-meta-item {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+}
+
+.pj-meta-item i {
+  color: #bdc3c7;
+}
+
+.pj-highlight {
+  color: #f39c12;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+/* Apply Now Button (Outline style) */
+.pj-apply-btn {
+  border: 1px solid #f39c12 !important;
+  color: #f39c12 !important;
+  background: transparent !important;
+  padding: 8px 20px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  white-space: nowrap;
+}
+
+.pj-apply-btn:hover {
+  background-color: #f39c12 !important;
+  color: #fff !important;
+}
+
+/* Load More Button (Solid style) */
+.pj-load-more {
+  background-color: #f39c12 !important;
+  color: #fff !important;
+  padding: 12px 40px !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3) !important;
+}
+
+.pj-load-more:hover {
+  background-color: #e67e22 !important;
+  transform: scale(1.05);
+}
+
+/* Responsive Fixes */
+@media (max-width: 576px) {
+  .pj-job-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .pj-job-info {
+    margin-bottom: 20px;
+  }
+
+  .pj-job-meta {
+    justify-content: center;
+  }
+
+  .pj-apply-btn {
+    width: 100%;
+  }
+}
+/* Container & Typography */
+.pbw-section-wrapper {
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.pbw-main-title {
+  font-weight: 800;
+  color: #1a2b3c;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.pbw-description, .pbw-description-sub {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Image Overlap Effect */
+.pbw-image-container {
+  position: relative;
+  height: 450px;
+  width: 100%;
+}
+
+.pbw-img-back {
+  position: absolute;
+  width: 70%;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.pbw-img-back img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.pbw-img-front {
+  position: absolute;
+  width: 65%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.pbw-img-front img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+
+/* Icon Grid Styling */
+.pbw-icon-box {
+  width: 70px;
+  height: 70px;
+  background-color: #fff7ee; /* Soft orange tint */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.pbw-orange-icon {
+  color: #f39c12;
+  font-size: 1.5rem;
+}
+
+.pbw-icon-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a2b3c;
+  line-height: 1.2;
+}
+
+/* Button Styling */
+.pbw-join-btn {
+  background-color: #f39c12 !important;
+  color: #fff !important;
+  padding: 12px 35px !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.pbw-join-btn:hover {
+  background-color: #e67e22 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .pbw-image-container {
+    height: 350px;
+    margin-bottom: 30px;
+  }
+  .pbw-main-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .pbw-image-container {
+    height: 250px;
+  }
+  .pbw-icon-label {
+    font-size: 0.75rem;
+  }
+}
+.per-review-wrapper {
+  background-color: #fff;
+  overflow: visible;
+}
+
+.per-main-title {
+  font-weight: 800;
+  color: #1a2b3c;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.per-description, .per-description-sub {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.per-stories-btn {
+  background-color: #f39c12 !important;
+  color: #fff !important;
+  padding: 12px 35px !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  margin-top: 15px;
+}
+
+.per-visual-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 550px;
+}
+
+.per-bg-circle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: #fff7ee;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.per-main-img {
+  position: relative;
+  z-index: 2;
+  height: 500px;
+  width: auto;
+}
+
+.per-float-card {
+  position: absolute;
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  z-index: 3;
+}
+
+.per-top-card {
+  top: 15%;
+  left: 5%;
+  min-width: 180px;
+}
+
+.per-star-badge {
+  top: 30%;
+  right: 5%;
+  padding: 10px 15px;
+}
+
+.per-bottom-card {
+  bottom: 0;
+  right: 0;
+  width: 320px;
+  padding: 25px;
+}
+
+.per-avatar-sm { width: 35px; height: 35px; border-radius: 8px; object-fit: cover; }
+.per-avatar-lg { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
+
+.per-name-sm { font-size: 0.9rem; font-weight: 700; color: #1a2b3c; }
+.per-role-sm { font-size: 0.75rem; color: #777; }
+
+.per-review-text {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .per-visual-container {
+    min-height: 450px;
+    margin-top: 40px;
+  }
+  .per-main-img { height: 350px; }
+  .per-bg-circle { width: 280px; height: 280px; }
+  .per-bottom-card { width: 280px; position: relative; margin-top: 20px; }
+  .per-float-card { position: relative; left: auto; top: auto; right: auto; margin-bottom: 10px; display: inline-block; }
+  .per-visual-container { display: block; text-align: center; }
+}

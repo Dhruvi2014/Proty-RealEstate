@@ -1056,9 +1056,9 @@ export default function Home2() {
                 </div>
             </section>
 
-            <section className="sell-banner-wrapper">
-                <div className="sell-banner">
-                    <div className="sell-content">
+            <section className="sell-banner-wrapper1">
+                <div className="sell-banner1">
+                    <div className="sell-content1">
                         <h1>
                             Are You Selling Or <br /> Renting Your Property?
                         </h1>
@@ -1068,7 +1068,7 @@ export default function Home2() {
                         <button>Request your free appraisal</button>
                     </div>
 
-                    <div className="sell-image">
+                    <div className="sell-image1">
                         <img
                             src={home2person5}
                             alt="Agent"

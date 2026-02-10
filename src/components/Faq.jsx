@@ -1,24 +1,49 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../AgenciesDetails.css";
+import "../Faq.css";
 import logo from "../assets/logo.png";
-
-import banner from "../assets/blog-grid-1.jpg";
-import bannerlogo from "../assets/brand8.jpg";
-
-import img1 from "../assets/boxlist1.jpg";
-import img2 from "../assets/boxlist2.jpg";
+import agentImg from "../assets/agent4.jpg";
 
 import gridImg from "../assets/img1.jpg";
+import logobanner from "../assets/logobanner.png";
 
 import footerImg from "../assets/footerImg.png";
 import footerlogo from "../assets/logo2.png";
 
-export default function AgenciesDetails() {
+export default function Faq() {
+    const faqData = [
+        {
+            question: "Why Should I Use Your Services?",
+            answer:
+                "Once your account is set up, you can easily access our tools, manage transactions, and explore features designed to make your experience smooth and efficient."
+        },
+        {
+            question: "How Secure Are Your Services?",
+            answer:
+                "We use industry-standard security measures, encryption, and regular audits to ensure your data remains safe and protected at all times."
+        },
+        {
+            question: "Is There Customer Support Available?",
+            answer:
+                "Yes, our customer support team is available via email and phone to help you with any questions or issues."
+        },
+        {
+            question: "How Can I Update My Account Information?",
+            answer:
+                "You can update your account information by logging in and navigating to the profile settings section."
+        }
+    ];
+
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const toggleFaq = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
+
     return (
         <>
-
             <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
                 <div className="container">
 
@@ -365,121 +390,123 @@ export default function AgenciesDetails() {
                 </div>
             </div>
 
-            <section className="agd-wrapper">
+            <section className="faq10-wrapper py-5">
                 <div className="container">
                     <div className="row">
+
                         <div className="col-lg-8">
-                            <div className="agd-banner">
-                                <img
-                                    src={banner}
-                                    alt="agency banner"
-                                    className="agd-banner-img"
-                                />
+                            <h2 className="faq10-title mb-4">Frequently Asked Questions</h2><br></br>
+                            <h2 className="faq10-title mb-4">Overview</h2>
 
-                                <div className="agd-logo-box">
-                                    <img src={bannerlogo} alt="agency logo" />
-                                </div>
-                            </div>
+                            {faqData.map((item, index) => (
+                                <div className="faq10-item" key={index}>
+                                    <button
+                                        className="faq10-question"
+                                        onClick={() => toggleFaq(index)}
+                                    >
+                                        {item.question}
+                                        <i
+                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
+                                                }`}
+                                        ></i>
+                                    </button>
 
-                            <div className="agd-title-box">
-                                <h2>Lorem House</h2>
-                                <p>
-                                    <i className="fas fa-map-marker-alt"></i>
-                                    2118 Thornridge Cir, Syracuse, Connecticut 35624
-                                </p>
-                            </div>
-
-                            <div className="agd-about-box">
-                                <h4>About Lorem House</h4>
-
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                                    risus leo, blandit vitae diam a, vestibulum viverra nisi.
-                                    Vestibulum ullamcorper velit eget mattis aliquam. Proin dapibus
-                                    luctus pulvinar. Integer et libero ut purus bibendum gravida non
-                                    ac tellus.
-                                </p>
-
-                                <p>
-                                    Aliquam non lorem consequat, luctus dui et, auctor nisi. Aenean
-                                    placerat sapien at augue lacinia, non semper urna tempor.
-                                    Mauris sit amet elit orci.
-                                </p>
-
-                                <div className="container my-5">
-                                    <div className="location-card-wrapper border rounded-3 shadow-sm">
-                                        {/* Header Section */}
-                                        <div className="location-header p-3 border-bottom">
-                                            <h2 className="location-title h5 mb-0 fw-bold">Location</h2>
-                                        </div>
-
-                                        {/* Map Body */}
-                                        <div className="map-container-body position-relative">
-                                            {/* Map Iframe */}
-                                            <iframe
-                                                title="Google Map"
-                                                className="google-map-iframe w-100"
-                                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d192842.123456789!2d-73.87!3d41.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1234567890"
-                                                allowFullScreen=""
-                                                loading="lazy"
-                                                referrerPolicy="no-referrer-when-downgrade"
-                                            ></iframe>
-
-                                            {/* Overlapping "View larger map" Button */}
-                                            <div className="map-overlay-button-box">
-                                                <a
-                                                    href="https://maps.google.com"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="btn btn-light shadow-sm btn-sm px-3 py-2 text-primary fw-medium"
-                                                >
-                                                    View larger map
-                                                </a>
-                                            </div>
-                                        </div>
+                                    <div
+                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
+                                            }`}
+                                    >
+                                        <p>{item.answer}</p>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
+                            <br></br><br></br>
+
+                            <h2 className="faq10-title mb-4">Costs and Payments</h2>
+
+                            {faqData.map((item, index) => (
+                                <div className="faq10-item" key={index}>
+                                    <button
+                                        className="faq10-question"
+                                        onClick={() => toggleFaq(index)}
+                                    >
+                                        {item.question}
+                                        <i
+                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
+                                                }`}
+                                        ></i>
+                                    </button>
+
+                                    <div
+                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
+                                            }`}
+                                    >
+                                        <p>{item.answer}</p>
+                                    </div>
+                                </div>
+                            ))}
 
 
+                            <br></br><br></br>
+
+                            <h2 className="faq10-title mb-4">Safety and Security</h2>
+
+                            {faqData.map((item, index) => (
+                                <div className="faq10-item" key={index}>
+                                    <button
+                                        className="faq10-question"
+                                        onClick={() => toggleFaq(index)}
+                                    >
+                                        {item.question}
+                                        <i
+                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
+                                                }`}
+                                        ></i>
+                                    </button>
+
+                                    <div
+                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
+                                            }`}
+                                    >
+                                        <p>{item.answer}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
 
-                        <div className="col-lg-4">
-                            <div className="agd-contact-box">
-                                <h4>Contact Me</h4>
+                        <div className="col-lg-4 mt-4 mt-lg-0">
+                            <div className="faq10-contact-card">
+                                <h5 className="mb-3">Contact Sellers</h5>
 
-                                <input type="text" placeholder="Your name" />
-                                <input type="email" placeholder="Email" />
-                                <input type="text" placeholder="Phone" />
-                                <textarea rows="4" placeholder="Message"></textarea>
-
-                                <div className="agd-btn-group">
-                                    <button className="agd-send-btn">
-                                        <i className="fas fa-envelope"></i> Send message
-                                    </button>
-
-                                    <button className="agd-call-btn">
-                                        <i className="fas fa-phone"></i> Call
-                                    </button>
-                                </div>
-                            </div>
-                            <br></br>
-                            <div className="pl-sidebar">
-                                <h5>Featured Listings</h5>
-
-                                {[img1, img2, img1, img2].map((img, i) => (
-                                    <div className="pl-side-item" key={i}>
-                                        <img src={img} alt="side" />
-                                        <div>
-                                            <h6>Casa Lomas de Machali</h6>
-                                            <p>3 Bed · 3 Bath · 4,043 Sqft</p>
-                                            <span>$7,250.00</span>
-                                        </div>
+                                <div className="faq10-agent d-flex align-items-center mb-3">
+                                    <img
+                                        src={agentImg}
+                                        alt="agent"
+                                        className="faq10-agent-img"
+                                    />
+                                    <div className="ms-3">
+                                        <h6 className="mb-1">Shara Conner</h6>
+                                        <p className="mb-0">
+                                            <i className="fa-solid fa-phone"></i> 1-333-345-6868
+                                        </p>
                                     </div>
-                                ))}
+                                </div>
 
+                                <input
+                                    type="text"
+                                    className="form-control mb-3"
+                                    placeholder="Full Name"
+                                />
+                                <textarea
+                                    className="form-control mb-3"
+                                    rows="4"
+                                    placeholder="How can an agent help?"
+                                ></textarea>
+
+                                <button className="btn faq10-btn w-100">
+                                    Send message
+                                </button>
                             </div>
-                            <br></br>
+
                             <div
                                 className="sidebar-box agent-card"
                                 style={{ backgroundImage: `url(${gridImg})` }}
@@ -494,87 +521,40 @@ export default function AgenciesDetails() {
                                 </button>
                             </div>
 
-
-
                         </div>
 
+                    </div>
+                </div>
+            </section>
 
+            <section className="cta10-wrapper">
+                <div className="container">
+                    <div className="cta10-box">
 
-                        <section className="pl-wrapper">
-                            <div className="container">
-                                <div className="row">
+                        <div className="cta10-overlay"></div>
 
-                                    <div className="col-lg-8">
-                                        <h3 className="pl-title">Listing</h3>
+                        <div className="cta10-logo">
+                            <span>
+                                <img src={logobanner} alt="logo" className="header-logo" />
+                            </span>
+                        </div>
+                        <div className="cta10-content">
+                            <h2>Need help? Talk to our expert.</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
 
-                                        <div className="row g-4">
-
-                                            {[img1, img2, img1, img2].map((img, i) => (
-                                                <div className="col-md-6" key={i}>
-                                                    <div className="pl-card">
-
-                                                        <div className="pl-img-box">
-                                                            <img src={img} alt="property" />
-
-                                                            <span className="pl-badge-featured">Featured</span>
-                                                            <span className="pl-badge-sale">For Sale</span>
-
-                                                            <div className="pl-hover-icons">
-                                                                <button><i className="fas fa-heart"></i></button>
-                                                                <button><i className="fas fa-random"></i></button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="pl-card-body">
-                                                            <h5>Elegant studio flat</h5>
-                                                            <p className="pl-location">
-                                                                <i className="fas fa-map-marker-alt"></i>
-                                                                102 Ingraham St, Brooklyn, NY 11237
-                                                            </p>
-
-                                                            <div className="pl-features">
-                                                                <span>3 Beds</span>
-                                                                <span>3 Baths</span>
-                                                                <span>4,043 Sqft</span>
-                                                            </div>
-
-                                                            <div className="pl-footer">
-                                                                <span className="pl-price">$8,600</span>
-                                                                <button className="pl-details-btn">Details</button>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            ))}
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </section>
-
-
-                        <div className="container pp-wrapper d-flex flex-wrap align-items-center justify-content-between">
-
-                            <div className="pp-pagination d-flex align-items-center">
-
-                                <button className="pp-page-btn">
-                                    <i className="fas fa-chevron-left"></i>
+                            <div className="cta10-actions">
+                                <button className="cta10-btn-outline">
+                                    Contact us
                                 </button>
 
-                                <button className="pp-page-number">1</button>
-                                <button className="pp-page-number active">2</button>
-                                <span className="pp-dots">…</span>
-                                <button className="pp-page-number">20</button>
-
-                                <button className="pp-page-btn">
-                                    <i className="fas fa-chevron-right"></i>
-                                </button>
-
+                                <a href="tel:6035550123" className="cta10-btn-filled">
+                                    <i className="fa-solid fa-phone"></i> (603) 555-0123
+                                </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -706,6 +686,7 @@ export default function AgenciesDetails() {
                     </div>
                 </div>
             </footer>
+
         </>
     )
 }
