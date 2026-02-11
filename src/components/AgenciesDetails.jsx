@@ -413,9 +413,7 @@ export default function AgenciesDetails() {
                                             <h2 className="location-title h5 mb-0 fw-bold">Location</h2>
                                         </div>
 
-                                        {/* Map Body */}
                                         <div className="map-container-body position-relative">
-                                            {/* Map Iframe */}
                                             <iframe
                                                 title="Google Map"
                                                 className="google-map-iframe w-100"
@@ -425,7 +423,6 @@ export default function AgenciesDetails() {
                                                 referrerPolicy="no-referrer-when-downgrade"
                                             ></iframe>
 
-                                            {/* Overlapping "View larger map" Button */}
                                             <div className="map-overlay-button-box">
                                                 <a
                                                     href="https://maps.google.com"

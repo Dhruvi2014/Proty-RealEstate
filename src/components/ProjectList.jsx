@@ -1,47 +1,47 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../Faq.css";
+import "../ProjectList.css";
 import logo from "../assets/logo.png";
-import agentImg from "../assets/agent4.jpg";
 
+import img1 from "../assets/boxlist1.jpg";
+import img2 from "../assets/boxlist2.jpg";
+import img3 from "../assets/box-house1.jpg";
+import img4 from "../assets/box-house2.jpg";
+import img5 from "../assets/box-house3.jpg";
+import img6 from "../assets/box-house4.jpg";
 import gridImg from "../assets/img1.jpg";
-import logobanner from "../assets/logobanner.png";
 
+import herohome from "../assets/herohome.jpeg";
 import footerImg from "../assets/footerImg.png";
 import footerlogo from "../assets/logo2.png";
-
-export default function Faq() {
-    const faqData = [
-        {
-            question: "Why Should I Use Your Services?",
-            answer:
-                "Once your account is set up, you can easily access our tools, manage transactions, and explore features designed to make your experience smooth and efficient."
-        },
-        {
-            question: "How Secure Are Your Services?",
-            answer:
-                "We use industry-standard security measures, encryption, and regular audits to ensure your data remains safe and protected at all times."
-        },
-        {
-            question: "Is There Customer Support Available?",
-            answer:
-                "Yes, our customer support team is available via email and phone to help you with any questions or issues."
-        },
-        {
-            question: "How Can I Update My Account Information?",
-            answer:
-                "You can update your account information by logging in and navigating to the profile settings section."
-        }
+export default function ProjectList() {
+    const cities = [
+        { name: "New York", img: "https://images.unsplash.com/photo-1494526585095-c41746248156" },
+        { name: "Mississauga", img: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b" },
+        { name: "Halifax", img: "https://images.unsplash.com/photo-1505761671935-60b3a7427bad" },
+        { name: "Ottawa", img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" },
+        { name: "Iqaluit", img: "https://images.unsplash.com/photo-1491553895911-0055eca6402d" },
+        { name: "Toronto", img: "https://images.unsplash.com/photo-1483721310020-03333e577078" },
     ];
 
-    const [activeIndex, setActiveIndex] = useState(0);
-
-    const toggleFaq = (index) => {
-        setActiveIndex(activeIndex === index ? null : index);
-    };
-
-
+    const agents = [
+        {
+            name: "Robert Fox",
+            phone: "(201) 555-0124",
+            img: "https://randomuser.me/api/portraits/women/44.jpg",
+        },
+        {
+            name: "Cameron Williamson",
+            phone: "(405) 555-0128",
+            img: "https://randomuser.me/api/portraits/men/32.jpg",
+        },
+        {
+            name: "Darlene Robertson",
+            phone: "(252) 555-0126",
+            img: "https://randomuser.me/api/portraits/women/65.jpg",
+        },
+    ];
     return (
         <>
             <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
@@ -380,133 +380,196 @@ export default function Faq() {
             </div>
             <br></br><br></br>
 
-            <div className="agnt-wrapper py-5">
-                <div className="container">
-                    <div className="agnt-breadcrumb mb-4">
-                        <span style={{ textDecoration: "none", color: "#888" }}><Link to="/">Home</Link></span>
-                        <i className="fas fa-angle-right mx-2"></i>
-                        <span className="agnt-breadcrumb-active">Property Listing</span>
-                    </div>
-                </div>
-            </div>
+            <section className="bp-hero-section">
 
-            <section className="faq10-wrapper py-5">
+                <div className="container text-center bp-heading-wrapper">
+                    <h1 className="bp-main-title">Our best project</h1>
+                    <p className="bp-sub-title">
+                        Our best projects are not just buildings; they are testaments to our dedication
+                        to creating spaces that inspire, connect, and endure
+                    </p>
+                </div>
+
+                <div className="bp-image-wrapper">
+                    <img
+                        src={herohome}
+                        alt="Best Project"
+                        className="img-fluid bp-hero-image"
+                    />
+
+                    <div className="container">
+                        <div className="bp-search-box shadow">
+
+                            <div className="row g-0 align-items-center">
+
+                                <div className="col-md-3 col-6 bp-search-item">
+                                    <i className="fas fa-home bp-icon"></i>
+                                    <select className="form-select bp-select">
+                                        <option>Property status</option>
+                                        <option>For Sale</option>
+                                        <option>For Rent</option>
+                                    </select>
+                                </div>
+
+                                <div className="col-md-3 col-6 bp-search-item">
+                                    <i className="fas fa-building bp-icon"></i>
+                                    <select className="form-select bp-select">
+                                        <option>Property type</option>
+                                        <option>Villa</option>
+                                        <option>Apartment</option>
+                                    </select>
+                                </div>
+
+                                <div className="col-md-2 col-6 bp-search-item">
+                                    <i className="fas fa-bath bp-icon"></i>
+                                    <select className="form-select bp-select">
+                                        <option>Bath</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+
+                                <div className="col-md-2 col-6 bp-search-item">
+                                    <i className="fas fa-bed bp-icon"></i>
+                                    <select className="form-select bp-select">
+                                        <option>Beds</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+
+                                <div className="col-md-2 col-12 text-center">
+                                    <button className="btn bp-search-btn">
+                                        Search <i className="fas fa-search ms-2"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section className="pl-wrapper">
                 <div className="container">
                     <div className="row">
 
                         <div className="col-lg-8">
-                            <h2 className="faq10-title mb-4">Frequently Asked Questions</h2><br></br>
-                            <h2 className="faq10-title mb-4">Overview</h2>
+                            <h3 className="pl-title">Listing</h3>
 
-                            {faqData.map((item, index) => (
-                                <div className="faq10-item" key={index}>
-                                    <button
-                                        className="faq10-question"
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        {item.question}
-                                        <i
-                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
-                                                }`}
-                                        ></i>
-                                    </button>
+                            <div className="row g-4">
 
-                                    <div
-                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
-                                            }`}
-                                    >
-                                        <p>{item.answer}</p>
+                                {[img1, img2, img1, img2, img3, img4, img5, img6, img1, img2].map((img, i) => (
+                                    <div className="col-md-6" key={i}>
+                                        <div className="pl-card">
+
+                                            <div className="pl-img-box">
+                                                <img src={img} alt="property" />
+
+                                                <span className="pl-badge-featured">Featured</span>
+                                                <span className="pl-badge-sale">For Sale</span>
+
+                                                <div className="pl-hover-icons">
+                                                    <button><i className="fas fa-heart"></i></button>
+                                                    <button><i className="fas fa-random"></i></button>
+                                                </div>
+                                            </div>
+
+                                            <div className="pl-card-body">
+                                                <h5>Elegant studio flat</h5>
+                                                <p className="pl-location">
+                                                    <i className="fas fa-map-marker-alt"></i>
+                                                    102 Ingraham St, Brooklyn, NY 11237
+                                                </p>
+
+
+                                            </div>
+
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
-                            <br></br><br></br>
+                                ))}
 
-                            <h2 className="faq10-title mb-4">Costs and Payments</h2>
-
-                            {faqData.map((item, index) => (
-                                <div className="faq10-item" key={index}>
-                                    <button
-                                        className="faq10-question"
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        {item.question}
-                                        <i
-                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
-                                                }`}
-                                        ></i>
-                                    </button>
-
-                                    <div
-                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
-                                            }`}
-                                    >
-                                        <p>{item.answer}</p>
-                                    </div>
-                                </div>
-                            ))}
-
-
-                            <br></br><br></br>
-
-                            <h2 className="faq10-title mb-4">Safety and Security</h2>
-
-                            {faqData.map((item, index) => (
-                                <div className="faq10-item" key={index}>
-                                    <button
-                                        className="faq10-question"
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        {item.question}
-                                        <i
-                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
-                                                }`}
-                                        ></i>
-                                    </button>
-
-                                    <div
-                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
-                                            }`}
-                                    >
-                                        <p>{item.answer}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="col-lg-4 mt-4 mt-lg-0">
-                            <div className="faq10-contact-card">
-                                <h5 className="mb-3">Contact Sellers</h5>
-
-                                <div className="faq10-agent d-flex align-items-center mb-3">
-                                    <img
-                                        src={agentImg}
-                                        alt="agent"
-                                        className="faq10-agent-img"
-                                    />
-                                    <div className="ms-3">
-                                        <h6 className="mb-1">Shara Conner</h6>
-                                        <p className="mb-0">
-                                            <i className="fa-solid fa-phone"></i> 1-333-345-6868
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <input
-                                    type="text"
-                                    className="form-control mb-3"
-                                    placeholder="Full Name"
-                                />
-                                <textarea
-                                    className="form-control mb-3"
-                                    rows="4"
-                                    placeholder="How can an agent help?"
-                                ></textarea>
-
-                                <button className="btn faq10-btn w-100">
-                                    Send message
-                                </button>
                             </div>
 
+                            <div className="container pp-wrapper d-flex flex-wrap align-items-center justify-content-between">
+
+                                <div className="pp-pagination d-flex align-items-center">
+
+                                    <button className="pp-page-btn">
+                                        <i className="fas fa-chevron-left"></i>
+                                    </button>
+
+                                    <button className="pp-page-number">1</button>
+                                    <button className="pp-page-number active">2</button>
+                                    <span className="pp-dots">…</span>
+                                    <button className="pp-page-number">20</button>
+
+                                    <button className="pp-page-btn">
+                                        <i className="fas fa-chevron-right"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4">
+                            <div className="pl-sidebar">
+                                <h5>Featured Listings</h5>
+
+                                {[img1, img2, img1, img2].map((img, i) => (
+                                    <div className="pl-side-item" key={i}>
+                                        <img src={img} alt="side" />
+                                        <div>
+                                            <h6>Casa Lomas de Machali</h6>
+                                            <p>3 Bed · 3 Bath · 4,043 Sqft</p>
+                                            <span>$7,250.00</span>
+                                        </div>
+                                    </div>
+                                ))}
+
+                            </div>
+
+                            <section className="ny-main-wrapper container my-5">
+
+                                <h2 className="ny-section-title mb-4">Real Estate Near You</h2>
+
+                                <div className="row g-4">
+                                    {cities.map((city, index) => (
+                                        <div className="col-md-6" key={index}>
+                                            <div className="ny-city-card">
+                                                <img src={city.img} alt={city.name} className="ny-city-img" />
+                                                <div className="ny-city-overlay">
+                                                    <h5>{city.name}</h5>
+                                                    <p><i className="fas fa-building me-2"></i>1570 listing</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <h2 className="ny-section-title mt-5 mb-4">Contact Agents</h2>
+
+                                <div className="ny-agent-wrapper">
+                                    {agents.map((agent, index) => (
+                                        <div key={index} className="ny-agent-card d-flex align-items-center">
+                                            <img src={agent.img} alt={agent.name} className="ny-agent-img" />
+                                            <div>
+                                                <h6 className="mb-1">{agent.name}</h6>
+                                                <p className="ny-agent-phone">
+                                                    <i className="fas fa-phone-alt me-2"></i>
+                                                    {agent.phone}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                            </section>
+
+                            <br></br>
                             <div
                                 className="sidebar-box agent-card"
                                 style={{ backgroundImage: `url(${gridImg})` }}
@@ -520,40 +583,8 @@ export default function Faq() {
                                     Connect with an agent
                                 </button>
                             </div>
-
                         </div>
 
-                    </div>
-                </div>
-            </section>
-
-            <section className="cta10-wrapper">
-                <div className="container">
-                    <div className="cta10-box">
-
-                        <div className="cta10-overlay"></div>
-
-                        <div className="cta10-logo">
-                            <span>
-                                <img src={logobanner} alt="logo" className="header-logo" />
-                            </span>
-                        </div>
-                        <div className="cta10-content">
-                            <h2>Need help? Talk to our expert.</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </p>
-
-                            <div className="cta10-actions">
-                                <button className="cta10-btn-outline">
-                                    Contact us
-                                </button>
-
-                                <a href="tel:6035550123" className="cta10-btn-filled">
-                                    <i className="fa-solid fa-phone"></i> (603) 555-0123
-                                </a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -686,6 +717,9 @@ export default function Faq() {
                     </div>
                 </div>
             </footer>
+
+
+
 
         </>
     )

@@ -1,47 +1,76 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../Faq.css";
+import "../Compare.css";
 import logo from "../assets/logo.png";
-import agentImg from "../assets/agent4.jpg";
 
-import gridImg from "../assets/img1.jpg";
-import logobanner from "../assets/logobanner.png";
+import img1 from "../assets/box-house4.jpg";
+import img2 from "../assets/box-house5.jpg";
+import img3 from "../assets/box-house6.jpg";
 
 import footerImg from "../assets/footerImg.png";
-import footerlogo from "../assets/logo2.png";
-
-export default function Faq() {
-    const faqData = [
+import footerlogo from "../assets/logo2.png"
+export default function Compare() {
+    const properties = [
         {
-            question: "Why Should I Use Your Services?",
-            answer:
-                "Once your account is set up, you can easily access our tools, manage transactions, and explore features designed to make your experience smooth and efficient."
+            id: 1,
+            title: "Elegant studio flat",
+            price: "$8,600",
+            location: "102 Ingraham St, Brooklyn, NY",
+            img: img1,
+            rating: 4,
+            reviews: 134,
+            type: "House, Townhouse, Villa",
+            status: "For Rent",
+            size: "1,500 m²",
+            landArea: "1,100 m²",
+            rooms: 10,
+            bathrooms: 2,
+            garages: "1,100 m²"
         },
         {
-            question: "How Secure Are Your Services?",
-            answer:
-                "We use industry-standard security measures, encryption, and regular audits to ensure your data remains safe and protected at all times."
+            id: 2,
+            title: "Elegant studio flat",
+            price: "$8,600",
+            location: "102 Ingraham St, Brooklyn, NY",
+            img: img2,
+            rating: null,
+            reviews: null,
+            type: "Bungalow",
+            status: "For Sale",
+            size: "2,112 m²",
+            landArea: "-",
+            rooms: 6,
+            bathrooms: 1,
+            garages: "300 m²"
         },
         {
-            question: "Is There Customer Support Available?",
-            answer:
-                "Yes, our customer support team is available via email and phone to help you with any questions or issues."
-        },
-        {
-            question: "How Can I Update My Account Information?",
-            answer:
-                "You can update your account information by logging in and navigating to the profile settings section."
+            id: 3,
+            title: "Elegant studio flat",
+            price: "$8,600",
+            location: "102 Ingraham St, Brooklyn, NY",
+            img: img3,
+            rating: 4,
+            reviews: 134,
+            type: "Bungalow",
+            status: "For Sale",
+            size: "900 m²",
+            landArea: "200 m²",
+            rooms: 6,
+            bathrooms: 1,
+            garages: "200 m²"
         }
     ];
 
-    const [activeIndex, setActiveIndex] = useState(0);
-
-    const toggleFaq = (index) => {
-        setActiveIndex(activeIndex === index ? null : index);
+    const renderStars = (rating) => {
+        if (!rating) return "-";
+        return (
+            <span className="rt-cmp-stars">
+                {"★".repeat(rating)}{"☆".repeat(5 - rating)}
+                <span className="rt-cmp-review-count"> ({properties[0].reviews} reviews)</span>
+            </span>
+        );
     };
-
-
     return (
         <>
             <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
@@ -385,179 +414,64 @@ export default function Faq() {
                     <div className="agnt-breadcrumb mb-4">
                         <span style={{ textDecoration: "none", color: "#888" }}><Link to="/">Home</Link></span>
                         <i className="fas fa-angle-right mx-2"></i>
-                        <span className="agnt-breadcrumb-active">Property Listing</span>
+                        <span className="agnt-breadcrumb-active">Compare</span>
                     </div>
                 </div>
             </div>
 
-            <section className="faq10-wrapper py-5">
-                <div className="container">
-                    <div className="row">
-
-                        <div className="col-lg-8">
-                            <h2 className="faq10-title mb-4">Frequently Asked Questions</h2><br></br>
-                            <h2 className="faq10-title mb-4">Overview</h2>
-
-                            {faqData.map((item, index) => (
-                                <div className="faq10-item" key={index}>
-                                    <button
-                                        className="faq10-question"
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        {item.question}
-                                        <i
-                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
-                                                }`}
-                                        ></i>
-                                    </button>
-
-                                    <div
-                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
-                                            }`}
-                                    >
-                                        <p>{item.answer}</p>
-                                    </div>
-                                </div>
-                            ))}
-                            <br></br><br></br>
-
-                            <h2 className="faq10-title mb-4">Costs and Payments</h2>
-
-                            {faqData.map((item, index) => (
-                                <div className="faq10-item" key={index}>
-                                    <button
-                                        className="faq10-question"
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        {item.question}
-                                        <i
-                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
-                                                }`}
-                                        ></i>
-                                    </button>
-
-                                    <div
-                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
-                                            }`}
-                                    >
-                                        <p>{item.answer}</p>
-                                    </div>
-                                </div>
-                            ))}
-
-
-                            <br></br><br></br>
-
-                            <h2 className="faq10-title mb-4">Safety and Security</h2>
-
-                            {faqData.map((item, index) => (
-                                <div className="faq10-item" key={index}>
-                                    <button
-                                        className="faq10-question"
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        {item.question}
-                                        <i
-                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
-                                                }`}
-                                        ></i>
-                                    </button>
-
-                                    <div
-                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
-                                            }`}
-                                    >
-                                        <p>{item.answer}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="col-lg-4 mt-4 mt-lg-0">
-                            <div className="faq10-contact-card">
-                                <h5 className="mb-3">Contact Sellers</h5>
-
-                                <div className="faq10-agent d-flex align-items-center mb-3">
-                                    <img
-                                        src={agentImg}
-                                        alt="agent"
-                                        className="faq10-agent-img"
-                                    />
-                                    <div className="ms-3">
-                                        <h6 className="mb-1">Shara Conner</h6>
-                                        <p className="mb-0">
-                                            <i className="fa-solid fa-phone"></i> 1-333-345-6868
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <input
-                                    type="text"
-                                    className="form-control mb-3"
-                                    placeholder="Full Name"
-                                />
-                                <textarea
-                                    className="form-control mb-3"
-                                    rows="4"
-                                    placeholder="How can an agent help?"
-                                ></textarea>
-
-                                <button className="btn faq10-btn w-100">
-                                    Send message
-                                </button>
-                            </div>
-
-                            <div
-                                className="sidebar-box agent-card"
-                                style={{ backgroundImage: `url(${gridImg})` }}
-                            >
-                                <h3>We can help you find a local real estate agent</h3>
-                                <p>
-                                    Connect with a trusted agent who knows the market inside out –
-                                    whether you’re buying or selling.
-                                </p>
-                                <button className="btn btn-warning w-100">
-                                    Connect with an agent
-                                </button>
-                            </div>
-
-                        </div>
-
+            <div className="container my-5 rt-cmp-wrapper">
+                <div className="row g-0">
+                    <div className="col-md-3 d-none d-md-block">
+                        <div className="rt-cmp-header-spacer"></div>
+                        <div className="rt-cmp-label">Feature</div>
+                        <div className="rt-cmp-label">Type</div>
+                        <div className="rt-cmp-label">Status</div>
+                        <div className="rt-cmp-label">Size</div>
+                        <div className="rt-cmp-label">Land Area</div>
+                        <div className="rt-cmp-label">Rooms</div>
+                        <div className="rt-cmp-label">Bathrooms</div>
+                        <div className="rt-cmp-label">Garages Size</div>
                     </div>
-                </div>
-            </section>
 
-            <section className="cta10-wrapper">
-                <div className="container">
-                    <div className="cta10-box">
+                    {properties.map((prop) => (
+                        <div key={prop.id} className="col-12 col-md-3 rt-cmp-column">
+                            <div className="rt-cmp-card-top">
+                                <img src={prop.img} alt={prop.title} className="img-fluid rt-cmp-img" />
+                                <div className="p-3">
+                                    <h5 className="rt-cmp-title">{prop.title}</h5>
+                                    <p className="rt-cmp-price">{prop.price}</p>
+                                    <p className="rt-cmp-loc"><i className="bi bi-geo-alt"></i> {prop.location}</p>
+                                </div>
+                            </div>
 
-                        <div className="cta10-overlay"></div>
-
-                        <div className="cta10-logo">
-                            <span>
-                                <img src={logobanner} alt="logo" className="header-logo" />
-                            </span>
-                        </div>
-                        <div className="cta10-content">
-                            <h2>Need help? Talk to our expert.</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </p>
-
-                            <div className="cta10-actions">
-                                <button className="cta10-btn-outline">
-                                    Contact us
-                                </button>
-
-                                <a href="tel:6035550123" className="cta10-btn-filled">
-                                    <i className="fa-solid fa-phone"></i> (603) 555-0123
-                                </a>
+                            <div className="rt-cmp-data-row">
+                                <span className="d-md-none fw-bold">Feature: </span> {renderStars(prop.rating)}
+                            </div>
+                            <div className="rt-cmp-data-row">
+                                <span className="d-md-none fw-bold">Type: </span> {prop.type}
+                            </div>
+                            <div className="rt-cmp-data-row">
+                                <span className="d-md-none fw-bold">Status: </span> {prop.status}
+                            </div>
+                            <div className="rt-cmp-data-row">
+                                <span className="d-md-none fw-bold">Size: </span> {prop.size}
+                            </div>
+                            <div className="rt-cmp-data-row">
+                                <span className="d-md-none fw-bold">Land Area: </span> {prop.landArea}
+                            </div>
+                            <div className="rt-cmp-data-row">
+                                <span className="d-md-none fw-bold">Rooms: </span> {prop.rooms}
+                            </div>
+                            <div className="rt-cmp-data-row">
+                                <span className="d-md-none fw-bold">Bathrooms: </span> {prop.bathrooms}
+                            </div>
+                            <div className="rt-cmp-data-row">
+                                <span className="d-md-none fw-bold">Garages: </span> {prop.garages}
                             </div>
                         </div>
-
-                    </div>
+                    ))}
                 </div>
-            </section>
+            </div>
 
             <div className="rf-cta0">
                 <div className="container">
@@ -686,7 +600,6 @@ export default function Faq() {
                     </div>
                 </div>
             </footer>
-
         </>
     )
 }

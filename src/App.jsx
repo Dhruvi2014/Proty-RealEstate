@@ -18,8 +18,10 @@ import AgenciesDetails from "./components/AgenciesDetails";
 import HomeLoanProcess from "./components/HomeLoanProcess";
 import Career from "./components/Career";
 import Faq from "./components/Faq";
-
+import Compare from "./components/Compare"
 import BlogDetails from "./components/BlogDetails";
+import ProjectList from "./components/ProjectList";
+import ProjectDetails from "./components/ProjectDetails";
 
 function App() {
   return (
@@ -43,7 +45,9 @@ function App() {
         <Route path="/homeloanprocess" element={<HomeLoanProcess />} />
         <Route path="/career" element={<Career />} />
         <Route path="/faq" element={<Faq />} />
-
+        <Route path="/compare" element={<Compare />} />
+        <Route path="/projectlist" element={<ProjectList />} />
+        <Route path="/projectdetails" element={<ProjectDetails />} />
 
         <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>

@@ -1,47 +1,99 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../Faq.css";
+import "../ProjectDetails.css";
 import logo from "../assets/logo.png";
-import agentImg from "../assets/agent4.jpg";
 
-import gridImg from "../assets/img1.jpg";
-import logobanner from "../assets/logobanner.png";
+import img1 from "../assets/boxlist1.jpg";
+import img2 from "../assets/boxlist2.jpg";
+import img3 from "../assets/boxlist3.jpg";
+import agent4 from "../assets/agent4.jpg";
+import floor1 from "../assets/floor1.jpg";
+
+import img4 from "../assets/blog-grid-1.jpg";
+import img5 from "../assets/blog-grid-2.jpg";
+import img6 from "../assets/blog-grid-3.jpg";
+
+import logo1 from "../assets/vector1.png";
+import logo2 from "../assets/vector2.png";
+import logo3 from "../assets/vector3.png";
+import logo4 from "../assets/vector4.png";
+import logo5 from "../assets/vector5.png";
 
 import footerImg from "../assets/footerImg.png";
 import footerlogo from "../assets/logo2.png";
 
-export default function Faq() {
-    const faqData = [
+export default function ProjectDetails() {
+    const slides = [
         {
-            question: "Why Should I Use Your Services?",
-            answer:
-                "Once your account is set up, you can easily access our tools, manage transactions, and explore features designed to make your experience smooth and efficient."
+            image: img4,
+            tag: "Office",
+            title: "Seaside breeze luxury residence",
+            subtitle: "Living room",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id risus est. Ut efficitur dignissim ante, nec bibendum odio ullamcorper ut. Vivamus condimentum gravida condimentum."
         },
         {
-            question: "How Secure Are Your Services?",
-            answer:
-                "We use industry-standard security measures, encryption, and regular audits to ensure your data remains safe and protected at all times."
+            image: img5,
+            tag: "Bedroom",
+            title: "Modern minimal interior design",
+            subtitle: "Master bedroom",
+            description:
+                "Elegant interiors with warm tones and natural light. Designed for comfort and modern lifestyle experience."
         },
         {
-            question: "Is There Customer Support Available?",
-            answer:
-                "Yes, our customer support team is available via email and phone to help you with any questions or issues."
-        },
-        {
-            question: "How Can I Update My Account Information?",
-            answer:
-                "You can update your account information by logging in and navigating to the profile settings section."
+            image: img6,
+            tag: "Apartment",
+            title: "Premium city skyline apartment",
+            subtitle: "Luxury suite",
+            description:
+                "Experience breathtaking views with premium finishing and modern architectural elements."
         }
     ];
 
-    const [activeIndex, setActiveIndex] = useState(0);
+    const amenitiesData = [
+        {
+            icon: "fa-water",
+            title: "Infinity pool",
+        },
+        {
+            icon: "fa-seedling",
+            title: "Sky garden",
+        },
+        {
+            icon: "fa-chess-rook",
+            title: "Children’s play",
+        },
+        {
+            icon: "fa-spa",
+            title: "Spa and sauna",
+        },
+    ];
 
-    const toggleFaq = (index) => {
-        setActiveIndex(activeIndex === index ? null : index);
+    const rowOneLogos = [logo1, logo2, logo3, logo4, logo5];
+    const rowTwoLogos = [logo5, logo4, logo3, logo2, logo1];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [currentIndex]);
+
+    const nextSlide = () => {
+        setCurrentIndex((prev) =>
+            prev === slides.length - 1 ? 0 : prev + 1
+        );
     };
 
-
+    const prevSlide = () => {
+        setCurrentIndex((prev) =>
+            prev === 0 ? slides.length - 1 : prev - 1
+        );
+    };
     return (
         <>
             <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
@@ -157,9 +209,9 @@ export default function Faq() {
                                             </span>
 
                                             <ul className="submenu list-unstyled">
-                                                <li><Link to="/agenciesgrid">Agencies Grid</Link></li>
-                                                <li><Link to="/agencieslist">Agencies List</Link></li>
-                                                <li><Link to="/agenciesdetails">Agencies Details</Link></li>
+                                                <li>Agencies Grid</li>
+                                                <li>Agencies Grid</li>
+                                                <li>Agencies Details</li>
                                             </ul>
                                         </li>
 
@@ -389,172 +441,379 @@ export default function Faq() {
                     </div>
                 </div>
             </div>
+            <section className="pd-main-wrapper container my-5">
+                <div className="row g-5">
 
-            <section className="faq10-wrapper py-5">
-                <div className="container">
-                    <div className="row">
+                    <div className="col-lg-6">
 
-                        <div className="col-lg-8">
-                            <h2 className="faq10-title mb-4">Frequently Asked Questions</h2><br></br>
-                            <h2 className="faq10-title mb-4">Overview</h2>
-
-                            {faqData.map((item, index) => (
-                                <div className="faq10-item" key={index}>
-                                    <button
-                                        className="faq10-question"
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        {item.question}
-                                        <i
-                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
-                                                }`}
-                                        ></i>
-                                    </button>
-
-                                    <div
-                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
-                                            }`}
-                                    >
-                                        <p>{item.answer}</p>
-                                    </div>
-                                </div>
-                            ))}
-                            <br></br><br></br>
-
-                            <h2 className="faq10-title mb-4">Costs and Payments</h2>
-
-                            {faqData.map((item, index) => (
-                                <div className="faq10-item" key={index}>
-                                    <button
-                                        className="faq10-question"
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        {item.question}
-                                        <i
-                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
-                                                }`}
-                                        ></i>
-                                    </button>
-
-                                    <div
-                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
-                                            }`}
-                                    >
-                                        <p>{item.answer}</p>
-                                    </div>
-                                </div>
-                            ))}
-
-
-                            <br></br><br></br>
-
-                            <h2 className="faq10-title mb-4">Safety and Security</h2>
-
-                            {faqData.map((item, index) => (
-                                <div className="faq10-item" key={index}>
-                                    <button
-                                        className="faq10-question"
-                                        onClick={() => toggleFaq(index)}
-                                    >
-                                        {item.question}
-                                        <i
-                                            className={`fa-solid fa-chevron-${activeIndex === index ? "up" : "down"
-                                                }`}
-                                        ></i>
-                                    </button>
-
-                                    <div
-                                        className={`faq10-answer ${activeIndex === index ? "show" : ""
-                                            }`}
-                                    >
-                                        <p>{item.answer}</p>
-                                    </div>
-                                </div>
-                            ))}
+                        <div className="pd-big-img-wrapper mb-4">
+                            <img
+                                src={img1}
+                                alt="Main Property"
+                                className="img-fluid pd-big-img"
+                            />
                         </div>
 
-                        <div className="col-lg-4 mt-4 mt-lg-0">
-                            <div className="faq10-contact-card">
-                                <h5 className="mb-3">Contact Sellers</h5>
+                        <div className="row g-3">
+                            <div className="col-6">
+                                <img
+                                    src={img2}
+                                    alt="Property"
+                                    className="img-fluid pd-small-img"
+                                />
+                            </div>
+                            <div className="col-6">
+                                <img
+                                    src={img3}
+                                    alt="Property"
+                                    className="img-fluid pd-small-img"
+                                />
+                            </div>
+                        </div>
+                    </div>
 
-                                <div className="faq10-agent d-flex align-items-center mb-3">
-                                    <img
-                                        src={agentImg}
-                                        alt="agent"
-                                        className="faq10-agent-img"
-                                    />
-                                    <div className="ms-3">
-                                        <h6 className="mb-1">Shara Conner</h6>
-                                        <p className="mb-0">
-                                            <i className="fa-solid fa-phone"></i> 1-333-345-6868
+                    <div className="col-lg-6">
+
+                        <h2 className="pd-title">Nextgen riverside</h2>
+
+                        <p className="pd-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Mauris id risus est. Ut efficitur dignissim ante.
+                        </p>
+
+                        <div className="d-flex justify-content-between align-items-center my-4">
+                            <h3 className="pd-price">$1,250,000</h3>
+                            <button className="btn pd-outline-btn">
+                                Split options <i className="fas fa-arrow-up-right-from-square ms-2"></i>
+                            </button>
+                        </div>
+
+                        <div className="pd-info-table">
+
+                            <div className="pd-info-row">
+                                <span>Type</span>
+                                <span>Studio, Shophouse</span>
+                            </div>
+
+                            <div className="pd-info-row">
+                                <span>Status</span>
+                                <span>Finish</span>
+                            </div>
+
+                            <div className="pd-info-row">
+                                <span>Location</span>
+                                <span>102 Ingraham St, Brooklyn, NY 11237</span>
+                            </div>
+
+                            <div className="pd-info-row">
+                                <span>Total Towers</span>
+                                <span>5</span>
+                            </div>
+
+                            <div className="pd-info-row">
+                                <span>Year</span>
+                                <span>2024</span>
+                            </div>
+
+                        </div>
+
+                        <div className="pd-agent-box d-flex justify-content-between align-items-center mt-4">
+
+                            <div className="d-flex align-items-center">
+                                <img
+                                    src={agent4}
+                                    alt="Agent"
+                                    className="pd-agent-img"
+                                />
+                                <div className="ms-3">
+                                    <h6 className="mb-0">Marvin McKinney</h6>
+                                    <small className="text-muted">Local agent</small>
+                                </div>
+                            </div>
+
+                            <button className="btn pd-outline-btn">
+                                Contact <i className="fas fa-arrow-up-right-from-square ms-2"></i>
+                            </button>
+                        </div>
+
+                        <button className="btn pd-primary-btn w-100 mt-4">
+                            Request a tour <br />
+                            <small>Earliest at 11:00 tomorrow</small>
+                        </button>
+
+                    </div>
+                </div>
+            </section>
+
+            <section className="hl-section py-5">
+                <div className="container">
+                    <div className="row align-items-center">
+
+                        <div className="col-lg-6 mb-5 mb-lg-0">
+                            <div className="hl-left-wrapper">
+
+                                <h2 className="hl-title mb-3">Home layout</h2>
+
+                                <p className="hl-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Mauris id risus est. Ut efficitur dignissim ante, nec
+                                    bibendum odio ullamcorper ut. Vivamus condimentum gravida
+                                    condimentum.
+                                </p>
+
+                                <div className="row text-center hl-stats-row">
+
+                                    <div className="col-4">
+                                        <h3 className="hl-stat-number">4</h3>
+                                        <p className="hl-stat-label">
+                                            <i className="fa-solid fa-bed me-2"></i>Beds
                                         </p>
                                     </div>
+
+                                    <div className="col-4 hl-stat-border">
+                                        <h3 className="hl-stat-number">3</h3>
+                                        <p className="hl-stat-label">
+                                            <i className="fa-solid fa-bath me-2"></i>Baths
+                                        </p>
+                                    </div>
+
+                                    <div className="col-4">
+                                        <h3 className="hl-stat-number">1,484</h3>
+                                        <p className="hl-stat-label">
+                                            <i className="fa-solid fa-ruler-combined me-2"></i>sqft
+                                        </p>
+                                    </div>
+
                                 </div>
 
-                                <input
-                                    type="text"
-                                    className="form-control mb-3"
-                                    placeholder="Full Name"
-                                />
-                                <textarea
-                                    className="form-control mb-3"
-                                    rows="4"
-                                    placeholder="How can an agent help?"
-                                ></textarea>
+                                <div className="hl-details-list mt-4">
 
-                                <button className="btn faq10-btn w-100">
-                                    Send message
-                                </button>
+                                    <div className="hl-detail-item">
+                                        <span>Floors</span>
+                                        <span>2</span>
+                                    </div>
+
+                                    <div className="hl-detail-item">
+                                        <span>Garage</span>
+                                        <span>1</span>
+                                    </div>
+
+                                    <div className="hl-detail-item">
+                                        <span>Ceiling height</span>
+                                        <span>3m</span>
+                                    </div>
+
+                                    <div className="hl-detail-item">
+                                        <span>Pool</span>
+                                        <span>1</span>
+                                    </div>
+
+                                    <div className="hl-detail-item">
+                                        <span>Garden</span>
+                                        <span>5m</span>
+                                    </div>
+
+                                </div>
+
                             </div>
+                        </div>
 
-                            <div
-                                className="sidebar-box agent-card"
-                                style={{ backgroundImage: `url(${gridImg})` }}
-                            >
-                                <h3>We can help you find a local real estate agent</h3>
-                                <p>
-                                    Connect with a trusted agent who knows the market inside out –
-                                    whether you’re buying or selling.
-                                </p>
-                                <button className="btn btn-warning w-100">
-                                    Connect with an agent
-                                </button>
+                        <div className="col-lg-6">
+                            <div className="hl-floor-card p-4">
+
+                                <div className="accordion" id="floorAccordion">
+
+                                    <div className="accordion-item hl-accordion-item">
+                                        <h2 className="accordion-header">
+                                            <button
+                                                className="accordion-button hl-accordion-btn"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#floorOne"
+                                            >
+                                                <div className="d-flex justify-content-between w-100">
+                                                    <span>First Floor</span>
+                                                    <span className="hl-floor-icons">
+                                                        <i className="fa-solid fa-bed me-2"></i>2 Bedroom
+                                                        <i className="fa-solid fa-bath ms-3 me-2"></i>2 Bathroom
+                                                    </span>
+                                                </div>
+                                            </button>
+                                        </h2>
+
+                                        <div
+                                            id="floorOne"
+                                            className="accordion-collapse collapse show"
+                                            data-bs-parent="#floorAccordion"
+                                        >
+                                            <div className="accordion-body">
+                                                <img
+                                                    src={floor1}
+                                                    alt="Floor Plan"
+                                                    className="img-fluid rounded"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="accordion-item hl-accordion-item">
+                                        <h2 className="accordion-header">
+                                            <button
+                                                className="accordion-button collapsed hl-accordion-btn"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#floorTwo"
+                                            >
+                                                <div className="d-flex justify-content-between w-100">
+                                                    <span>Second Floor</span>
+                                                    <span className="hl-floor-icons">
+                                                        <i className="fa-solid fa-bed me-2"></i>2 Bedroom
+                                                        <i className="fa-solid fa-bath ms-3 me-2"></i>2 Bathroom
+                                                    </span>
+                                                </div>
+                                            </button>
+                                        </h2>
+
+                                        <div
+                                            id="floorTwo"
+                                            className="accordion-collapse collapse"
+                                            data-bs-parent="#floorAccordion"
+                                        >
+                                            <div className="accordion-body">
+                                                <img
+                                                    src={floor1}
+                                                    alt="Floor Plan"
+                                                    className="img-fluid rounded"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div className="text-center mt-4">
+                                    <button className="hl-download-btn">
+                                        Download floor plans
+                                        <i className="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+                                    </button>
+                                </div>
+
                             </div>
-
                         </div>
 
                     </div>
                 </div>
             </section>
 
-            <section className="cta10-wrapper">
+            <section
+                className="sb-hero-section"
+                style={{ backgroundImage: `url(${slides[currentIndex].image})` }}
+            >
+                <div className="container h-100 d-flex align-items-center">
+
+                    <div className="sb-content-card">
+
+                        <span className="sb-tag">{slides[currentIndex].tag}</span>
+
+                        <h2 className="sb-title">
+                            {slides[currentIndex].title}
+                        </h2>
+
+                        <h6 className="sb-subtitle">
+                            {slides[currentIndex].subtitle}
+                        </h6>
+
+                        <p className="sb-description">
+                            {slides[currentIndex].description}
+                        </p>
+
+                        <hr />
+
+                        <div className="sb-controls">
+                            <button onClick={prevSlide} className="sb-nav-btn">
+                                <i className="fa-solid fa-arrow-left"></i>
+                            </button>
+
+                            <button onClick={nextSlide} className="sb-nav-btn">
+                                <i className="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section className="ha-section py-5">
                 <div className="container">
-                    <div className="cta10-box">
 
-                        <div className="cta10-overlay"></div>
+                    {/* Section Header */}
+                    <div className="text-center mb-5">
+                        <h2 className="ha-title">Home amenities</h2>
+                        <p className="ha-subtitle">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Mauris id risus est. Ut efficitur dignissim ante, nec bibendum odio ullamcorper ut.
+                        </p>
+                    </div>
 
-                        <div className="cta10-logo">
-                            <span>
-                                <img src={logobanner} alt="logo" className="header-logo" />
-                            </span>
-                        </div>
-                        <div className="cta10-content">
-                            <h2>Need help? Talk to our expert.</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </p>
+                    {/* Cards */}
+                    <div className="row g-4">
+                        {amenitiesData.map((item, index) => (
+                            <div className="col-lg-3 col-md-6" key={index}>
+                                <div className="ha-card text-center">
 
-                            <div className="cta10-actions">
-                                <button className="cta10-btn-outline">
-                                    Contact us
-                                </button>
+                                    <div className="ha-icon-wrapper">
+                                        <i className={`fa-solid ${item.icon} ha-icon`}></i>
+                                    </div>
 
-                                <a href="tel:6035550123" className="cta10-btn-filled">
-                                    <i className="fa-solid fa-phone"></i> (603) 555-0123
-                                </a>
+                                    <h5 className="ha-card-title">{item.title}</h5>
+
+                                    <div className="ha-divider"></div>
+
+                                    <p className="ha-card-text">
+                                        We are not loud, noisy and full of our own self-importance.
+                                        As your agent we know we work for you.
+                                    </p>
+
+
+
+                                </div>
                             </div>
-                        </div>
+                        ))}
+                    </div>
+                    <br></br><br></br>
+                    <h2 style={{ textAlign: "center" }}>Photo Gallery</h2><br></br><br></br>
+                    <img src={img1} style={{ width: "100%", height: "500px" }}></img>
 
+                </div>
+            </section>
+
+            <section className="wt-main-section container">
+                <div className="container text-center">
+                    <h2 className="wt-title">Our Trusted Partners</h2>
+                    <p className="wt-subtitle">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id risus est.
+
+                    </p>
+                </div>
+
+                <div className="wt-slider-wrapper">
+                    <div className="wt-slider wt-slider-left">
+                        {[...rowOneLogos, ...rowOneLogos].map((logo, index) => (
+                            <div className="wt-logo-card" key={`row1-${index}`}>
+                                <img src={logo} alt="Real Estate Logo" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="wt-slider-wrapper">
+                    <div className="wt-slider wt-slider-right">
+                        {[...rowTwoLogos, ...rowTwoLogos].map((logo, index) => (
+                            <div className="wt-logo-card" key={`row2-${index}`}>
+                                <img src={logo} alt="Real Estate Logo" />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -686,6 +945,9 @@ export default function Faq() {
                     </div>
                 </div>
             </footer>
+
+
+
 
         </>
     )

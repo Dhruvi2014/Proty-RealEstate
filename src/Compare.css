@@ -1,0 +1,96 @@
+.rt-cmp-wrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid #f0e6e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.rt-cmp-header-spacer {
+    height: 250px; 
+}
+
+.rt-cmp-label, .rt-cmp-data-row {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0e6e0;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.rt-cmp-label {
+    font-weight: 700;
+    background-color: #fffaf7;
+    color: #333;
+}
+
+.rt-cmp-data-row {
+    justify-content: center;
+    background-color: #fff;
+    color: #666;
+    text-align: center;
+}
+
+.rt-cmp-column:nth-child(odd) .rt-cmp-data-row {
+    background-color: #fffcfb;
+}
+
+.rt-cmp-card-top {
+    border-bottom: 1px solid #f0e6e0;
+    height: 280px;   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 100px;
+}
+
+.rt-cmp-header-spacer {
+    height: 280px; 
+    padding-top: 260px;  
+}
+
+
+.rt-cmp-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.rt-cmp-title {
+    font-size: 16px;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+.rt-cmp-price {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.rt-cmp-loc {
+    font-size: 11px;
+    color: #888;
+}
+
+.rt-cmp-stars {
+    color: #f39c12;
+    font-size: 16px;
+}
+
+.rt-cmp-review-count {
+    color: #888;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .rt-cmp-data-row {
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .rt-cmp-column {
+        border-bottom: 10px solid #f0e6e0;
+    }
+}

@@ -144,9 +144,9 @@ export default function Career() {
                                             </span>
 
                                             <ul className="submenu list-unstyled">
-                                                <li>Agencies Grid</li>
-                                                <li>Agencies Grid</li>
-                                                <li>Agencies Details</li>
+                                                <li><Link to="/agenciesgrid">Agencies Grid</Link></li>
+                                                <li><Link to="/agencieslist">Agencies List</Link></li>
+                                                <li><Link to="/agenciesdetails">Agencies Details</Link></li>
                                             </ul>
                                         </li>
 

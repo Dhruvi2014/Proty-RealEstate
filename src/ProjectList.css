@@ -1,0 +1,211 @@
+/* Section Styling */
+.bp-hero-section {
+  background-color: #f8f9fa;
+  padding-top: 80px;
+  padding-bottom: 120px;
+  position: relative;
+}
+
+/* Heading */
+.bp-main-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.bp-sub-title {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #777;
+  font-size: 16px;
+}
+
+/* Image */
+.bp-image-wrapper {
+  position: relative;
+  margin-top: 50px;
+}
+
+.bp-hero-image {
+  width: 100%;
+  border-radius: 20px;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Search Box */
+.bp-search-box {
+  background: #fff;
+  border-radius: 60px;
+  padding: 20px 30px;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1100px;
+}
+
+/* Search Items */
+.bp-search-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-right: 1px solid #eee;
+}
+
+.bp-search-item:last-child {
+  border-right: none;
+}
+
+.bp-icon {
+  margin-right: 10px;
+  color: #ff7a00;
+  font-size: 18px;
+}
+
+.bp-select {
+  border: none;
+  box-shadow: none !important;
+  font-size: 14px;
+}
+
+.bp-select:focus {
+  outline: none;
+}
+
+/* Search Button */
+.bp-search-btn {
+  background-color: #ff7a00;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 500;
+  border: none;
+}
+
+.bp-search-btn:hover {
+  background-color: #e86c00;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .bp-main-title {
+    font-size: 40px;
+  }
+
+  .bp-hero-image {
+    height: 400px;
+  }
+
+  .bp-search-box {
+    border-radius: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bp-search-box {
+    position: relative;
+    bottom: 0;
+    transform: none;
+    margin-top: 20px;
+  }
+
+  .bp-search-item {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .bp-search-item:last-child {
+    border-bottom: none;
+  }
+}
+/* Section Title */
+.ny-section-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+/* City Cards */
+.ny-city-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ny-city-card:hover {
+  transform: translateY(-5px);
+}
+
+.ny-city-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.ny-city-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.ny-city-overlay h5 {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.ny-city-overlay p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Agents */
+.ny-agent-wrapper {
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px 0;
+}
+
+.ny-agent-card {
+  padding: 15px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.ny-agent-card:last-child {
+  border-bottom: none;
+}
+
+.ny-agent-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.ny-agent-phone {
+  color: #222;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ny-city-img {
+    height: 160px;
+  }
+
+  .ny-section-title {
+    font-size: 22px;
+  }
+}

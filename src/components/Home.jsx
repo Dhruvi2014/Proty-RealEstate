@@ -336,9 +336,9 @@ const Home = () => {
                                         <li><Link to="/homeloanprocess">Home Loan Process</Link></li>
                                         <li><Link to="/career">Career</Link></li>
                                         <li><Link to="/faq">Faq's</Link></li>
-                                        <li>Compare</li>
-                                        <li>Project List</li>
-                                        <li>Project Details</li>
+                                        <li><Link to="/compare">Compare</Link></li>
+                                        <li><Link to="/projectlist">Project List</Link></li>
+                                        <li><Link to="/projectdetails">Project Details</Link></li>
                                         <li>Page 404</li>
                                         <li>Dashboard</li>
 
